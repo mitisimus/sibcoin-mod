@@ -1,5 +1,6 @@
 # Copyright (c) 2013-2016 The Bitcoin Core developers
 # Copyright (c) 2014-2018 The Dash Core developers
+# Copyright (c) 2015-2018 Sibcoin Developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -26,7 +27,7 @@ BITCOIN_WIN_INSTALLER=$(PACKAGE)-$(PACKAGE_VERSION)-win$(WINDOWS_BITS)-setup$(EX
 empty :=
 space := $(empty) $(empty)
 
-OSX_APP=Dash-Qt.app
+OSX_APP=Sibcoin-Qt.app
 OSX_VOLNAME = $(subst $(space),-,$(PACKAGE_NAME))
 OSX_DMG = $(OSX_VOLNAME).dmg
 OSX_BACKGROUND_SVG=background.svg
@@ -41,8 +42,8 @@ OSX_QT_TRANSLATIONS = da,de,es,hu,ru,uk,zh_CN,zh_TW
 
 DIST_DOCS = $(wildcard doc/*.md) $(wildcard doc/release-notes/*.md)
 DIST_CONTRIB = $(top_srcdir)/contrib/dash-cli.bash-completion \
-	       $(top_srcdir)/contrib/dash-tx.bash-completion \
-	       $(top_srcdir)/contrib/dashd.bash-completion \
+               $(top_srcdir)/contrib/dash-tx.bash-completion \
+               $(top_srcdir)/contrib/dashd.bash-completion \
 	       $(top_srcdir)/contrib/init
 
 BIN_CHECKS=$(top_srcdir)/contrib/devtools/symbol-check.py \
@@ -92,7 +93,7 @@ $(OSX_APP)/Contents/Resources/bitcoin.icns: $(OSX_INSTALLER_ICONS)
 	$(MKDIR_P) $(@D)
 	$(INSTALL_DATA) $< $@
 
-$(OSX_APP)/Contents/MacOS/Dash-Qt: $(BITCOIN_QT_BIN)
+$(OSX_APP)/Contents/MacOS/Sibcoini-Qt: $(BITCOIN_QT_BIN)
 	$(MKDIR_P) $(@D)
 	STRIPPROG="$(STRIP)" $(INSTALL_STRIP_PROGRAM)  $< $@
 
@@ -102,7 +103,7 @@ $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings:
 
 OSX_APP_BUILT=$(OSX_APP)/Contents/PkgInfo $(OSX_APP)/Contents/Resources/empty.lproj \
   $(OSX_APP)/Contents/Resources/bitcoin.icns $(OSX_APP)/Contents/Info.plist \
-  $(OSX_APP)/Contents/MacOS/Dash-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
+  $(OSX_APP)/Contents/MacOS/Sibcoin-Qt $(OSX_APP)/Contents/Resources/Base.lproj/InfoPlist.strings
 
 osx_volname:
 	echo $(OSX_VOLNAME) >$@
@@ -127,7 +128,7 @@ $(APP_DIST_DIR)/Applications:
 	@rm -f $@
 	@cd $(@D); $(LN_S) /Applications $(@F)
 
-$(APP_DIST_EXTRAS): $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Dash-Qt
+$(APP_DIST_EXTRAS): $(APP_DIST_DIR)/$(OSX_APP)/Contents/MacOS/Sibcoin-Qt
 
 $(OSX_DMG): $(APP_DIST_EXTRAS)
 	$(GENISOIMAGE) -no-cache-inodes -D -l -probe -V "$(OSX_VOLNAME)" -no-pad -r -dir-mode 0755 -apple -o $@ dist
@@ -233,4 +234,3 @@ DISTCHECK_CONFIGURE_FLAGS = --enable-man
 
 clean-local:
 	rm -rf coverage_percent.txt test_dash.coverage/ total.coverage/ qa/tmp/ cache/ $(OSX_APP)
-	rm -rf qa/pull-tester/__pycache__

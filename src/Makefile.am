@@ -1,5 +1,6 @@
 # Copyright (c) 2013-2016 The Bitcoin Core developers
 # Copyright (c) 2014-2018 The Dash Core developers
+# Copyright (c) 2015-2016 The Sibcoin Core Developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -66,11 +67,11 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += dashd
+  bin_PROGRAMS += sibcoind
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += dash-cli dash-tx
+  bin_PROGRAMS += sibcoin-cli sibcoin-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
@@ -437,17 +438,17 @@ libdash_cli_a_SOURCES = \
 nodist_libdash_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# dashd binary #
-dashd_SOURCES = dashd.cpp
-dashd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-dashd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-dashd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# bitcoind binary #
+sibcoind_SOURCES = sibcoind.cpp
+sibcoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+sibcoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+sibcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-dashd_SOURCES += dashd-res.rc
+sibcoind_SOURCES += sibcoind-res.rc
 endif
 
-dashd_LDADD = \
+sibcoind_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -462,35 +463,35 @@ dashd_LDADD = \
 
 dashd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
-# dash-cli binary #
-dash_cli_SOURCES = dash-cli.cpp
-dash_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-dash_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-dash_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# sibcoin-cli binary #
+sibcoin_cli_SOURCES = sibcoin-cli.cpp
+sibcoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+sibcoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+sibcoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-dash_cli_SOURCES += dash-cli-res.rc
+sibcoind_cli_SOURCES += sibcoind-cli-res.rc
 endif
 
-dash_cli_LDADD = \
+sibcoin_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
-dash_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+sibcoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# dash-tx binary #
-dash_tx_SOURCES = dash-tx.cpp
-dash_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-dash_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-dash_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# sibcoin-tx binary #
+sibcoin_tx_SOURCES = sibcoin-tx.cpp
+sibcoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+sibcoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+sibcoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-dash_tx_SOURCES += dash-tx-res.rc
+sibcoin_tx_SOURCES += sibcoin-tx-res.rc
 endif
 
-dash_tx_LDADD = \
+sibcoin_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -498,7 +499,7 @@ dash_tx_LDADD = \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-dash_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+sibcoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # dashconsensus library #
