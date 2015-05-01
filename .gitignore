@@ -6,10 +6,10 @@ reset-files.bash
 *.tar.gz
 
 *.exe
-src/dash
-src/dashd
-src/dash-cli
-src/dash-tx
+src/sibcoin
+src/sibcoind
+src/sibcoin-cli
+src/sibcoin-tx
 src/test/test_dash
 src/qt/test/test_dash-qt
 src/bench/bench_dash
@@ -35,8 +35,8 @@ config.log
 config.status
 configure
 libtool
-src/config/dash-config.h
-src/config/dash-config.h.in
+src/config/sibcoin-config.h
+src/config/sibcoin-config.h.in
 src/config/stamp-h1
 share/setup.nsi
 share/qt/Info.plist
@@ -82,8 +82,8 @@ libconftest.dylib*
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-dash-qt
-Dash-Qt.app
+sibcoin-qt
+Sibcoin-Qt.app
 
 # Unit-tests
 Makefile.test
@@ -125,9 +125,9 @@ src/qt/dash-qt.bash
 qa/pull-tester/tests-config.sh
 
 #development symlinks
-dash-cli
-dashd
-dash-qt
+sibcoin-cli
+sibcoind
+sibcoin-qt
 make
 
 /docker/bin

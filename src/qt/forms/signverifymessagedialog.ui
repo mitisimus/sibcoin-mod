@@ -140,7 +140,7 @@
          <item>
           <widget class="QPushButton" name="signMessageButton_SM">
            <property name="toolTip">
-            <string>Sign the message to prove you own this Dash address</string>
+            <string>Sign the message to prove you own this Sibcoin address</string>
            </property>
            <property name="text">
             <string>Sign &amp;Message</string>
@@ -271,7 +271,7 @@
          <item>
           <widget class="QPushButton" name="verifyMessageButton_VM">
            <property name="toolTip">
-            <string>Verify the message to ensure it was signed with the specified Dash address</string>
+            <string>Verify the message to ensure it was signed with the specified Sibcoin address</string>
            </property>
            <property name="text">
             <string>Verify &amp;Message</string>
