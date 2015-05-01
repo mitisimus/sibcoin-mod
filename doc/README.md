@@ -1,5 +1,9 @@
-Dash Core 0.12.1
-=====================
+Sibcoin 0.16.x BETA
+====================
+
+Copyright (c) 2009-2016 Bitcoin Developers
+Copyright (c) 2014-2017 Dash Core Developers
+Copyright (c) 2015-2017 Sibcoin Developers
 
 This is the official reference wallet for Dash digital currency and comprises the backbone of the Dash peer-to-peer network. You can [download Dash Core](https://www.dash.org/downloads/) or [build it yourself](#building) using the guides below.
 
@@ -11,8 +15,8 @@ The following are some helpful notes on how to run Dash on your native platform.
 
 Unpack the files into a directory and run:
 
-- `bin/dash-qt` (GUI) or
-- `bin/dashd` (headless)
+- `bin/sibcoin-qt` (GUI) or
+- `bin/sibcoind` (headless)
 
 ### Windows
 
