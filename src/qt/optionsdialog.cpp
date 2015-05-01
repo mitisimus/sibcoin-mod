@@ -98,7 +98,7 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
 //    ui->theme->addItem(QString("DASH-light-hires-retro"), QVariant("light-hires-retro"));
 //    ui->theme->addItem(QString("DASH-blue"), QVariant("drkblue"));
 //    ui->theme->addItem(QString("DASH-Crownium"), QVariant("crownium"));
-    ui->theme->addItem(QString("DASH-traditional"), QVariant("trad"));
+    ui->theme->addItem(QString("Traditional"), QVariant("trad"));
     
     /* Language selector */
     QDir translations(":translations");

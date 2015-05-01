@@ -944,8 +944,8 @@ QString loadStyleSheet()
         cssName = QString(":/css/") + theme; 
     }
     else {
-        cssName = QString(":/css/light");  
-        settings.setValue("theme", "light");
+        cssName = QString(":/css/trad");  
+        settings.setValue("theme", "trad");
     }
     
     QFile qFile(cssName);      
