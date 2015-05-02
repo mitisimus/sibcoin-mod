@@ -19,10 +19,10 @@ BitcoinUnits::BitcoinUnits(QObject *parent):
 QList<BitcoinUnits::Unit> BitcoinUnits::availableUnits()
 {
     QList<BitcoinUnits::Unit> unitlist;
-    unitlist.append(DASH);
-    unitlist.append(mDASH);
-    unitlist.append(uDASH);
-    unitlist.append(duffs);
+    unitlist.append(SIB);
+    unitlist.append(mSIB);
+    unitlist.append(uSIB);
+    unitlist.append(ivans);
     return unitlist;
 }
 
@@ -30,10 +30,10 @@ bool BitcoinUnits::valid(int unit)
 {
     switch(unit)
     {
-    case DASH:
-    case mDASH:
-    case uDASH:
-    case duffs:
+    case SIB:
+    case mSIB:
+    case uSIB:
+    case ivans:
         return true;
     default:
         return false;
@@ -46,10 +46,10 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case DASH: return QString("DASH");
-            case mDASH: return QString("mDASH");
-            case uDASH: return QString::fromUtf8("μDASH");
-            case duffs: return QString("duffs");
+            case SIB: return QString("SIB");
+            case mSIB: return QString("mSIB");
+            case uSIB: return QString::fromUtf8("μSIB");
+            case ivans: return QString::fromUtf8("ivans");
             default: return QString("???");
         }
     }
@@ -57,10 +57,10 @@ QString BitcoinUnits::name(int unit)
     {
         switch(unit)
         {
-            case DASH: return QString("tDASH");
-            case mDASH: return QString("mtDASH");
-            case uDASH: return QString::fromUtf8("μtDASH");
-            case duffs: return QString("tduffs");
+            case SIB: return QString("tSIB");
+            case mSIB: return QString("mtSIB");
+            case uSIB: return QString::fromUtf8("μtSIB");
+            case ivans: return QString::fromUtf8("tivans");
             default: return QString("???");
         }
     }
@@ -72,10 +72,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case DASH: return QString("Dash");
-            case mDASH: return QString("Milli-Dash (1 / 1" THIN_SP_UTF8 "000)");
-            case uDASH: return QString("Micro-Dash (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-Dash (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case SIB: return QString("Sib");
+            case mSIB: return QString("Milli-Sib (1 / 1,000)");
+            case uSIB: return QString("Micro-Sib (1 / 1,000,000)");
+            case ivans: return QString("Ten Nano-Sib (1 / 100,000,000)");
             default: return QString("???");
         }
     }
@@ -83,10 +83,10 @@ QString BitcoinUnits::description(int unit)
     {
         switch(unit)
         {
-            case DASH: return QString("TestDashs");
-            case mDASH: return QString("Milli-TestDash (1 / 1" THIN_SP_UTF8 "000)");
-            case uDASH: return QString("Micro-TestDash (1 / 1" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
-            case duffs: return QString("Ten Nano-TestDash (1 / 100" THIN_SP_UTF8 "000" THIN_SP_UTF8 "000)");
+            case SIB: return QString("TestSibs");
+            case mSIB: return QString("Milli-TestSib (1 / 1,000)");
+            case uSIB: return QString("Micro-TestSib (1 / 1,000,000)");
+            case ivans: return QString("Ten Nano-TestSib (1 / 100,000,000)");
             default: return QString("???");
         }
     }
@@ -96,10 +96,10 @@ qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
     {
-    case DASH:  return 100000000;
-    case mDASH: return 100000;
-    case uDASH: return 100;
-    case duffs: return 1;
+    case SIB:  return 100000000;
+    case mSIB: return 100000;
+    case uSIB: return 100;
+    case ivans: return 1;
     default:   return 100000000;
     }
 }
@@ -108,10 +108,10 @@ int BitcoinUnits::decimals(int unit)
 {
     switch(unit)
     {
-    case DASH: return 8;
-    case mDASH: return 5;
-    case uDASH: return 2;
-    case duffs: return 0;
+    case SIB: return 8;
+    case mSIB: return 5;
+    case uSIB: return 2;
+    case ivans: return 0;
     default: return 0;
     }
 }
