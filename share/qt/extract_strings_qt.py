@@ -12,7 +12,7 @@ import operator
 import os
 import sys
 
-OUT_CPP="qt/dashstrings.cpp"
+OUT_CPP="qt/sibcoinstrings.cpp"
 EMPTY=['""']
 
 def parse_po(text):
@@ -84,6 +84,6 @@ if os.getenv('COPYRIGHT_HOLDERS_SUBSTITUTION') != os.getenv('PACKAGE_NAME'):
 messages.sort(key=operator.itemgetter(0))
 for (msgid, msgstr) in messages:
     if msgid != EMPTY:
-        f.write('QT_TRANSLATE_NOOP("dash-core", %s),\n' % ('\n'.join(msgid)))
+        f.write('QT_TRANSLATE_NOOP("sibcoin-core", %s),\n' % ('\n'.join(msgid)))
 f.write('};\n')
 f.close()

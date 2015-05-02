@@ -48,7 +48,7 @@
          <item>
           <widget class="QValidatedLineEdit" name="addressIn_SM">
            <property name="toolTip">
-            <string>The Dash address to sign the message with</string>
+            <string>The address to sign the message with (e.g. SwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg)</string>
            </property>
           </widget>
          </item>
@@ -238,7 +238,7 @@
          <item>
           <widget class="QValidatedLineEdit" name="addressIn_VM">
            <property name="toolTip">
-            <string>The Dash address the message was signed with</string>
+            <string>The address the message was signed with (e.g. SwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg)</string>
            </property>
           </widget>
          </item>
