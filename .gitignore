@@ -64,6 +64,7 @@ libconftest.dylib*
 *.o
 *.o-*
 *.patch
+.dash
 *.a
 *.pb.cc
 *.pb.h
@@ -101,7 +102,7 @@ build
 *.gcno
 *.gcda
 /*.info
-test_dash.coverage/
+test_sibcoin.coverage/
 total.coverage/
 coverage_percent.txt
 
@@ -109,8 +110,13 @@ coverage_percent.txt
 linux-coverage-build
 linux-build
 win32-build
+qa/pull-tester/run-bitcoind-for-test.sh
 qa/pull-tester/tests_config.py
-qa/cache/*
+qa/pull-tester/cache/*
+qa/pull-tester/test.*/*
+qa/tmp
+cache/
+share/BitcoindComparisonTool.jar
 
 !src/leveldb*/Makefile
 
@@ -121,7 +127,7 @@ qa/cache/*
 
 libdashconsensus.pc
 contrib/devtools/split-debug.sh
-src/qt/dash-qt.bash
+src/qt/sibcoin-qt.bash
 qa/pull-tester/tests-config.sh
 
 #development symlinks
