@@ -77,7 +77,7 @@ static CBlock CreateDevNetGenesisBlock(const uint256 &prevBlockHash, const std::
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward)
 {
-    const char* pszTimestamp = "Sputnik News 29/Apr/2015 International Monetary System is Wrong and Needs to Be Reset";
+    const char* pszTimestamp = "RT.COM 08/May/2015 World marks WWII victory day";
     const CScript genesisOutputScript = CScript() << ParseHex("04a31424abc548189ddce601561b2691d8b9b8551cc45522d06656b67ee062b84d4c6d6e142b05b87237b0e0ddadf9d6978bc0243def2210067c43890adbcb030d") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward);
 }
@@ -193,10 +193,10 @@ public:
         nDefaultPort = 1945;
         nPruneAfterHeight = 100000;
 
-        genesis = CreateGenesisBlock(1430659200, 50183, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1431122400, 1394136, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000de440d2e620e91730393bb20f33622509329c54cc9d816036c22a7a5b03"));
-        assert(genesis.hashMerkleRoot == uint256S("0xfe377a569558eee27d43b18e978fe980ad9f2babdafd8ede7021195f30f3a4f7"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000c492bf73490420868bc577680bfc4c60116e7e85343bc624787c21efa4c"));
+        assert(genesis.hashMerkleRoot == uint256S("0x6a35812a1d2dd4ec413b7de5870c56455110ad6395ef00962e58f812da7cb4b9"));
 
         //vSeeds.push_back(CDNSSeedData("darkcoin.io", "dnsseed.darkcoin.io"));
         //vSeeds.push_back(CDNSSeedData("dashdot.io", "dnsseed.dashdot.io"));
@@ -340,9 +340,9 @@ public:
         nDefaultPort = 11945;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1430659800UL, 541389UL, 0x1e0ffff0, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1431129600UL, 2308058UL, 0x1e0ffff0, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x00000b086c99c29eb4a8dfd18b817bab952763c7abfeebc51a640e815b9001fb"));
+        assert(consensus.hashGenesisBlock == uint256S("0x00000617791d0e19f524387f67e558b2a928b670b9a3b387ae003ad7f9093017"));
         //assert(genesis.hashMerkleRoot == uint256S("0xe0028eb9648db56b1ac77cf090b99048a8007e2bb64b68f092c03c7f56a662c7"));
 
         vFixedSeeds.clear();
@@ -585,9 +585,9 @@ public:
         nDefaultPort = 18333;
         nPruneAfterHeight = 1000;
 
-        genesis = CreateGenesisBlock(1430659800, 3160562, 0x207fffff, 1, 50 * COIN);
+        genesis = CreateGenesisBlock(1431129600, 2106393, 0x207fffff, 1, 50 * COIN);
         consensus.hashGenesisBlock = genesis.GetHash();
-        assert(consensus.hashGenesisBlock == uint256S("0x000009cd389e50c66c8ac2549c78701c22ee5c366fda854c410a7c379ce6b1a3"));
+        assert(consensus.hashGenesisBlock == uint256S("0x000007bfa2866f77d1f22f9da7fda73ea3c5185dc156f4f6f8b3a3caed27247e"));
         //assert(genesis.hashMerkleRoot == uint256S("0xe0028eb9648db56b1ac77cf090b99048a8007e2bb64b68f092c03c7f56a662c7"));
 
         vFixedSeeds.clear(); //!< Regtest mode doesn't have any fixed seeds.
@@ -607,7 +607,7 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0x000008ca1832a4baf228eb1553c03d3a2c8e02399550dd6ea8d65cec3ef23d2e"))
+            ( 0, uint256S("0x000007bfa2866f77d1f22f9da7fda73ea3c5185dc156f4f6f8b3a3caed27247e")),
         };
 
         chainTxData = ChainTxData{
@@ -616,18 +616,18 @@ public:
             0
         };
 
-        // Regtest Dash addresses start with 'y'
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,140);
-        // Regtest Dash script addresses start with '8' or '9'
-        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,19);
+        // Regtest Sibcoin addresses start with 's'
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,125);
+        // Regtest Sibcoin script addresses start with 'h'
+        base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,100);
         // Regtest private keys start with '9' or 'c' (Bitcoin defaults)
         base58Prefixes[SECRET_KEY] =     std::vector<unsigned char>(1,239);
-        // Regtest Dash BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
+        // Regtest Sibcoin BIP32 pubkeys start with 'tpub' (Bitcoin defaults)
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x04)(0x35)(0x87)(0xCF).convert_to_container<std::vector<unsigned char> >();
-        // Regtest Dash BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
+        // Regtest Sibcoin BIP32 prvkeys start with 'tprv' (Bitcoin defaults)
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x04)(0x35)(0x83)(0x94).convert_to_container<std::vector<unsigned char> >();
 
-        // Regtest Dash BIP44 coin type is '1' (All coin's testnet default)
+        // Regtest Sibcoin BIP44 coin type is '1' (All coin's testnet default)
         nExtCoinType = 1;
    }
 
