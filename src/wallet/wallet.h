@@ -834,10 +834,10 @@ public:
     void UnlockAllCoins();
     void ListLockedCoins(std::vector<COutPoint>& vOutpts);
 
-    /**
-     * keystore implementation
-     * Generate a new key
-     */
+    // keystore implementation
+    // Generate new priv key without saving 
+    CKey GeneratePrivKey();
+    // Generate a new key
     CPubKey GenerateNewKey(uint32_t nAccountIndex, bool fInternal /*= false*/);
     //! HaveKey implementation that also checks the mapHdPubKeys
     bool HaveKey(const CKeyID &address) const override;

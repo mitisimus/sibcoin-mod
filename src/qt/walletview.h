@@ -112,6 +112,11 @@ public Q_SLOTS:
     /** Show used receiving addresses */
     void usedReceivingAddresses();
 
+    /** Generate and print addresses */
+    void genAndPrintAddresses();
+    /** Load keys from QR code */
+    void loadFromPaper();
+
     /** Re-emit encryption status signal */
     void updateEncryptionStatus();
 

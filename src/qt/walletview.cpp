@@ -5,6 +5,7 @@
 #include "walletview.h"
 
 #include "addressbookpage.h"
+#include "genandprintdialog.h"
 #include "askpassphrasedialog.h"
 #include "bitcoingui.h"
 #include "clientmodel.h"
@@ -351,6 +352,26 @@ void WalletView::usedReceivingAddresses()
     usedReceivingAddressesPage->show();
     usedReceivingAddressesPage->raise();
     usedReceivingAddressesPage->activateWindow();
+}
+
+void WalletView::genAndPrintAddresses()
+{
+    if(!walletModel)
+        return;
+    
+    GenAndPrintDialog dlg(GenAndPrintDialog::Export, this);
+    dlg.setModel(walletModel);
+    dlg.exec();
+}
+
+void WalletView::loadFromPaper()
+{
+    if(!walletModel)
+        return;
+    
+    GenAndPrintDialog dlg(GenAndPrintDialog::Import, this);
+    dlg.setModel(walletModel);
+    dlg.exec();
 }
 
 void WalletView::showProgress(const QString &title, int nProgress)
