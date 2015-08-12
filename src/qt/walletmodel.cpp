@@ -471,7 +471,10 @@ CKey WalletModel::generateNewKey() const
 
 bool WalletModel::setAddressBook(const CTxDestination& address, const std::string& strName, const std::string& strPurpose)
 {
-    return wallet->SetAddressBook(address, strName, strPurpose);
+    LOCK(wallet->cs_wallet);
+    {
+        return wallet->SetAddressBook(address, strName, strPurpose);
+    }
 }
  
  
