@@ -43,6 +43,8 @@ private Q_SLOTS:
 
     /** Print button clicked */
     void on_printButton_clicked();
+    /** Import button clicked */
+    void on_importButton_clicked();
     
 protected:
     bool event(QEvent *event);

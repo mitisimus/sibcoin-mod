@@ -10,11 +10,20 @@
 #include "guiconstants.h"
 #include "walletmodel.h"
 
+#include "allocators.h"
+#include "../crypter.h"
+#include "../rpcserver.h"
+//#include "../rpcprotocol.h"
+#include "json/json_spirit_writer.h"
+
 #include <QKeyEvent>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QFileDialog>
 #include <QPainter>
+#include <QTextStream>
+#include <QTextDocument>
+#include <QUrl>
 
 #if QT_VERSION >= 0x050000
 #include <QtPrintSupport/QPrinter>
@@ -50,6 +59,7 @@ GenAndPrintDialog::GenAndPrintDialog(Mode mode, QWidget *parent) :
     {
         case Export: // Ask passphrase x2 and account
             setWindowTitle(tr("Export key pair"));
+            ui->importButton->hide();
             ui->passLabel1->setText(tr("Account name"));
             ui->passLabel2->setText(tr("Password"));
             ui->passLabel3->setText(tr("Repeat password"));
@@ -57,6 +67,7 @@ GenAndPrintDialog::GenAndPrintDialog(Mode mode, QWidget *parent) :
             break;
         case Import: // Ask old passphrase + new passphrase x2
             setWindowTitle(tr("Import private key"));
+            ui->printButton->hide();
             ui->passLabel1->setText(tr("Private key"));
             ui->passLabel2->setText(tr("Key password"));
             ui->passLabel3->hide();
@@ -119,10 +130,60 @@ void GenAndPrintDialog::textChanged()
     ui->printButton->setEnabled(acceptable);
 }
 
+void GenAndPrintDialog::on_importButton_clicked()
+{
+    json_spirit::Array params;
+    
+    try 
+    {
+        importprivkey(params, false);
+    }
+    catch (json_spirit::Object &err)
+    {
+//        cerr << json_spirit::write(err) << endl;
+//        for (json_spirit::Object::iterator it = err.begin() ; it != err.end(); ++it)
+//        {
+//            cerr << it->first << "=" << it->second << endl;
+//        }
+    }
+}
+
+bool readHtmlTemplate(const QString &res_name, QString &htmlContent)
+{
+    QFile  htmlFile(res_name);
+    if (!htmlFile.open(QIODevice::ReadOnly | QIODevice::Text)){
+        cerr << "Cant open " << res_name.toStdString() << endl;
+        return false;
+    }
+
+    QTextStream in(&htmlFile);
+    htmlContent = in.readAll();
+    return true;
+}
+
+void crypt(const CKey key, const std::string pwd, std::vector<unsigned char> &crypted)
+{
+    CCrypter crpt;
+    std::string slt("12345678");
+    std::vector<unsigned char> salt(slt.begin(), slt.end());
+    SecureString passwd(pwd.c_str());
+    crpt.SetKeyFromPassphrase(passwd, salt, 14, 0);
+    cerr << "SetKeyFromPassphrase ok" << endl;
+    CKeyingMaterial mat(key.begin(), key.end());
+    crpt.Encrypt(mat, crypted);   
+}
+
+void decrypt()
+{
+    
+}
+
 void GenAndPrintDialog::on_printButton_clicked()
 {
     //QMessageBox::information(this, tr("Generating..."), tr("Generating..."));
     //QString fileName = QFileDialog::getOpenFileName(this,"Open File",QString(),"PNG File(*.png)");
+    QString strAccount = ui->passEdit1->text();
+    QString passwd = ui->passEdit2->text();
     
     CKey secret = model->generateNewKey();
     CPrivKey privkey = secret.GetPrivKey();
@@ -134,27 +195,112 @@ void GenAndPrintDialog::on_printButton_clicked()
     
     QString qsecret = QString::fromStdString(secret_str);
     QString qaddress = QString::fromStdString(pubkey_str);
+    
+    cerr << "privkey=" << secret_str << endl;
      
-    QMessageBox::information(this, tr("New key"), "Debug:\n" + qsecret + "\n" + qaddress); 
-                    
+//    QMessageBox::information(this, tr("New key"), "Debug:\n" + qsecret + "\n" + qaddress); 
+        
+    std::vector<unsigned char> crypted_key;
+    crypt(secret,  passwd.toStdString(), crypted_key);
+    std::string crypted = EncodeBase58(crypted_key);
+    QString qcrypted = QString::fromStdString(crypted);
+    
+//    cerr << "Crypted: " << crypted << endl;
+    
+//      CCrypter crpt;
+//    std::string slt("12345678");
+//    std::vector<unsigned char> salt(slt.begin(), slt.end());
+//    std::vector<unsigned char> crypted;
+//    SecureString passwd("123");
+//    crpt.SetKeyFromPassphrase(passwd, salt, 14, 0);
+//    cerr << "SetKeyFromPassphrase ok" << endl;
+//    CKeyingMaterial mat(secret.begin(), secret.end());
+//    cerr << "mat ok" << endl;
+//    crpt.Encrypt(mat, crypted);
+//    cerr << "Encrypt ok" << endl;    
+//    std::string s = EncodeBase58(crypted);
+//    //std::string s(crypted.begin(), crypted.end());
+//    cerr << "s ok" << endl;      
+//    cerr << "size=" << crypted.size() << endl;
+//    cerr << "crypted: " << s << endl;
+//    
+//    CKeyingMaterial mat2;
+//    crpt.Decrypt(crypted, mat2);
+//    
+//    if (mat2==mat)
+//        cerr << "decrypt OK";
+//    else
+//        cerr << "decrypt FAILED";
+//    
+//    cerr << "size=" << mat2.size() << endl;
+//    std::vector<unsigned char> orig(mat2.begin(), mat2.end());
+//    std::string ss = EncodeBase58(orig);
+//    cerr << "decrypted=" << ss << endl;
+//    CKey key2;
+//    key2.Set(mat2.begin(), mat2.end(), true);
+//    
+//    std::string secret_2 = CBitcoinSecret(key2).ToString();
+//    
+//    cerr << "decoded=" << secret_2 << endl;
+//    
+//    
+//    return;
+//                    
     QPrinter printer;
+    printer.setResolution(QPrinter::ScreenResolution);
+    printer.setPageMargins(0, 10, 0, 0, QPrinter::Millimeter);
     QPrintDialog *dlg = new QPrintDialog(&printer, this);
     if(dlg->exec() == QDialog::Accepted) {
-        //QImage img(fileName);
-        QString strAccount = ui->passEdit1->text();
-        QPainter painter(&printer);
-        QFont font = painter.font();
-        font.setPointSize(8);
-        painter.setFont(font);
-        printAsQR(painter, qaddress, 0);
-        painter.drawText(0, 250, qaddress);
-        printAsQR(painter, qsecret, 250);
-        painter.drawText(250, 250, qsecret);
-        painter.drawText(0, 300, QString("Account: ") + strAccount);
-        painter.end();
         
-        // import pub key into wallet
+        QImage img1(200, 200, QImage::Format_Mono);
+        QImage img2(200, 200, QImage::Format_Mono);
+        QPainter painter(&img1);
+        painter.setRenderHint(QPainter::Antialiasing, false);
+        painter.setRenderHint(QPainter::TextAntialiasing, false);
+        painter.setRenderHint(QPainter::SmoothPixmapTransform, false);
+        painter.setRenderHint(QPainter::HighQualityAntialiasing, false);
+        painter.setRenderHint(QPainter::NonCosmeticDefaultPen, false);
+        printAsQR(painter, qaddress, 0);
+        bool bEnd = painter.end();
+
+        painter.begin(&img2);
+        printAsQR(painter, qsecret, 0);
+        bEnd = painter.end();
+        
+        QString html;
+        readHtmlTemplate(":/html/paperwallet", html);
+        
+        html.replace("__ACCOUNT__", strAccount);
+        html.replace("__ADDRESS__", qaddress);
+        html.replace("__PRIVATE__", qcrypted);
+        
+        //cerr << "size: " << html.size() << ":" << html.toStdString() << endl;
+        QTextDocument *document = new QTextDocument();
+        document->setHtml(html);
+        document->addResource(QTextDocument::ImageResource, QUrl(":qr1.png" ), img1);
+        document->addResource(QTextDocument::ImageResource, QUrl(":qr2.png" ), img2);
+        document->print(&printer);
+        
         model->setAddressBook(keyid, strAccount.toStdString(), "send");
+
+        delete document;
+        return;
+        
+        //QImage img(fileName);
+//        QString strAccount = ui->passEdit1->text();
+//        QPainter painter(&printer);
+//        QFont font = painter.font();
+//        font.setPointSize(8);
+//        painter.setFont(font);
+//        printAsQR(painter, qaddress, 0);
+//        painter.drawText(0, 250, qaddress);
+//        printAsQR(painter, qsecret, 250);
+//        painter.drawText(250, 250, qsecret);
+//        painter.drawText(0, 300, QString("Account: ") + strAccount);
+//        painter.end();
+//        
+//        // import pub key into wallet
+//        model->setAddressBook(keyid, strAccount.toStdString(), "send");
     }
     delete dlg;
     
@@ -166,17 +312,18 @@ void GenAndPrintDialog::printAsQR(QPainter &painter, QString &vchKey, int shift)
     QRcode *qr = QRcode_encodeString(vchKey.toStdString().c_str(), 1, QR_ECLEVEL_L, QR_MODE_8, 0);
     if(0!=qr) {
         QPaintDevice *pd = painter.device(); 
+        const double w = pd->width();
+        const double h = pd->height();
         QColor fg("black");
         QColor bg("white");
         painter.setBrush(bg);
+        painter.fillRect(0, 0, w, h, bg);
         painter.setPen(Qt::SolidLine);
         //painter.drawRect(0, 0, width(), height());
         painter.setBrush(fg);
         const int s=qr->width > 0 ? qr->width : 1;
-        const double w = pd->width();
-        const double h = pd->height();
         const double aspect = w / h;
-        const double scale = ((aspect > 1.0) ? h : w) / s * 0.3;
+        const double scale = ((aspect > 1.0) ? h : w) / s;// * 0.3;
         for(int y = 0; y < s; y++){
             const int yy = y*s;
             for(int x = 0; x < s; x++){
