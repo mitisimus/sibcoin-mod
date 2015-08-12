@@ -30,6 +30,8 @@
      </property>
      <property name="topMargin">
       <number>0</number>
+     <property name="pixmap">
+      <pixmap resource="../sibcoin.qrc">:/images/about</pixmap>
      </property>
      <property name="rightMargin">
       <number>0</number>
@@ -161,7 +163,6 @@
  </widget>
  <resources>
   <include location="../sibcoin.qrc"/>
-  <include location="../dash.qrc"/>
  </resources>
  <connections>
   <connection>

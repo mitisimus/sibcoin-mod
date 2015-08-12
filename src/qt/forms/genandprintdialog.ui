@@ -102,7 +102,7 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0">
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,0,0">
      <item>
       <widget class="QPushButton" name="printButton">
        <property name="toolTip">
@@ -115,8 +115,15 @@
         <string>&amp;Print</string>
        </property>
        <property name="icon">
-        <iconset resource="../dash.qrc">
+        <iconset resource="../sibcoin.qrc">
          <normaloff>:/icons/qrcode</normaloff>:/icons/qrcode</iconset>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="importButton">
+       <property name="text">
+        <string>Import</string>
        </property>
       </widget>
      </item>
@@ -135,7 +142,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="../dash.qrc"/>
+  <include location="../sibcoin.qrc"/>
  </resources>
  <connections>
   <connection>
