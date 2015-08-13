@@ -37,7 +37,8 @@ private:
     Mode mode;
     WalletModel *model;
     bool fCapsLock;
-
+    std::string salt;
+   
 private Q_SLOTS:
     void textChanged();
 

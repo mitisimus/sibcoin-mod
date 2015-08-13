@@ -11,7 +11,6 @@
 #include "walletmodel.h"
 
 #include "allocators.h"
-#include "../crypter.h"
 #include "../rpcserver.h"
 //#include "../rpcprotocol.h"
 #include "json/json_spirit_writer.h"
@@ -42,7 +41,8 @@ GenAndPrintDialog::GenAndPrintDialog(Mode mode, QWidget *parent) :
     ui(new Ui::GenAndPrintDialog),
     mode(mode),
     model(0),
-    fCapsLock(false)
+    fCapsLock(false),
+    salt("12345678")
 {
     ui->setupUi(this);
 
@@ -62,7 +62,9 @@ GenAndPrintDialog::GenAndPrintDialog(Mode mode, QWidget *parent) :
             ui->importButton->hide();
             ui->passLabel1->setText(tr("Account name"));
             ui->passLabel2->setText(tr("Password"));
+            ui->passEdit2->setEchoMode(QLineEdit::Password);
             ui->passLabel3->setText(tr("Repeat password"));
+            ui->passEdit3->setEchoMode(QLineEdit::Password);
             ui->warningLabel->setText(tr("Enter account and passphrase to the encrypt private key"));
             break;
         case Import: // Ask old passphrase + new passphrase x2
@@ -70,8 +72,8 @@ GenAndPrintDialog::GenAndPrintDialog(Mode mode, QWidget *parent) :
             ui->printButton->hide();
             ui->passLabel1->setText(tr("Private key"));
             ui->passLabel2->setText(tr("Key password"));
-            ui->passLabel3->hide();
-            ui->passEdit3->hide();
+            ui->passLabel3->setText(tr("Account name"));
+            ui->passEdit3->setEchoMode(QLineEdit::Normal);
             ui->warningLabel->setText(tr("Enter private key and passphrase"));
             break;
     }
@@ -133,14 +135,43 @@ void GenAndPrintDialog::textChanged()
 void GenAndPrintDialog::on_importButton_clicked()
 {
     json_spirit::Array params;
+
+    QString privkey_str = ui->passEdit1->text();
+    QString passwd = ui->passEdit2->text();
+    QString label_str = ui->passEdit3->text();
     
-    try 
+    std::vector<unsigned char> priv_data;
+    DecodeBase58(privkey_str.toStdString(), priv_data);
+
+    CKey key;
+    model->decryptKey(priv_data, passwd.toStdString(), salt, key);
+    
+    if (!key.IsValid())
+    {
+        QMessageBox::critical(this, tr("Error"), tr("Invalid private key! (Is password correct?)"));
+        return;
+    }
+    
+    std::string secret = CBitcoinSecret(key).ToString();
+    cerr << "Decrypted: " << secret << endl;
+   
+    params.push_back(json_spirit::Value(secret.c_str()));
+    params.push_back(json_spirit::Value(label_str.toStdString().c_str()));
+    for (json_spirit::Array::iterator it = params.begin(); it != params.end(); ++it) {
+        cerr << it->get_str().c_str() << endl;
+    }
+
+    try
     {
         importprivkey(params, false);
+        QMessageBox::information(this, tr(""), tr("Private key imported"));
+        close();
     }
     catch (json_spirit::Object &err)
     {
-//        cerr << json_spirit::write(err) << endl;
+        cerr << "Import private key error!" << endl;
+        QMessageBox::critical(this, tr("Error"), tr("Private importe ERROR"));
+//       cerr << json_spirit::write_string(err) << endl;
 //        for (json_spirit::Object::iterator it = err.begin() ; it != err.end(); ++it)
 //        {
 //            cerr << it->first << "=" << it->second << endl;
@@ -159,23 +190,6 @@ bool readHtmlTemplate(const QString &res_name, QString &htmlContent)
     QTextStream in(&htmlFile);
     htmlContent = in.readAll();
     return true;
-}
-
-void crypt(const CKey key, const std::string pwd, std::vector<unsigned char> &crypted)
-{
-    CCrypter crpt;
-    std::string slt("12345678");
-    std::vector<unsigned char> salt(slt.begin(), slt.end());
-    SecureString passwd(pwd.c_str());
-    crpt.SetKeyFromPassphrase(passwd, salt, 14, 0);
-    cerr << "SetKeyFromPassphrase ok" << endl;
-    CKeyingMaterial mat(key.begin(), key.end());
-    crpt.Encrypt(mat, crypted);   
-}
-
-void decrypt()
-{
-    
 }
 
 void GenAndPrintDialog::on_printButton_clicked()
@@ -201,11 +215,11 @@ void GenAndPrintDialog::on_printButton_clicked()
 //    QMessageBox::information(this, tr("New key"), "Debug:\n" + qsecret + "\n" + qaddress); 
         
     std::vector<unsigned char> crypted_key;
-    crypt(secret,  passwd.toStdString(), crypted_key);
+    model->encryptKey(secret,  passwd.toStdString(), salt, crypted_key);
     std::string crypted = EncodeBase58(crypted_key);
     QString qcrypted = QString::fromStdString(crypted);
     
-//    cerr << "Crypted: " << crypted << endl;
+    cerr << "Crypted: " << crypted << endl;
     
 //      CCrypter crpt;
 //    std::string slt("12345678");
@@ -322,6 +336,7 @@ void GenAndPrintDialog::printAsQR(QPainter &painter, QString &vchKey, int shift)
         painter.setBrush(bg);
         painter.fillRect(0, 0, w, h, bg);
         painter.setPen(Qt::SolidLine);
+        painter.setPen(fg);
         //painter.drawRect(0, 0, width(), height());
         painter.setBrush(fg);
         const int s=qr->width > 0 ? qr->width : 1;
@@ -332,7 +347,7 @@ void GenAndPrintDialog::printAsQR(QPainter &painter, QString &vchKey, int shift)
             for(int x = 0; x < s; x++){
                 const int xx = yy + x;
                 const unsigned char b = qr->data[xx];
-                if(b &0x01){
+                if(b & 0x01){
                     const double rx1 = x*scale, ry1 = y*scale;
                     QRectF r(rx1 + shift, ry1, scale, scale);
                     painter.drawRects(&r, 1);
