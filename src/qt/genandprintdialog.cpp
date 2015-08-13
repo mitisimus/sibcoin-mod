@@ -261,10 +261,13 @@ void GenAndPrintDialog::on_printButton_clicked()
         painter.setRenderHint(QPainter::HighQualityAntialiasing, false);
         painter.setRenderHint(QPainter::NonCosmeticDefaultPen, false);
         printAsQR(painter, qaddress, 0);
+        // QT bug. Painting img on pdf inverts colors
+        img1.invertPixels();
         bool bEnd = painter.end();
 
         painter.begin(&img2);
         printAsQR(painter, qsecret, 0);
+        img2.invertPixels();
         bEnd = painter.end();
         
         QString html;
