@@ -6,6 +6,7 @@ FORMS += \
     ../src/qt/forms/darksendconfig.ui \
     ../src/qt/forms/debugwindow.ui \
     ../src/qt/forms/editaddressdialog.ui \
+    ../src/qt/forms/genandprintdialog.ui \
     ../src/qt/forms/helpmessagedialog.ui \
     ../src/qt/forms/intro.ui \
     ../src/qt/forms/masternodelist.ui \
