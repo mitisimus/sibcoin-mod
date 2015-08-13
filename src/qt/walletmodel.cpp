@@ -26,6 +26,7 @@
 #include "instantx.h"
 #include "spork.h"
 #include "privatesend-client.h"
+#include "../crypter.h"
 
 #include <stdint.h>
 
@@ -477,6 +478,32 @@ bool WalletModel::setAddressBook(const CTxDestination& address, const std::strin
     }
 }
  
+void WalletModel::encryptKey(const CKey key, const std::string &pwd, 
+        const std::string &slt, std::vector<unsigned char> &crypted)
+{
+    CCrypter crpt;
+    SecureString passwd(pwd.c_str());
+    std::vector<unsigned char> salt(slt.begin(), slt.end());
+    
+    crpt.SetKeyFromPassphrase(passwd, salt, 14, 0);
+    CKeyingMaterial mat(key.begin(), key.end());
+    crpt.Encrypt(mat, crypted);   
+}
+
+void WalletModel::decryptKey(const std::vector<unsigned char> &crypted, const std::string &pwd, 
+        const std::string &slt, CKey &key)
+{
+    CCrypter crpt;
+    std::vector<unsigned char> decrypted;
+    std::vector<unsigned char> salt(slt.begin(), slt.end());
+    
+    SecureString passwd(pwd.c_str());
+    crpt.SetKeyFromPassphrase(passwd, salt, 14, 0);
+    
+    CKeyingMaterial mat;
+    crpt.Decrypt(crypted, mat);
+    key.Set(mat.begin(), mat.end(), true);
+}
  
 bool WalletModel::setWalletEncrypted(bool encrypted, const SecureString &passphrase)
 {
