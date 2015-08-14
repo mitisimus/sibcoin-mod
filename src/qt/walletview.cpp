@@ -130,6 +130,8 @@ void WalletView::setBitcoinGUI(BitcoinGUI *gui)
 
         // Connect HD enabled state signal
         connect(this, SIGNAL(hdEnabledStatusChanged(int)), gui, SLOT(setHDStatus(int)));
+        // Follow new URI
+        connect(this, SIGNAL(receivedURI(QString)), gui, SIGNAL(receivedURI(QString)));
     }
 }
 
@@ -361,7 +363,11 @@ void WalletView::genAndPrintAddresses()
     
     GenAndPrintDialog dlg(GenAndPrintDialog::Export, this);
     dlg.setModel(walletModel);
-    dlg.exec();
+    if (dlg.exec())
+    {
+        QString uri = dlg.getURI();
+        emit receivedURI(uri);
+    }
 }
 
 void WalletView::loadFromPaper()

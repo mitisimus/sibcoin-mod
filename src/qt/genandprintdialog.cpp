@@ -8,6 +8,7 @@
 #include "ui_genandprintdialog.h"
 
 #include "guiconstants.h"
+#include "guiutil.h"
 #include "walletmodel.h"
 
 #include "allocators.h"
@@ -99,6 +100,10 @@ void GenAndPrintDialog::setModel(WalletModel *model)
     //ui->anonymizationCheckBox->setChecked(model->isAnonymizeOnlyUnlocked());
 }
 
+QString GenAndPrintDialog::getURI(){
+    return uri;
+}
+
 void GenAndPrintDialog::accept()
 {
     SecureString oldpass, newpass1, newpass2;
@@ -112,6 +117,19 @@ void GenAndPrintDialog::accept()
     oldpass.assign(ui->passEdit1->text().toStdString().c_str());
     newpass1.assign(ui->passEdit2->text().toStdString().c_str());
     newpass2.assign(ui->passEdit3->text().toStdString().c_str());
+
+    switch(mode)
+    {
+    case Export: 
+        if (uri != "") {
+            QDialog::accept();
+            return;
+        }
+        break;
+    case Import:
+        QDialog::reject();
+        break;
+    }
 }
 
 void GenAndPrintDialog::textChanged()
@@ -161,22 +179,35 @@ void GenAndPrintDialog::on_importButton_clicked()
         cerr << it->get_str().c_str() << endl;
     }
 
-    try
+    WalletModel::EncryptionStatus encStatus = model->getEncryptionStatus();
+    if(encStatus == model->Locked || encStatus == model->UnlockedForAnonymizationOnly)
     {
-        importprivkey(params, false);
-        QMessageBox::information(this, tr(""), tr("Private key imported"));
-        close();
-    }
-    catch (json_spirit::Object &err)
-    {
-        cerr << "Import private key error!" << endl;
-        QMessageBox::critical(this, tr("Error"), tr("Private importe ERROR"));
-//       cerr << json_spirit::write_string(err) << endl;
-//        for (json_spirit::Object::iterator it = err.begin() ; it != err.end(); ++it)
-//        {
-//            cerr << it->first << "=" << it->second << endl;
-//        }
-    }
+        WalletModel::UnlockContext ctx(model->requestUnlock(true));
+        if(!ctx.isValid())
+        {
+            // Unlock wallet was cancelled
+            QMessageBox::critical(this, tr("Error"), tr("Cant import key into locked wallet"));
+            return;
+        }
+        
+        try
+        {
+            importprivkey(params, false);
+            QMessageBox::information(this, tr(""), tr("Private key imported"));
+            close();
+        }
+        //catch (json_spirit::Object &err)
+        // TODO: Cant catch expetion& To be investigate
+        catch (...)
+        {
+            cerr << "Import private key error!" << endl;            
+//            for (json_spirit::Object::iterator it = err.begin(); it != err.end(); ++it)
+//            {
+//                cerr << it->name_ << " = " << it->value_.get_str() << endl;
+//            }
+            QMessageBox::critical(this, tr("Error"), tr("Private key import error"));
+        }
+    }    
 }
 
 bool readHtmlTemplate(const QString &res_name, QString &htmlContent)
@@ -194,10 +225,12 @@ bool readHtmlTemplate(const QString &res_name, QString &htmlContent)
 
 void GenAndPrintDialog::on_printButton_clicked()
 {
-    //QMessageBox::information(this, tr("Generating..."), tr("Generating..."));
-    //QString fileName = QFileDialog::getOpenFileName(this,"Open File",QString(),"PNG File(*.png)");
     QString strAccount = ui->passEdit1->text();
     QString passwd = ui->passEdit2->text();
+
+    uri = "";
+    ui->passEdit2->setText("");
+    ui->passEdit3->setText("");
     
     CKey secret = model->generateNewKey();
     CPrivKey privkey = secret.GetPrivKey();
@@ -211,55 +244,14 @@ void GenAndPrintDialog::on_printButton_clicked()
     QString qaddress = QString::fromStdString(pubkey_str);
     
     cerr << "privkey=" << secret_str << endl;
-     
-//    QMessageBox::information(this, tr("New key"), "Debug:\n" + qsecret + "\n" + qaddress); 
-        
+             
     std::vector<unsigned char> crypted_key;
     model->encryptKey(secret,  passwd.toStdString(), salt, crypted_key);
     std::string crypted = EncodeBase58(crypted_key);
     QString qcrypted = QString::fromStdString(crypted);
     
     cerr << "Crypted: " << crypted << endl;
-    
-//      CCrypter crpt;
-//    std::string slt("12345678");
-//    std::vector<unsigned char> salt(slt.begin(), slt.end());
-//    std::vector<unsigned char> crypted;
-//    SecureString passwd("123");
-//    crpt.SetKeyFromPassphrase(passwd, salt, 14, 0);
-//    cerr << "SetKeyFromPassphrase ok" << endl;
-//    CKeyingMaterial mat(secret.begin(), secret.end());
-//    cerr << "mat ok" << endl;
-//    crpt.Encrypt(mat, crypted);
-//    cerr << "Encrypt ok" << endl;    
-//    std::string s = EncodeBase58(crypted);
-//    //std::string s(crypted.begin(), crypted.end());
-//    cerr << "s ok" << endl;      
-//    cerr << "size=" << crypted.size() << endl;
-//    cerr << "crypted: " << s << endl;
-//    
-//    CKeyingMaterial mat2;
-//    crpt.Decrypt(crypted, mat2);
-//    
-//    if (mat2==mat)
-//        cerr << "decrypt OK";
-//    else
-//        cerr << "decrypt FAILED";
-//    
-//    cerr << "size=" << mat2.size() << endl;
-//    std::vector<unsigned char> orig(mat2.begin(), mat2.end());
-//    std::string ss = EncodeBase58(orig);
-//    cerr << "decrypted=" << ss << endl;
-//    CKey key2;
-//    key2.Set(mat2.begin(), mat2.end(), true);
-//    
-//    std::string secret_2 = CBitcoinSecret(key2).ToString();
-//    
-//    cerr << "decoded=" << secret_2 << endl;
-//    
-//    
-//    return;
-//                    
+                        
     QPrinter printer;
     printer.setResolution(QPrinter::ScreenResolution);
     printer.setPageMargins(0, 10, 0, 0, QPrinter::Millimeter);
@@ -298,30 +290,18 @@ void GenAndPrintDialog::on_printButton_clicked()
         document->addResource(QTextDocument::ImageResource, QUrl(":qr2.png" ), img2);
         document->print(&printer);
         
-        model->setAddressBook(keyid, strAccount.toStdString(), "send");
+        bool res = model->setAddressBook(keyid, strAccount.toStdString(), "send");
+        cerr << "setAddressBook: " << res << endl;
+        
+        SendCoinsRecipient rcp(qaddress, strAccount, 0, "");
+        uri = GUIUtil::formatBitcoinURI(rcp);
+        cerr << "uri=" << uri.toStdString() << endl;
 
         delete document;
-        return;
-        
-        //QImage img(fileName);
-//        QString strAccount = ui->passEdit1->text();
-//        QPainter painter(&printer);
-//        QFont font = painter.font();
-//        font.setPointSize(8);
-//        painter.setFont(font);
-//        printAsQR(painter, qaddress, 0);
-//        painter.drawText(0, 250, qaddress);
-//        printAsQR(painter, qsecret, 250);
-//        painter.drawText(250, 250, qsecret);
-//        painter.drawText(0, 300, QString("Account: ") + strAccount);
-//        painter.end();
-//        
-//        // import pub key into wallet
-//        model->setAddressBook(keyid, strAccount.toStdString(), "send");
+        accept();
     }
-    delete dlg;
     
-    this->close();
+    delete dlg;
 }
 
 void GenAndPrintDialog::printAsQR(QPainter &painter, QString &vchKey, int shift)

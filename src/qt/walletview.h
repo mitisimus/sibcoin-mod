@@ -129,6 +129,7 @@ public Q_SLOTS:
 
     /** Update selected DASH amount from transactionview */
     void trxAmount(QString amount);
+
 Q_SIGNALS:
     /** Signal that we want to show the main window */
     void showNormalIfMinimized();
@@ -142,6 +143,8 @@ Q_SIGNALS:
     void incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address, const QString& label);
     /** Notify that the out of sync warning icon has been pressed */
     void outOfSyncWarningClicked();
+    /** Signal raised when a URI was entered or dragged to the GUI */
+    void receivedURI(const QString &uri); 
 };
 
 #endif // BITCOIN_QT_WALLETVIEW_H

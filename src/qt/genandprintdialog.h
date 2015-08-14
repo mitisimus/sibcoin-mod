@@ -31,6 +31,7 @@ public:
     void accept();
 
     void setModel(WalletModel *model);
+    QString getURI();
 
 private:
     Ui::GenAndPrintDialog *ui;
@@ -38,6 +39,7 @@ private:
     WalletModel *model;
     bool fCapsLock;
     std::string salt;
+    QString uri;
    
 private Q_SLOTS:
     void textChanged();
