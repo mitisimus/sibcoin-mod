@@ -2,8 +2,10 @@
     <qresource prefix="/icons">
         <file alias="bitcoin">res/icons/bitcoin.png</file>
         <file alias="prompticon">res/icons/chevron.png</file>
-        <file alias="warning">res/icons/warning.png</file>
-        <file alias="che_cash_print">res/icons/che_cash_print.png</file>        
+        <file alias="warning">res/icons/warning.png</file>        
+        <file alias="che_cash_print">res/icons/che_cash_print.png</file>
+        <file alias="cash_icon">res/icons/cash_icon.png</file>
+        <file alias="import">res/icons/import.png</file>               
     </qresource>
     <qresource prefix="/icons/drkblue">
         <file alias="address-book">res/icons/drkblue/address-book.png</file>
