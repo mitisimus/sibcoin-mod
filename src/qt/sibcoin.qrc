@@ -296,6 +296,12 @@
         <file alias="light-hires-retro">res/css/light-hires-retro.css</file>
         <file alias="trad">res/css/trad.css</file>
     </qresource>
+    <qresource prefix="/html" lang="en">
+        <file alias="paperwallet">res/html/paperwallet_en.html</file>
+    </qresource>
+    <qresource prefix="/html" lang="ru">
+        <file alias="paperwallet">res/html/paperwallet_ru.html</file>
+    </qresource>
     <qresource prefix="/images/drkblue">
         <file alias="about">res/images/drkblue/about.png</file>
         <file alias="dash_logo_horizontal">res/images/drkblue/dash_logo_horizontal.png</file>
