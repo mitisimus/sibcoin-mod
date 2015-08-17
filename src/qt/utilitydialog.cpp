@@ -31,6 +31,8 @@
 #include <QTextTable>
 #include <QTextCursor>
 #include <QVBoxLayout>
+#include <QFile>
+#include <QTextStream>
 
 /** "Help message" or "About" dialog box */
 HelpMessageDialog::HelpMessageDialog(QWidget *parent, HelpMode helpMode) :
@@ -197,6 +199,60 @@ void HelpMessageDialog::showOrPrint()
 }
 
 void HelpMessageDialog::on_okButton_accepted()
+{
+    close();
+}
+
+
+/** "Help message" dialog box */
+HelpSibcoinDialog::HelpSibcoinDialog(QWidget *parent) :
+    QDialog(parent),
+    ui(new Ui::HelpMessageDialog)
+{
+    ui->setupUi(this);
+    GUIUtil::restoreWindowGeometry("nHelpMessageDialogWindow", this->size(), this);
+    
+    QString res_name = ":/html/sibcoindesc";
+    QString htmlContent;
+    
+    QFile  htmlFile(res_name);
+    if (!htmlFile.open(QIODevice::ReadOnly | QIODevice::Text)){
+        std::cerr << "Cant open " << res_name.toStdString() << std::endl;
+        return;
+    }
+
+    QTextStream in(&htmlFile);
+    htmlContent = in.readAll();
+    
+    // Set help message text
+    ui->helpMessageLabel->setText(htmlContent);
+}
+
+HelpSibcoinDialog::~HelpSibcoinDialog()
+{
+    GUIUtil::saveWindowGeometry("nHelpMessageDialogWindow", this);
+    delete ui;
+}
+
+void HelpSibcoinDialog::printToConsole()
+{
+    // On other operating systems, the expected action is to print the message to the console.
+    QString strUsage = header + "\n" + coreOptions + "\n" + uiOptions + "\n";
+    fprintf(stdout, "%s", strUsage.toStdString().c_str());
+}
+
+void HelpSibcoinDialog::showOrPrint()
+{
+#if defined(WIN32)
+        // On Windows, show a message box, as there is no stderr/stdout in windowed applications
+        exec();
+#else
+        // On other operating systems, print help text to console
+        printToConsole();
+#endif
+}
+
+void HelpSibcoinDialog::on_okButton_accepted()
 {
     close();
 }
