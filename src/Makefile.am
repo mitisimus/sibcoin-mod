@@ -326,6 +326,7 @@ crypto_libdash_crypto_a_SOURCES += \
   crypto/groestl.c \
   crypto/jh.c \
   crypto/keccak.c \
+  crypto/gost.c \
   crypto/luffa.c \
   crypto/shavite.c \
   crypto/simd.c \
@@ -338,6 +339,7 @@ crypto_libdash_crypto_a_SOURCES += \
   crypto/sph_groestl.h \
   crypto/sph_jh.h \
   crypto/sph_keccak.h \
+  crypto/sph_gost.h \
   crypto/sph_luffa.h \
   crypto/sph_shavite.h \
   crypto/sph_simd.h \

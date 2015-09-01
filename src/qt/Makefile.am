@@ -50,11 +50,11 @@ QT_TS = \
 QT_FORMS_UI = \
   forms/aboutdialog.ui \
   forms/addressbookpage.ui \
-  forms/genandprintdialog.ui \
   forms/askpassphrasedialog.ui \
   forms/coincontroldialog.ui \
   forms/darksendconfig.ui \
   forms/editaddressdialog.ui \
+  forms/genandprintdialog.ui \
   forms/helpmessagedialog.ui \
   forms/intro.ui \
   forms/openuridialog.ui \
@@ -71,7 +71,6 @@ QT_FORMS_UI = \
 QT_MOC_CPP = \
   moc_addressbookpage.cpp \
   moc_addresstablemodel.cpp \
-  moc_genandprintdialog.cpp \
   moc_askpassphrasedialog.cpp \
   moc_bitcoinaddressvalidator.cpp \
   moc_bitcoinamountfield.cpp \
@@ -83,11 +82,11 @@ QT_MOC_CPP = \
   moc_csvmodelwriter.cpp \
   moc_darksendconfig.cpp \
   moc_editaddressdialog.cpp \
+  moc_genandprintdialog.cpp \
   moc_guiutil.cpp \
   moc_intro.cpp \
   moc_macdockiconhandler.cpp \
   moc_macnotificationhandler.cpp \
-  moc_monitoreddatamapper.cpp \
   moc_notificator.cpp \
   moc_openuridialog.cpp \
   moc_optionsdialog.cpp \
@@ -135,7 +134,6 @@ PROTOBUF_PROTO = paymentrequest.proto
 BITCOIN_QT_H = \
   addressbookpage.h \
   addresstablemodel.h \
-  genandprintdialog.h \
   askpassphrasedialog.h \
   bitcoinaddressvalidator.h \
   bitcoinamountfield.h \
@@ -147,12 +145,12 @@ BITCOIN_QT_H = \
   csvmodelwriter.h \
   darksendconfig.h \
   editaddressdialog.h \
+  genandprintdialog.h \
   guiconstants.h \
   guiutil.h \
   intro.h \
   macdockiconhandler.h \
   macnotificationhandler.h \
-  monitoreddatamapper.h \
   notificator.h \
   openuridialog.h \
   optionsdialog.h \
@@ -246,7 +244,6 @@ BITCOIN_QT_CPP = \
   darksendconfig.cpp \
   guiutil.cpp \
   intro.cpp \
-  monitoreddatamapper.cpp \
   notificator.cpp \
   optionsdialog.cpp \
   optionsmodel.cpp \
@@ -262,12 +259,12 @@ if ENABLE_WALLET
 BITCOIN_QT_CPP += \
   addressbookpage.cpp \
   addresstablemodel.cpp \
-  genandprintdialog.cpp \
   askpassphrasedialog.cpp \
   coincontroldialog.cpp \
   coincontroltreewidget.cpp \
   darksendconfig.cpp \
   editaddressdialog.cpp \
+  genandprintdialog.cpp \
   openuridialog.cpp \
   overviewpage.cpp \
   paymentrequestplus.cpp \
@@ -358,7 +355,7 @@ sibcoinstrings.cpp: FORCE
 
 translate: sibcoinstrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	@QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts locale/sibcoin_en.ts
+	@QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts locale/sibcoi_en.ts  
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_QM) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES) $(RES_CSS) $(PROTOBUF_H)
 	@cd $(abs_srcdir); test -f $(RCC) && QT_SELECT=$(QT_SELECT) $(RCC) -name sibcoin -o $(abs_builddir)/$@ $< || \
