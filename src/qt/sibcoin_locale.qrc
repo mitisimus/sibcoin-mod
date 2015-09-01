@@ -1,0 +1,6 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/translations">
+        <file alias="pt">locale/sibcoin_en.qm</file>
+        <file alias="ru">locale/sibcoin_ru.qm</file>
+    </qresource>
+</RCC>

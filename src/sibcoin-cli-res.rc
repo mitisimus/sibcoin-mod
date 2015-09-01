@@ -17,13 +17,13 @@ BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
             VALUE "CompanyName",        "Sibcoin"
-            VALUE "FileDescription",    "sibcoin-cli (JSON-RPC client for " PACKAGE_NAME ")"
+            VALUE "FileDescription",    "Sibcoin-cli (JSON-RPC client for " PACKAGE_NAME ")"
             VALUE "FileVersion",        VER_FILEVERSION_STR
             VALUE "InternalName",       "sibcoin-cli"
             VALUE "LegalCopyright",     COPYRIGHT_STR
-            VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
+            VALUE "LegalTrademarks1",   "Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
             VALUE "OriginalFilename",   "sibcoin-cli.exe"
-            VALUE "ProductName",        "sibcoin-cli"
+            VALUE "ProductName",        "Sibcoin-cli"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END
