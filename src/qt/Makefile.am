@@ -55,6 +55,7 @@ QT_FORMS_UI = \
   forms/darksendconfig.ui \
   forms/editaddressdialog.ui \
   forms/genandprintdialog.ui \
+  forms/goodsdialog.ui \
   forms/helpmessagedialog.ui \
   forms/intro.ui \
   forms/openuridialog.ui \
@@ -83,6 +84,7 @@ QT_MOC_CPP = \
   moc_darksendconfig.cpp \
   moc_editaddressdialog.cpp \
   moc_genandprintdialog.cpp \
+  moc_goodsdialog.cpp \
   moc_guiutil.cpp \
   moc_intro.cpp \
   moc_macdockiconhandler.cpp \
@@ -146,6 +148,7 @@ BITCOIN_QT_H = \
   darksendconfig.h \
   editaddressdialog.h \
   genandprintdialog.h \
+  goodsdialog.h \
   guiconstants.h \
   guiutil.h \
   intro.h \
@@ -267,6 +270,7 @@ BITCOIN_QT_CPP += \
   darksendconfig.cpp \
   editaddressdialog.cpp \
   genandprintdialog.cpp \
+  goodsdialog.cpp \
   openuridialog.cpp \
   overviewpage.cpp \
   paymentrequestplus.cpp \

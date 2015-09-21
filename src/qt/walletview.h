@@ -16,6 +16,7 @@ class OverviewPage;
 class PlatformStyle;
 class ReceiveCoinsDialog;
 class SendCoinsDialog;
+class GoodsDialog;
 class SendCoinsRecipient;
 class TransactionView;
 class WalletModel;
@@ -69,6 +70,8 @@ private:
     MasternodeList *masternodeListPage;
 
     TransactionView *transactionView;
+    
+    GoodsDialog *goodsPage;
 
     QProgressDialog *progressDialog;
     QLabel *transactionSum;
@@ -85,6 +88,8 @@ public Q_SLOTS:
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "");
+    /** Switch to send coins page */
+    void gotoGoodsPage();
 
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");
