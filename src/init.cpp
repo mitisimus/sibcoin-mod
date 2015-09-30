@@ -44,6 +44,7 @@
 #include "validationinterface.h"
 #ifdef ENABLE_WALLET
 #include "wallet/wallet.h"
+#include "sibdb.h"
 #endif
 
 #include "activemasternode.h"
@@ -92,6 +93,9 @@
 
 extern void ThreadSendAlert(CConnman& connman);
 
+#ifdef ENABLE_WALLET
+CSibDB *psibDB = NULL;
+#endif
 bool fFeeEstimatesInitialized = false;
 static const bool DEFAULT_PROXYRANDOMIZE = true;
 static const bool DEFAULT_REST_ENABLE = false;
@@ -1207,6 +1211,8 @@ bool AppInitParameterInteraction()
 #ifdef ENABLE_WALLET
     if (!CWallet::ParameterInteraction())
         return false;
+
+    std::string strSibFile = GetArg("-sibstore", "sib.dat");
 #endif // ENABLE_WALLET
 
     fIsBareMultisigStd = GetBoolArg("-permitbaremultisig", DEFAULT_PERMIT_BAREMULTISIG);
@@ -1740,6 +1746,8 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
 #ifdef ENABLE_WALLET
     if (!CWallet::InitLoadWallet())
         return false;
+
+    psibDB = new CSibDB(strSibFile, "cr+");
 #else
     LogPrintf("No wallet support compiled in!\n");
 #endif

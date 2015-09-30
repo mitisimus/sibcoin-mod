@@ -10,11 +10,14 @@
 
 class CScheduler;
 class CWallet;
+class CSibDB;
 
 namespace boost
 {
 class thread_group;
 } // namespace boost
+
+extern CSibDB* psibDB;
 
 void StartShutdown();
 void StartRestart();
