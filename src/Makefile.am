@@ -176,6 +176,7 @@ BITCOIN_CORE_H = \
   timedata.h \
   torcontrol.h \
   txdb.h \
+  sibdb.h \
   txmempool.h \
   ui_interface.h \
   undo.h \
@@ -261,6 +262,7 @@ libdash_server_a_SOURCES = \
   timedata.cpp \
   torcontrol.cpp \
   txdb.cpp \
+  sibdb.cpp \
   txmempool.cpp \
   ui_interface.cpp \
   validation.cpp \
