@@ -94,6 +94,10 @@ src/test/buildenv.py
 # Resources cpp
 qrc_*.cpp
 
+# Dev resources
+src/qt/res_dev
+src/qt/sibcoin_dev.qrc
+
 # Mac specific
 .DS_Store
 build
