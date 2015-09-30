@@ -21,6 +21,7 @@
 #include "transactiontablemodel.h"
 #include "transactionview.h"
 #include "walletmodel.h"
+#include "sibmodel.h"
 
 #include "ui_interface.h"
 
@@ -151,6 +152,13 @@ void WalletView::setClientModel(ClientModel *_clientModel)
     }
 }
 
+void WalletView::setSibModel(SibModel *sibModel)
+{
+    this->sibModel = sibModel;
+
+    goodsPage->setSibModel(sibModel);
+}
+
 void WalletView::setWalletModel(WalletModel *_walletModel)
 {
     this->walletModel = _walletModel;
@@ -166,6 +174,7 @@ void WalletView::setWalletModel(WalletModel *_walletModel)
     sendCoinsPage->setModel(_walletModel);
     usedReceivingAddressesPage->setModel(_walletModel->getAddressTableModel());
     usedSendingAddressesPage->setModel(_walletModel->getAddressTableModel());
+    goodsPage->setModel(walletModel);
 
     if (_walletModel)
     {

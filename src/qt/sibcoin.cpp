@@ -26,6 +26,7 @@
 #ifdef ENABLE_WALLET
 #include "paymentserver.h"
 #include "walletmodel.h"
+#include "sibmodel.h"
 #endif
 #include "masternodeconfig.h"
 
@@ -253,6 +254,7 @@ private:
 #ifdef ENABLE_WALLET
     PaymentServer* paymentServer;
     WalletModel *walletModel;
+    SibModel *sibModel;
 #endif
     int returnValue;
     const PlatformStyle *platformStyle;
@@ -357,6 +359,7 @@ BitcoinApplication::BitcoinApplication(int &argc, char **argv):
 #ifdef ENABLE_WALLET
     paymentServer(0),
     walletModel(0),
+    sibModel(0),
 #endif
     returnValue(0)
 {
@@ -484,6 +487,8 @@ void BitcoinApplication::requestShutdown()
     window->removeAllWallets();
     delete walletModel;
     walletModel = 0;
+    delete sibModel;
+    sibModel = 0;
 #endif
     delete clientModel;
     clientModel = 0;
@@ -510,12 +515,13 @@ void BitcoinApplication::initializeResult(int retval)
 
         clientModel = new ClientModel(optionsModel);
         window->setClientModel(clientModel);
-
 #ifdef ENABLE_WALLET
         if(pwalletMain)
         {
+            sibModel = new SibModel(psibDB);            
             walletModel = new WalletModel(platformStyle, pwalletMain, optionsModel);
-
+            
+            window->setSibModel(sibModel);
             window->addWallet(BitcoinGUI::DEFAULT_WALLET, walletModel);
             window->setCurrentWallet(BitcoinGUI::DEFAULT_WALLET);
 

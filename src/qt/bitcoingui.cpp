@@ -27,6 +27,7 @@
 #ifdef ENABLE_WALLET
 #include "walletframe.h"
 #include "walletmodel.h"
+#include "sibmodel.h"
 #endif // ENABLE_WALLET
 
 #ifdef Q_OS_MAC
@@ -86,6 +87,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
     QMainWindow(parent),
     enableWallet(false),
     clientModel(0),
+    sibModel(0),
     walletFrame(0),
     unitDisplayControl(0),
     labelWalletEncryptionIcon(0),
@@ -714,12 +716,19 @@ void BitcoinGUI::setClientModel(ClientModel *_clientModel)
     }
 }
 
+
+void BitcoinGUI::setSibModel(SibModel *sibModel)
+{
+    this->sibModel = sibModel;
+}
+
 #ifdef ENABLE_WALLET
 bool BitcoinGUI::addWallet(const QString& name, WalletModel *walletModel)
 {
     if(!walletFrame)
         return false;
     setWalletActionsEnabled(true);
+    walletFrame->setSibModel(sibModel);
     return walletFrame->addWallet(name, walletModel);
 }
 
