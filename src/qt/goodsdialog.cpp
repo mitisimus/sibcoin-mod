@@ -4,60 +4,62 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include <iostream>
+
+#include "walletmodel.h"
+#include "sibmodel.h"
 #include "goodsdialog.h"
 #include "ui_goodsdialog.h"
 
 #include <QFile>
 #include <QTextStream>
+#include <QResource>
+#include <QByteArray>
+#include <QTextDocument>
 
-/** "Help message" dialog box */
+
+/** Googs&Service page */
 GoodsDialog::GoodsDialog(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::GoodsDialog)
+    ui(new Ui::GoodsDialog),
+    page_name(":/dev/html/goods.html")
 {
     ui->setupUi(this);
-    //GUIUtil::restoreWindowGeometry("nHelpMessageDialogWindow", this->size(), this);
-    
-    QString res_name = ":/html/sibcoindesc";
+}
+
+GoodsDialog::~GoodsDialog()
+{
+    // TODO:
+    //unsibscribeModelSignals();
+    delete ui;
+}
+
+void GoodsDialog::setModel(WalletModel *model)
+{
+    this->model = model;
+}
+
+void GoodsDialog::setSibModel(SibModel *sibModel)
+{
+    this->sibModel = sibModel;
+    connect(sibModel, SIGNAL(resourceReady(std::string)), 
+            this, SLOT(on_resourceReady(std::string)));
+    sibModel->fetch();
+}
+
+void GoodsDialog::on_resourceReady(std::string res_root) 
+{
     QString htmlContent;
-    
-    QFile  htmlFile(res_name);
+
+    QFile  htmlFile(page_name);
     if (!htmlFile.open(QIODevice::ReadOnly | QIODevice::Text)){
         return;
     }
 
     QTextStream in(&htmlFile);
     htmlContent = in.readAll();
-    
-    // Set help message text
-    //ui->helpMessageLabel->setText(htmlContent);
-}
 
-GoodsDialog::~GoodsDialog()
-{
-    //GUIUtil::saveWindowGeometry("nHelpMessageDialogWindow", this);
-    delete ui;
+    QTextDocument *document = new QTextDocument();
+    document->setHtml(htmlContent);
+    ui->textBrowser->setDocument(document);    
 }
-
-void GoodsDialog::printToConsole()
-{
-    // On other operating systems, the expected action is to print the message to the console.
-    QString strUsage = header + "\n" + coreOptions + "\n" + uiOptions + "\n";
-    fprintf(stdout, "%s", strUsage.toStdString().c_str());
-}
-
-void GoodsDialog::showOrPrint()
-{
-#if defined(WIN32)
-        // On Windows, show a message box, as there is no stderr/stdout in windowed applications
-        exec();
-#else
-        // On other operating systems, print help text to console
-        printToConsole();
-#endif
-}
-
-//void GoodsDialog::on_okButton_accepted()
-//{
-//    close();
-//}

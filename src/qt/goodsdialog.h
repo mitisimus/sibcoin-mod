@@ -7,6 +7,9 @@
 #ifndef GOODSDIALOG_H
 #define	GOODSDIALOG_H
 
+#include "walletmodel.h"
+#include "sibmodel.h"
+
 #include <QDialog>
 #include <QObject>
 
@@ -23,17 +26,23 @@ public:
     explicit GoodsDialog(QWidget *parent=0);
     ~GoodsDialog();
 
-    void printToConsole();
-    void showOrPrint();
-
+    void setModel(WalletModel *model);
+    void setSibModel(SibModel *sibModel);
+    
 private:
     Ui::GoodsDialog *ui;
     QString header;
     QString coreOptions;
     QString uiOptions;
+    
+    WalletModel *model;
+    SibModel *sibModel;
+    
+    const QString page_name;
+    
+public slots:
+    void on_resourceReady(std::string res_root);
 
-//private slots:
-//    void on_okButton_accepted();
 };
 
 
