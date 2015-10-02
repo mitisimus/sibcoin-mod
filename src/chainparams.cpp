@@ -131,6 +131,7 @@ public:
         consensus.nBudgetPaymentsStartBlock = 328008; // actual historical value
         consensus.nBudgetPaymentsCycleBlocks = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
         consensus.nBudgetPaymentsWindowBlocks = 100;
+        consensus.nBudgetProposalEstablishingTime = 60*60*24;
         consensus.nSuperblockStartBlock = 614820; // The block at which 12.1 goes live (end of final 12.0 budget cycle)
         consensus.nSuperblockStartHash = uint256S("0000000000020cb27c7ef164d21003d5d20cdca2f54dd9a9ca6d45f4d47f8aa3");
         consensus.nSuperblockCycle = 16616; // ~(60*24*30)/2.6, actual number of blocks per month is 200700 / 12 = 16725
@@ -198,10 +199,7 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x00000c492bf73490420868bc577680bfc4c60116e7e85343bc624787c21efa4c"));
         assert(genesis.hashMerkleRoot == uint256S("0x6a35812a1d2dd4ec413b7de5870c56455110ad6395ef00962e58f812da7cb4b9"));
 
-        //vSeeds.push_back(CDNSSeedData("darkcoin.io", "dnsseed.darkcoin.io"));
-        //vSeeds.push_back(CDNSSeedData("dashdot.io", "dnsseed.dashdot.io"));
-        //vSeeds.push_back(CDNSSeedData("masternode.io", "dnsseed.masternode.io"));
-        //vSeeds.push_back(CDNSSeedData("dashpay.io", "dnsseed.dashpay.io"));
+        vSeeds.push_back(CDNSSeedData("sibcoin.net", "dnsseed.sibcoin.net"));
 
         // Sibcoin addresses start with 'S'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,63);
@@ -243,11 +241,13 @@ public:
             (  30000, uint256S("0x0000007f8622cde9424e5a7e9bd86aefe844b43e20343bcde69a7d3cb9cc640d"))
             (  35000, uint256S("0x000000160f53facbb70193a3dac0357331520eb9e4fb544ac33a96b81c5ea890"))
             (  38700, uint256S("0x0000000922c8ae23533c8aa6a4a22f51fa4cdfba85e8c08f2a019dcf755ec48f"))
+            (  70000, uint256S("0x00000000013eb4498b627e9b8cc1baf74f77f518be4f32ed27b6455e18f5295a")) 
+            (  80000, uint256S("0x0000000027d43f7c0323d29365f18c39666b8205a160d8a09f599f92ff259482"))
         };
 
         chainTxData = ChainTxData{
-            1529305236, // * UNIX timestamp of last known number of transactions
-            6155435,    // * total number of transactions between genesis and that timestamp
+            1443347415, // * UNIX timestamp of last known number of transactions
+            94147,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.1         // * estimated number of transactions per second after that timestamp
         };
@@ -367,12 +367,14 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-        ( 0, uint256S("0x00000617791d0e19f524387f67e558b2a928b670b9a3b387ae003ad7f9093017"))
-        };
+            ( 0, uint256S("0x00000617791d0e19f524387f67e558b2a928b670b9a3b387ae003ad7f9093017"))
+            ( 1500, uint256S("0x0000031c5def292029d4713891fc26e5b4559aff101ce2cf6348418d028daf11"))
+            ( 5650, uint256S("0x000000131d2a832c254b06d37ee035a5a92d4266b3e489ed1ecb185e4f06ea0f"))
+            };
 
         chainTxData = ChainTxData{        
-            1529294335, // * UNIX timestamp of last known number of transactions
-            5810120,    // * total number of transactions between genesis and that timestamp
+            1443544738, // * UNIX timestamp of last known number of transactions
+            5654,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.01        // * estimated number of transactions per second after that timestamp
         };
