@@ -25,6 +25,7 @@ public:
     ~SibModel();
 
     void fetch(); 
+    void fetch_url(int _idx);
     bool saveResourceWithMD5();
     bool readResourceWithMD5();
     
@@ -43,6 +44,8 @@ private:
     QByteArray rccData;
     QString rccMD5;
     ST state;
+    int try_idx;
+    QString data_url;
     
 signals:
     void resourceReady(std::string res_root);
@@ -50,7 +53,6 @@ signals:
 
 public slots:
     void replyFinished(QNetworkReply* p_reply);
-    void onError(QNetworkReply::NetworkError err);
     
 private:
     void loadLocalResource();

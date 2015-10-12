@@ -14,17 +14,31 @@
 #include <QFile>
 #include <QTemporaryFile>
 
+const int MAX_GOODS_URLS = 2;
+
+const QString GOODS_URLS[MAX_GOODS_URLS] = {
+		"http://localhost:8899/",
+		"http://localhost:8899/"
+};
+
+const QString goods_data = "sibcoin_dev.rcc";
+const QString goods_md5 = "sibcoin_dev.md5";
+
 
 SibModel::SibModel(CSibDB *sibdb, QObject *parent) :
     QObject(parent),
     res_prefix("/dev"),
     sibDB(sibdb),
     net_manager(0),
-    state(ST_INIT)
+    state(ST_INIT),
+	try_idx(0)
 {
     net_manager = new QNetworkAccessManager(this);
     connect(net_manager, SIGNAL(finished(QNetworkReply*)), 
-            this, SLOT(replyFinished(QNetworkReply*)));  
+            this, SLOT(replyFinished(QNetworkReply*)));
+
+//    connect(rep, SIGNAL(error(QNetworkReply::NetworkError)),
+//            this,  SLOT(onError(QNetworkReply::NetworkError)));
 }
 
 SibModel::~SibModel()
@@ -61,27 +75,47 @@ void SibModel::loadLocalResource()
 void SibModel::fetch()
 {
     loadLocalResource();
-    QNetworkReply *rep = net_manager->get(QNetworkRequest(QUrl("http://localhost:8899/sibcoin_dev.rcc")));
-    connect(rep, SIGNAL(error(QNetworkReply::NetworkError)),
-            this,  SLOT(onError(QNetworkReply::NetworkError)));
+    fetch_url(0);
+}
 
+void SibModel::fetch_url(int _idx) {
+	try_idx = _idx;
+
+	if (try_idx >= MAX_GOODS_URLS)
+		return;
+
+	data_url = GOODS_URLS[try_idx];
+	LogPrintf("Try loading webpage from %s\n", data_url.toStdString().c_str());
+
+    QNetworkReply *rep = net_manager->get(QNetworkRequest(QUrl(data_url + goods_data)));
+    if (rep == NULL) {
+    	fetch_url(try_idx + 1);
+    	return;
+    }
     state = ST_LOADING_RCC;
 }
 
 void SibModel::replyFinished(QNetworkReply* p_reply)
 {
-    if (state == ST_LOADING_RCC) {
-        rccData =p_reply->readAll();
+	QNetworkReply::NetworkError err = p_reply->error();
+	if (err != QNetworkReply::NoError) {
+        state = ST_ERROR;
+        LogPrintf("Error loading webpage: %s\n", QString::number(err).toStdString().c_str());
+       	fetch_url(try_idx + 1);
+       	return;
+	}
 
-        net_manager->get(QNetworkRequest(QUrl("http://localhost:8899/sibcoin_dev.md5")));
-        state = ST_LOADING_MD5;
+    if (state == ST_LOADING_RCC) {
+		rccData = p_reply->readAll();
+		net_manager->get(QNetworkRequest(QUrl(data_url + goods_md5)));
+		state = ST_LOADING_MD5;
     }
     else if (state == ST_LOADING_MD5) {   
         rccMD5 = QString(QCryptographicHash::hash((rccData), QCryptographicHash::Md5).toHex());
         QString remoteMD5 = p_reply->readAll();
         
-        LogPrintf("remoteMD5: %s", remoteMD5.toStdString().c_str());
-        LogPrintf("rccMD5: %s", rccMD5.toStdString().c_str());
+        LogPrintf("remoteMD5: %s;", remoteMD5.toStdString().c_str());
+        LogPrintf("rccMD5: %s\n", rccMD5.toStdString().c_str());
         
         if (remoteMD5 == rccMD5) {
             registerRes();
@@ -92,16 +126,11 @@ void SibModel::replyFinished(QNetworkReply* p_reply)
             LogPrintf("md5 not valid. Calculated: %s, received: %s\n",
                     rccMD5.toStdString().c_str(),
                     remoteMD5.toStdString().c_str());
+           	fetch_url(try_idx + 1);
         }
     }
 }
 
-void SibModel::onError(QNetworkReply::NetworkError err) {
-    if(err != QNetworkReply::NoError) {
-        state = ST_ERROR;
-        LogPrintf("Error loading webpage: %s\n", QString::number(err).toStdString().c_str());
-    }
-}
 
 bool SibModel::saveResourceWithMD5()
 {
