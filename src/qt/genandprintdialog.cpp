@@ -156,21 +156,18 @@ void GenAndPrintDialog::on_importButton_clicked()
     QString privkey_str = ui->passEdit1->text();
     QString passwd = ui->passEdit2->text();
     QString label_str = ui->passEdit3->text();
+    std::string secret = privkey_str.toStdString();
     
     std::vector<unsigned char> priv_data;
+
     DecodeBase58(privkey_str.toStdString(), priv_data);
 
     CKey key;
     model->decryptKey(priv_data, passwd.toStdString(), salt, key);
-    
-    if (!key.IsValid())
-    {
-        QMessageBox::critical(this, tr("Error"), tr("Invalid private key! (Is password correct?)"));
-        return;
-    }
-    
-    std::string secret = CBitcoinSecret(key).ToString();
-   
+
+    if (key.IsValid())
+       secret = CBitcoinSecret(key).ToString();
+
     params.push_back(json_spirit::Value(secret.c_str()));
     params.push_back(json_spirit::Value(label_str.toStdString().c_str()));
 
