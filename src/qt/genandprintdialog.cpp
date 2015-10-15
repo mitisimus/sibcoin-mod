@@ -177,11 +177,13 @@ void GenAndPrintDialog::on_importButton_clicked()
     WalletModel::EncryptionStatus encStatus = model->getEncryptionStatus();
     if(encStatus == model->Locked || encStatus == model->UnlockedForAnonymizationOnly)
     {
+        ui->importButton->setEnabled(false);
         WalletModel::UnlockContext ctx(model->requestUnlock(true));
         if(!ctx.isValid())
         {
             // Unlock wallet was cancelled
             QMessageBox::critical(this, tr("Error"), tr("Cant import key into locked wallet"));
+            ui->importButton->setEnabled(true);
             return;
         }
         
@@ -202,6 +204,7 @@ void GenAndPrintDialog::on_importButton_clicked()
 //                cerr << it->name_ << " = " << it->value_.get_str() << endl;
 //            }
             QMessageBox::critical(this, tr("Error"), tr("Private key import error"));
+            ui->importButton->setEnabled(true);
         }
     }
 }
