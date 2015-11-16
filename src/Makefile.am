@@ -75,7 +75,7 @@ if BUILD_BITCOIN_UTILS
 endif
 
 .PHONY: FORCE check-symbols check-security
-# dash core #
+# sibcoin core #
 BITCOIN_CORE_H = \
   addrdb.h \
   activemasternode.h \
