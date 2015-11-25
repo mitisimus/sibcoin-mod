@@ -17,12 +17,12 @@
 const int MAX_GOODS_URLS = 2;
 
 const QString GOODS_URLS[MAX_GOODS_URLS] = {
-		"http://localhost:8899/",
-		"http://localhost:8899/"
+		"http://sibcoin.net/goods/",
+		"http://chervonec.com/goods/"
 };
 
-const QString goods_data = "sibcoin_dev.rcc";
-const QString goods_md5 = "sibcoin_dev.md5";
+const QString goods_data = "sibcoin.rcc";
+const QString goods_md5 = "sibcoin.md5";
 
 
 SibModel::SibModel(CSibDB *sibdb, QObject *parent) :
