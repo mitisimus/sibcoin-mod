@@ -53,7 +53,7 @@ QT_TRANSLATE_NOOP("sibcoin-core", ""
 "Delete all wallet transactions and only recover those parts of the "
 "blockchain through -rescan on startup"),
 QT_TRANSLATE_NOOP("sibcoin-core", ""
-"Disable all Dash specific functionality (Masternodes, Darksend, InstantX, "
+"Disable all Sibcoin/Dash specific functionality (Masternodes, Darksend, InstantX, "
 "Budgeting) (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("sibcoin-core", ""
 "Distributed under the MIT software license, see the accompanying file "
@@ -82,10 +82,10 @@ QT_TRANSLATE_NOOP("sibcoin-core", ""
 "Execute command when the best block changes (%s in cmd is replaced by block "
 "hash)"),
 QT_TRANSLATE_NOOP("sibcoin-core", ""
-"Fees (in DASH/Kb) smaller than this are considered zero fee for relaying "
+"Fees (in SIB/Kb) smaller than this are considered zero fee for relaying "
 "(default: %s)"),
 QT_TRANSLATE_NOOP("sibcoin-core", ""
-"Fees (in DASH/Kb) smaller than this are considered zero fee for transaction "
+"Fees (in SIB/Kb) smaller than this are considered zero fee for transaction "
 "creation (default: %s)"),
 QT_TRANSLATE_NOOP("sibcoin-core", ""
 "Flush database activity from memory pool to disk log every <n> megabytes "
@@ -154,7 +154,7 @@ QT_TRANSLATE_NOOP("sibcoin-core", ""
 "the OpenSSL Toolkit <https://www.openssl.org/> and cryptographic software "
 "written by Eric Young and UPnP software written by Thomas Bernard."),
 QT_TRANSLATE_NOOP("sibcoin-core", ""
-"To use dashd, or the -server option to dash-qt, you must set an rpcpassword "
+"To use sibcoind, or the -server option to sibcoin-qt, you must set an rpcpassword "
 "in the configuration file:\n"
 "%s\n"
 "It is recommended you use the following random password:\n"
@@ -176,7 +176,7 @@ QT_TRANSLATE_NOOP("sibcoin-core", ""
 "that are not equal 1000 SIB."),
 QT_TRANSLATE_NOOP("sibcoin-core", ""
 "Unable to locate enough funds for this transaction that are not equal 1000 "
-"DASH."),
+"SIB."),
 QT_TRANSLATE_NOOP("sibcoin-core", ""
 "Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: "
 "%s)"),
@@ -188,7 +188,7 @@ QT_TRANSLATE_NOOP("sibcoin-core", ""
 "pay if you send a transaction."),
 QT_TRANSLATE_NOOP("sibcoin-core", ""
 "Warning: Please check that your computer's date and time are correct! If "
-"your clock is wrong Dash Core will not work properly."),
+"your clock is wrong Sibcoin Core will not work properly."),
 QT_TRANSLATE_NOOP("sibcoin-core", ""
 "Warning: The network does not appear to fully agree! Some miners appear to "
 "be experiencing issues."),
@@ -276,7 +276,7 @@ QT_TRANSLATE_NOOP("sibcoin-core", "Error: Wallet locked, unable to create transa
 QT_TRANSLATE_NOOP("sibcoin-core", "Error: You already have pending entries in the Darksend pool"),
 QT_TRANSLATE_NOOP("sibcoin-core", "Failed to listen on any port. Use -listen=0 if you want this."),
 QT_TRANSLATE_NOOP("sibcoin-core", "Failed to read block"),
-QT_TRANSLATE_NOOP("sibcoin-core", "Fee (in DASH/kB) to add to transactions you send (default: %s)"),
+QT_TRANSLATE_NOOP("sibcoin-core", "Fee (in SIB/kB) to add to transactions you send (default: %s)"),
 QT_TRANSLATE_NOOP("sibcoin-core", "Finalizing transaction."),
 QT_TRANSLATE_NOOP("sibcoin-core", "Force safe mode (default: %u)"),
 QT_TRANSLATE_NOOP("sibcoin-core", "Found enough users, signing ( waiting %s )"),
@@ -309,7 +309,7 @@ QT_TRANSLATE_NOOP("sibcoin-core", "Invalid private key."),
 QT_TRANSLATE_NOOP("sibcoin-core", "Invalid script detected."),
 QT_TRANSLATE_NOOP("sibcoin-core", "KeePassHttp id for the established association"),
 QT_TRANSLATE_NOOP("sibcoin-core", "KeePassHttp key for AES encrypted communication with KeePass"),
-QT_TRANSLATE_NOOP("sibcoin-core", "Keep N DASH anonymized (default: %u)"),
+QT_TRANSLATE_NOOP("sibcoin-core", "Keep N SIB anonymized (default: %u)"),
 QT_TRANSLATE_NOOP("sibcoin-core", "Keep at most <n> unconnectable transactions in memory (default: %u)"),
 QT_TRANSLATE_NOOP("sibcoin-core", "Last Darksend was too recent."),
 QT_TRANSLATE_NOOP("sibcoin-core", "Last successful Darksend action was too recent."),
