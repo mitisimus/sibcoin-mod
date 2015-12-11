@@ -92,7 +92,10 @@ class FrameworkInfo(object):
             return None
 
         # Don't deploy system libraries (exception for libQtuitools and libQtlucene).
-        if line.startswith("/System/Library/") or line.startswith("@executable_path") or (line.startswith("/usr/lib/") and "libQt" not in line):
+        if line.startswith("/System/Library/") \
+                or line.startswith("@executable_path") \
+                or (line.startswith("/usr/lib/") \
+                    and ("libQt" not in line) and ("libicu" not in line)):
             return None
 
         m = cls.reOLine.match(line)
@@ -264,7 +267,9 @@ def copyFramework(framework, path, verbose):
     toPath = os.path.join(toDir, framework.binaryName)
 
     if not os.path.exists(fromPath):
-        raise RuntimeError("No file at " + fromPath)
+        fromPath = "/usr/local/lib/" + fromPath
+        if not os.path.exists(fromPath):
+            raise RuntimeError("No file at " + fromPath)
 
     if os.path.exists(toPath):
         return None # Already there
