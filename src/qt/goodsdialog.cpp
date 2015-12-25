@@ -57,6 +57,7 @@ void GoodsDialog::on_resourceReady(std::string res_root)
     }
 
     QTextStream in(&htmlFile);
+    in.setCodec("UTF-8");
     htmlContent = in.readAll();
 
     QTextDocument *document = new QTextDocument();

@@ -221,6 +221,7 @@ HelpSibcoinDialog::HelpSibcoinDialog(QWidget *parent) :
     }
 
     QTextStream in(&htmlFile);
+    in.setCodec("UTF-8");
     htmlContent = in.readAll();
     
     // Set help message text
