@@ -3,6 +3,7 @@
 #include <iomanip>
 #include <iostream>
 #include <vector>
+#include <cstring>
 
 #include "crypto.h"
 #include "crypto_scrypt.h"
@@ -34,8 +35,6 @@ std::string encode_base16(std::vector<unsigned char> data, size_t len)
 
 std::vector<unsigned char> decode_base16(const std::string &hex)
 {
-	size_t len = hex.size();
-	// len must be even
     std::vector<unsigned char> bytes;
 
     for (unsigned int i = 0; i < hex.length(); i += 2) {
@@ -177,7 +176,6 @@ std::vector<unsigned char> decrypt_bip38(const std::vector<unsigned char> enc_da
     const unsigned char *data = reinterpret_cast<const unsigned char*>(enc_data.data());
 
     unsigned char key[64];
-    unsigned char flagbyte = data[2];
     unsigned char addresshash[4];
     unsigned char encryptedhalf1[16], encryptedhalf2[16];
     unsigned char decryptedhalf1[16], decryptedhalf2[16];
