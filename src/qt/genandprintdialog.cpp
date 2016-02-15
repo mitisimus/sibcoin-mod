@@ -307,7 +307,7 @@ void GenAndPrintDialog::on_printButton_clicked()
 
     QString qcrypted = QString::fromStdString(crypted);
     QPrinter printer;
-    printer.setResolution(QPrinter::ScreenResolution);
+    printer.setResolution(QPrinter::HighResolution);
     printer.setPageMargins(0, 10, 0, 0, QPrinter::Millimeter);
     
     QPrintDialog *dlg = new QPrintDialog(&printer, this);
@@ -338,10 +338,11 @@ void GenAndPrintDialog::on_printButton_clicked()
         html.replace("__ADDRESS__", qaddress);
         html.replace("__PRIVATE__", qcrypted);
         
-        QTextDocument *document = new QTextDocument();
-        document->setHtml(html);
+        QTextDocument *document = new QTextDocument(this);
         document->addResource(QTextDocument::ImageResource, QUrl(":qr1.png" ), img1);
         document->addResource(QTextDocument::ImageResource, QUrl(":qr2.png" ), img2);
+        document->setHtml(html);
+        document->setPageSize(QSizeF(printer.pageRect().size()));
         document->print(&printer);
         
         model->setAddressBook(keyid, strAccount.toStdString(), "send");
