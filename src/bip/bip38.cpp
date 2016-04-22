@@ -72,7 +72,7 @@ std::vector<unsigned char> decrypt_bip38_ec(const std::vector<unsigned char> key
 
     // get the passpoint as bytes
     unsigned char * passpoint;
-    unsigned long int passpoint_len;
+    size_t passpoint_len;
 
     if(!bp_pubkey_get(&ec_point,(unsigned char **)&passpoint,&passpoint_len)) {
         fprintf(stderr,"%s","cannot get pubkey for EC point");
