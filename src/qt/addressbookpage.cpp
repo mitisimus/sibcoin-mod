@@ -82,6 +82,8 @@ AddressBookPage::AddressBookPage(const PlatformStyle *platformStyle, Mode _mode,
     // Context menu actions
     QAction *copyAddressAction = new QAction(tr("&Copy Address"), this);
     QAction *copyLabelAction = new QAction(tr("Copy &Label"), this);
+    QAction *copyPubkeyAction = new QAction(tr("Copy &Public Key"), this);
+    QAction *copyPrivkeyAction = new QAction(tr("Copy P&rivate Key"), this);
     QAction *editAction = new QAction(tr("&Edit"), this);
     deleteAction = new QAction(ui->deleteAddress->text(), this);
 
@@ -89,6 +91,11 @@ AddressBookPage::AddressBookPage(const PlatformStyle *platformStyle, Mode _mode,
     contextMenu = new QMenu(this);
     contextMenu->addAction(copyAddressAction);
     contextMenu->addAction(copyLabelAction);
+    if(tab == ReceivingTab)
+    {
+    	contextMenu->addAction(copyPubkeyAction);
+    	contextMenu->addAction(copyPrivkeyAction);
+    }
     contextMenu->addAction(editAction);
     if(tab == SendingTab)
         contextMenu->addAction(deleteAction);
@@ -97,6 +104,8 @@ AddressBookPage::AddressBookPage(const PlatformStyle *platformStyle, Mode _mode,
     // Connect signals for context menu actions
     connect(copyAddressAction, SIGNAL(triggered()), this, SLOT(on_copyAddress_clicked()));
     connect(copyLabelAction, SIGNAL(triggered()), this, SLOT(onCopyLabelAction()));
+    connect(copyPubkeyAction, SIGNAL(triggered()), this, SLOT(onCopyPubkeyAction()));
+    connect(copyPrivkeyAction, SIGNAL(triggered()), this, SLOT(onCopyPrivkeyAction()));
     connect(editAction, SIGNAL(triggered()), this, SLOT(onEditAction()));
     connect(deleteAction, SIGNAL(triggered()), this, SLOT(on_deleteAddress_clicked()));
 
@@ -163,6 +172,64 @@ void AddressBookPage::on_copyAddress_clicked()
 void AddressBookPage::onCopyLabelAction()
 {
     GUIUtil::copyEntryData(ui->tableView, AddressTableModel::Label);
+}
+
+void AddressBookPage::onCopyPubkeyAction()
+{
+    if(!model)
+        return;
+
+    if(!ui->tableView->selectionModel())
+        return;
+    QModelIndexList indexes = ui->tableView->selectionModel()->selectedRows();
+    if(indexes.isEmpty())
+        return;
+
+    QModelIndex index = indexes.at(0);
+    QSortFilterProxyModel *proxy = static_cast<QSortFilterProxyModel*>(ui->tableView->model());
+    int row = proxy->mapToSource(index).row();
+    QModelIndex nameIndex = model->index(row, AddressTableModel::Address, QModelIndex());
+    QString address = model->data(nameIndex, Qt::DisplayRole).toString();
+
+	try {
+	    QString s_pubkey = model->pubkeyForAddress(address);
+	    GUIUtil::setClipboard(s_pubkey);
+	} catch (const std::runtime_error& e) {
+	    QMessageBox::critical(this, "Error", tr("Can't copy public key to clipboard"));
+	}
+}
+
+void AddressBookPage::onCopyPrivkeyAction()
+{
+    if(!model)
+        return;
+
+    if(!ui->tableView->selectionModel())
+        return;
+
+    QModelIndexList indexes = ui->tableView->selectionModel()->selectedRows();
+    if(indexes.isEmpty())
+        return;
+
+    QMessageBox::StandardButton reply = QMessageBox::question(
+    					this, "Copy to clipboard", tr("Copy private key to clipboard?"),
+						QMessageBox::Yes|QMessageBox::No, QMessageBox::No);
+
+    if (reply != QMessageBox::Yes)
+    	return;
+
+    QModelIndex index = indexes.at(0);
+    QSortFilterProxyModel *proxy = static_cast<QSortFilterProxyModel*>(ui->tableView->model());
+    int row = proxy->mapToSource(index).row();
+    QModelIndex nameIndex = model->index(row, AddressTableModel::Address, QModelIndex());
+    QString address = model->data(nameIndex, Qt::DisplayRole).toString();
+
+    try {
+    	QString s_privkey = model->privkeyForAddress(address);
+        GUIUtil::setClipboard(s_privkey);
+	} catch (const std::runtime_error& e) {
+		QMessageBox::critical(this, "Error", tr("Can't copy private key to clipboard"));
+	}
 }
 
 void AddressBookPage::onEditAction()

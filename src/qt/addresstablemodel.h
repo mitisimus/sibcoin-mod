@@ -67,6 +67,14 @@ public:
      */
     QString labelForAddress(const QString &address) const;
 
+    /* Look up public key for address in address book, if not found return empty string.
+     */
+    QString pubkeyForAddress(const QString &addr) const;
+
+    /* Look up privatelic key for address in address book, if not found return empty string.
+     */
+    QString privkeyForAddress(const QString &addr) const;
+
     /* Look up row index of an address in the model.
        Return -1 if not found.
      */

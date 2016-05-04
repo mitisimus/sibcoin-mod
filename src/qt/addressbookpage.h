@@ -69,6 +69,10 @@ private Q_SLOTS:
     void on_copyAddress_clicked();
     /** Copy label of currently selected address entry to clipboard (no button) */
     void onCopyLabelAction();
+    /** Show public key of currently selected address entry to clipboard (no button)*/
+    void onCopyPubkeyAction();
+    /** Copy private key of currently selected address entry to clipboard (no button) */
+    void onCopyPrivkeyAction();
     /** Edit currently selected address entry (no button) */
     void onEditAction();
     /** Export button clicked */

@@ -435,6 +435,49 @@ QString AddressTableModel::labelForAddress(const QString &address) const
     return QString();
 }
 
+static CKeyID getKeyID(const QString &addr)
+{
+	string strAddress = addr.toStdString();
+	std::cerr << strAddress << std::endl;
+
+	CBitcoinAddress address;
+	if (!address.SetString(strAddress))
+		throw std::runtime_error("Invalid Sibcoin address");
+	CKeyID keyID;
+	if (!address.GetKeyID(keyID))
+		throw std::runtime_error("Address does not refer to a key");
+
+	return keyID;
+}
+
+QString AddressTableModel::pubkeyForAddress(const QString &addr) const
+{
+	CKeyID keyID;
+	keyID = getKeyID(addr);
+
+	CPubKey vchPubKeyOut;
+	if (!wallet->GetPubKey(keyID, vchPubKeyOut))
+		throw std::runtime_error(
+				"Public key for address " + addr.toStdString()
+						+ " is not known");
+
+	std::string s_pubkey = HexStr(vchPubKeyOut);
+	return QString::fromStdString(s_pubkey);
+}
+
+QString AddressTableModel::privkeyForAddress(const QString &addr) const
+{
+	CKeyID keyID;
+	keyID = getKeyID(addr);
+
+	CKey vchSecret;
+	if (!wallet->GetKey(keyID, vchSecret))
+		throw std::runtime_error(
+				"Private key for address " + addr.toStdString()
+						+ " is not known");
+	return QString::fromStdString(CBitcoinSecret(vchSecret).ToString());
+}
+
 int AddressTableModel::lookupAddress(const QString &address) const
 {
     QModelIndexList lst = match(index(0, Address, QModelIndex()),
