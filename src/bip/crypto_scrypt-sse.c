@@ -26,7 +26,7 @@
  * This file was originally written by Colin Percival as part of the Tarsnap
  * online backup system.
  */
-#include "scrypt_platform.h"
+#include "bip/scrypt_platform.h"
 
 #include <sys/types.h>
 #include <sys/mman.h>
@@ -37,10 +37,10 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "sha256.h"
-#include "sysendian.h"
+#include "bip/sha256.h"
+#include "bip/sysendian.h"
 
-#include "crypto_scrypt.h"
+#include "bip/crypto_scrypt.h"
 
 static void blkcpy(void *, void *, size_t);
 static void blkxor(void *, void *, size_t);

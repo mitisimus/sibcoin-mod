@@ -1,7 +1,7 @@
 #include <string.h>
 
-#include "crypto_scrypt.h"
-#include "crypto.h"
+#include "bip/crypto_scrypt.h"
+#include "bip/crypto.h"
 
 #include <openssl/sha.h>
 #include <openssl/ecdsa.h>

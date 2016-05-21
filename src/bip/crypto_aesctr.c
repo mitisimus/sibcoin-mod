@@ -26,16 +26,16 @@
  * This file was originally written by Colin Percival as part of the Tarsnap
  * online backup system.
  */
-#include "scrypt_platform.h"
+#include "bip/scrypt_platform.h"
 
 #include <stdint.h>
 #include <stdlib.h>
 
 #include <openssl/aes.h>
 
-#include "sysendian.h"
+#include "bip/sysendian.h"
 
-#include "crypto_aesctr.h"
+#include "bip/crypto_aesctr.h"
 
 struct crypto_aesctr {
 	AES_KEY * key;

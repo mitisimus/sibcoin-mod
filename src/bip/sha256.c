@@ -23,16 +23,16 @@
  * OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
  * SUCH DAMAGE.
  */
-#include "scrypt_platform.h"
+#include "bip/scrypt_platform.h"
 
 #include <sys/types.h>
 
 #include <stdint.h>
 #include <string.h>
 
-#include "sysendian.h"
+#include "bip/sysendian.h"
 
-#include "sha256.h"
+#include "bip/sha256.h"
 
 /*
  * Encode a length len/4 vector of (uint32_t) into a length len vector of
