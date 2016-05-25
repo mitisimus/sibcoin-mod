@@ -200,9 +200,11 @@ BITCOIN_CORE_H = \
   zmq/zmqpublishnotifier.h
 
 BIP_H = \
+  bip/scrypt_platform.h \
   bip/crypto_aesctr.h \
   bip/crypto_scrypt.h \
   bip/sha256.h \
+  bip/sysendian.h \
   bip/crypto.h \
   bip/bip38.h
 

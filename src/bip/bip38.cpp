@@ -5,9 +5,9 @@
 #include <vector>
 #include <cstring>
 
-#include "bip/crypto.h"
-#include "bip/crypto_scrypt.h"
-#include "bip/bip38.h"
+#include "crypto.h"
+#include "crypto_scrypt.h"
+#include "bip38.h"
 
 #define PASSFACTOR_SIZE 32
 #define PASSPHRASE_MAGIC_SIZE 8
