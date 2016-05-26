@@ -29,7 +29,7 @@
 #include "scrypt_platform.h"
 
 #include <sys/types.h>
-#include <sys/mman.h>
+//#include <sys/mman.h>
 
 #include <emmintrin.h>
 #include <errno.h>
