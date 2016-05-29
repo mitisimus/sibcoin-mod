@@ -21,6 +21,7 @@
 #include "bip/bip38.h"
 #include "hash.h"
 
+#include <QtGlobal>
 #include <QKeyEvent>
 #include <QMessageBox>
 #include <QPushButton>
