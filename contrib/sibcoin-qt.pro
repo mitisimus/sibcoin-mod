@@ -21,5 +21,7 @@ FORMS += \
     ../src/qt/forms/signverifymessagedialog.ui \
     ../src/qt/forms/transactiondescdialog.ui
 
-RESOURCES += \
-    ../src/qt/sibcoin.qrc
+RESOURCES += ../src/qt/sibcoin.qrc ../src/qt/sibcoin_locale.qrc
+
+QT += \
+    printsupport
