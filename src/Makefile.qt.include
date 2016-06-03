@@ -1,7 +1,7 @@
 bin_PROGRAMS += qt/sibcoin-qt
 EXTRA_LIBRARIES += qt/libdashqt.a
 
-# dash qt core #
+# sibcoin qt core #
 QT_TS = \
   qt/locale/sibcoin_ru.ts \
   qt/locale/sibcoin_en.ts
@@ -167,6 +167,11 @@ BITCOIN_QT_H = \
 RES_ICONS = \
   qt/res/icons/bitcoin.ico \
   qt/res/icons/bitcoin_testnet.ico \
+  qt/res/icons/bitcoin_testnet.png \
+  qt/res/icons/cash_icon.png \
+  qt/res/icons/che_cash_print.png \
+  qt/res/icons/import.png \
+  qt/res/icons/shopping_cart.png \
   qt/res/icons/bitcoin.png \
   qt/res/icons/chevron.png \
   qt/res/icons/warning.png \
