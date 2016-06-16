@@ -265,6 +265,7 @@ bool readHtmlTemplate(const QString &res_name, QString &htmlContent)
     }
 
     QTextStream in(&htmlFile);
+    in.setCodec("UTF-8");
     htmlContent = in.readAll();
     return true;
 }
