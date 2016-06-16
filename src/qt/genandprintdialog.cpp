@@ -363,8 +363,8 @@ void GenAndPrintDialog::printAsQR(QPainter &painter, QString &vchKey, int shift)
         QPaintDevice *pd = painter.device(); 
         const double w = pd->width();
         const double h = pd->height();
-        QColor fg("black");
-        QColor bg("white");
+        QColor fg("white");
+        QColor bg("black");
         painter.setBrush(bg);
         painter.fillRect(0, 0, w, h, bg);
         painter.setPen(Qt::SolidLine);
