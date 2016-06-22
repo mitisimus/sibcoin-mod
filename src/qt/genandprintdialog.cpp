@@ -315,8 +315,8 @@ void GenAndPrintDialog::on_printButton_clicked()
     QPrintDialog *dlg = new QPrintDialog(&printer, this);
     if(dlg->exec() == QDialog::Accepted) {
         
-        QImage img1(200, 200, QImage::Format_Mono);
-        QImage img2(200, 200, QImage::Format_Mono);
+        QImage img1(200, 200, QImage::Format_ARGB32);
+        QImage img2(200, 200, QImage::Format_ARGB32);
         QPainter painter(&img1);
         painter.setRenderHint(QPainter::Antialiasing, false);
         painter.setRenderHint(QPainter::TextAntialiasing, false);
