@@ -438,14 +438,12 @@ QString AddressTableModel::labelForAddress(const QString &address) const
 static CKeyID getKeyID(const QString &addr)
 {
 	string strAddress = addr.toStdString();
-	std::cerr << strAddress << std::endl;
 
 	CBitcoinAddress address;
 	if (!address.SetString(strAddress))
 		throw std::runtime_error("Invalid Sibcoin address");
 	CKeyID keyID;
-	if (!address.GetKeyID(keyID))
-		throw std::runtime_error("Address does not refer to a key");
+	address.GetKeyID(keyID);
 
 	return keyID;
 }
@@ -469,13 +467,26 @@ QString AddressTableModel::privkeyForAddress(const QString &addr) const
 {
 	CKeyID keyID;
 	keyID = getKeyID(addr);
+        
+        CKey vchSecret;
+        bool gotKey = false;
+        
+        WalletModel::EncryptionStatus encStatus = walletModel->getEncryptionStatus();
+        
+        // check if wallet encrypted
+        if(encStatus == walletModel->Locked || encStatus == walletModel->UnlockedForAnonymizationOnly)        
+        {        
+            WalletModel::UnlockContext ctx(walletModel->requestUnlock(true));
+            if(ctx.isValid())
+                gotKey = wallet->GetKey(keyID, vchSecret);
+        } else {
+            gotKey = wallet->GetKey(keyID, vchSecret);
+        }
 
-	CKey vchSecret;
-	if (!wallet->GetKey(keyID, vchSecret))
-		throw std::runtime_error(
-				"Private key for address " + addr.toStdString()
-						+ " is not known");
-	return QString::fromStdString(CBitcoinSecret(vchSecret).ToString());
+        if (!gotKey)
+            throw std::runtime_error("Private key for address "+addr.toStdString()+" is not known");
+        
+        return QString::fromStdString(CBitcoinSecret(vchSecret).ToString());                
 }
 
 int AddressTableModel::lookupAddress(const QString &address) const

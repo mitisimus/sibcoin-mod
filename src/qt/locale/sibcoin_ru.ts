@@ -100,8 +100,38 @@
     </message>
     <message>
         <location line="+1"/>
+        <source>Copy &amp;Public Key</source>
+        <translation>Копировать &amp;Публичный Ключ</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copy P&amp;rivate Key</source>
+        <translation>Копировать П&amp;риватный Ключ</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>&amp;Edit</source>
         <translation>&amp;Правка</translation>
+    </message>
+    <message>
+        <location line="+111"/>
+        <source>Can't copy public key to clipboard</source>
+        <translation>Не удалось скопировать публичный ключ</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Copy to clipboard</source>
+        <translation>Скопировать в буфер обмена</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Copy private key to clipboard?</source>
+        <translation>Скопировать приватный ключ в буфер обмена?</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Can't copy private key to clipboard</source>
+        <translation>Не удалось скопировать приватный ключ</translation>
     </message>
     <message>
         <location line="+194"/>

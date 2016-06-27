@@ -100,11 +100,41 @@
     </message>
     <message>
         <location line="+1"/>
+        <source>Copy &amp;Public Key</source>
+        <translation>Copy &amp;Public Key</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copy P&amp;rivate Key</source>
+        <translation>Copy P&amp;rivate Key</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>&amp;Edit</source>
         <translation>&amp;Edit</translation>
     </message>
     <message>
-        <location line="+194"/>
+        <location line="+111"/>
+        <source>Can't copy public key to clipboard</source>
+        <translation>Can't copy public key to clipboard</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Copy to clipboard</source>
+        <translation>Copy to clipboard</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>Copy private key to clipboard?</source>
+        <translation>Copy private key to clipboard?</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>Can't copy private key to clipboard</source>
+        <translation>Can't copy private key to clipboard</translation>
+    </message>
+    <message>
+        <location line="+115"/>
         <source>Export Address List</source>
         <translation>Export Address List</translation>
     </message>
