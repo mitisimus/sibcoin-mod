@@ -2,11 +2,41 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="en">
 <context>
+    <name>AboutDialog</name>
+    <message>
+        <location filename="../forms/ui_aboutdialog.h" line="+129"/>
+        <source>About Sibcoin Core</source>
+        <translation type="unfinished">About Sibcoin Core</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>&lt;b&gt;Sibcoin Core&lt;/b&gt; version</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copyright &amp;copy; 2009-2014 The Bitcoin Core developers.
+Copyright &amp;copy; 2014-YYYY The Dash Core developers.
+Copyright &amp;copy; 2015-YYYY The Sibcoin Core developers.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>
+This is experimental software.
+
+Distributed under the MIT/X11 software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
+This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit (http://www.openssl.org/) and cryptographic software written by Eric Young (eay@cryptsoft.com) and UPnP software written by Thomas Bernard.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AddressBookPage</name>
     <message>
         <location filename="../forms/addressbookpage.ui" line="+30"/>
         <source>Right-click to edit address or label</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Right-click to edit address or label</translation>
     </message>
     <message>
         <location line="+27"/>
@@ -326,13 +356,13 @@
 <context>
     <name>BitcoinGUI</name>
     <message>
-        <location filename="../bitcoingui.cpp" line="+108"/>
-        <location line="+780"/>
+        <location filename="../bitcoingui.cpp" line="+111"/>
+        <location line="+808"/>
         <source>Sibcoin Core</source>
         <translation>Sibcoin Core</translation>
     </message>
     <message>
-        <location line="-771"/>
+        <location line="-799"/>
         <source>Wallet</source>
         <translation>Wallet</translation>
     </message>
@@ -382,7 +412,18 @@
         <translation>Browse transaction history</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+10"/>
+        <source>&amp;Goods&amp;&amp;&amp;Services</source>
+        <translatorcomment>&amp;Goods&amp;&amp;&amp;Services</translatorcomment>
+        <translation type="unfinished">&amp;Goods&amp;&amp;&amp;Services</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Show links to services that accept sibcoins</source>
+        <translation type="unfinished">Show links to services that accept sibcoins</translation>
+    </message>
+    <message>
+        <location line="+25"/>
         <source>E&amp;xit</source>
         <translation>E&amp;xit</translation>
     </message>
@@ -663,15 +704,14 @@
         <translation>Tabs toolbar</translation>
     </message>
     <message>
-        <location line="+111"/>
+        <location line="+120"/>
         <source>Sibcoin Core client</source>
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location line="+190"/>
+        <location line="+196"/>
         <source>Processed %n blocks of transaction history.</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -892,6 +932,11 @@ Address: %4
     </message>
     <message>
         <location line="+16"/>
+        <source>toggle lock state</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+16"/>
         <source>Tree mode</source>
         <translation>Tree mode</translation>
     </message>
@@ -1012,7 +1057,12 @@ Address: %4
         <translation>Copy change</translation>
     </message>
     <message>
-        <location line="+329"/>
+        <location line="+162"/>
+        <source>Please switch to &quot;List mode&quot; to use this function.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+204"/>
         <source>Non-anonymized input selected. &lt;b&gt;Darksend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use Darksend, please deselect all non-nonymized inputs first and then check Darksend checkbox again.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1047,7 +1097,7 @@ Address: %4
         <translation>n/a</translation>
     </message>
     <message>
-        <location filename="../forms/coincontroldialog.ui" line="-318"/>
+        <location filename="../forms/coincontroldialog.ui" line="-334"/>
         <location filename="../coincontroldialog.cpp" line="-347"/>
         <source>medium</source>
         <translation>medium</translation>
@@ -1170,27 +1220,27 @@ Address: %4
     </message>
     <message>
         <location line="+13"/>
-        <source>Use 2 separate masternodes to mix funds up to 1000 DASH</source>
+        <source>Use 2 separate masternodes to mix funds up to 1000 SIB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>Use 8 separate masternodes to mix funds up to 1000 DASH</source>
+        <source>Use 8 separate masternodes to mix funds up to 1000 SIB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>This option is the quickest and will cost about ~0.025 DASH to anonymize 1000 DASH</source>
+        <source>This option is the quickest and will cost about ~0.025 SIB to anonymize 1000 SIB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>This option is moderately fast and will cost about 0.05 DASH to anonymize 1000 DASH</source>
+        <source>This option is moderately fast and will cost about 0.05 SIB to anonymize 1000 SIB</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+26"/>
-        <source>0.1 DASH per 1000 DASH you anonymize.</source>
+        <source>0.1 SIB per 1000 SIB you anonymize.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1360,7 +1410,7 @@ Address: %4
         <translation>Import</translation>
     </message>
     <message>
-        <location filename="../genandprintdialog.cpp" line="+56"/>
+        <location filename="../genandprintdialog.cpp" line="+68"/>
         <source>Export key pair</source>
         <translation>Export key pair</translation>
     </message>
@@ -1406,24 +1456,22 @@ Address: %4
         <translation>Enter private key and passphrase</translation>
     </message>
     <message>
-        <location line="+90"/>
-        <location line="+16"/>
-        <location line="+20"/>
+        <location line="+146"/>
+        <location line="+21"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
     <message>
-        <location line="-36"/>
         <source>Invalid private key! (Is password correct?)</source>
-        <translation>Invalid private key! (Is password correct?)</translation>
+        <translation type="obsolete">Invalid private key! (Is password correct?)</translation>
     </message>
     <message>
-        <location line="+16"/>
+        <location line="-21"/>
         <source>Cant import key into locked wallet</source>
         <translation>Can&apos;t import key into locked wallet</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+8"/>
         <source>Private key imported</source>
         <translation>Private key imported</translation>
     </message>
@@ -1433,7 +1481,7 @@ Address: %4
         <translation>Private key import error</translation>
     </message>
     <message>
-        <location line="+132"/>
+        <location line="+138"/>
         <location line="+24"/>
         <source>Warning: The Caps Lock key is on!</source>
         <translation>Warning: The Caps Lock key is on!</translation>
@@ -2100,7 +2148,6 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <source>%n Rounds</source>
         <translation type="unfinished">
             <numerusform></numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -2137,7 +2184,6 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <location line="+1"/>
         <source>Denominated inputs have %5 of %n rounds on average</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
             <numerusform></numerusform>
         </translation>
     </message>
@@ -2322,7 +2368,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../bitcoinunits.cpp" line="+252"/>
+        <location filename="../bitcoinunits.cpp" line="+243"/>
         <source>Amount</source>
         <translation type="unfinished">Amount</translation>
     </message>
@@ -2512,7 +2558,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+149"/>
-        <source>Open the Dash debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <source>Open the Sibcoin debug log file from the current data directory. This can take a few seconds for large log files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2804,7 +2850,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+17"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Dash network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Sibcoin network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2820,7 +2866,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="-14"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Dash network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Sibcoin network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3138,7 +3184,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     <message>
         <location line="+30"/>
         <location line="+13"/>
-        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for dash transactions than the network can process.</source>
+        <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for sibcoin transactions than the network can process.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3387,7 +3433,6 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <source>Estimated to begin confirmation within %n block(s).</source>
         <translation type="unfinished">
             <numerusform></numerusform>
-            <numerusform></numerusform>
         </translation>
     </message>
     <message>
@@ -3610,7 +3655,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+21"/>
-        <source>The Sibcoin address the message was signed with</source>
+        <source>The Sibcoin address the message was signed with (e.g. SwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -4404,12 +4449,18 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     <name>WalletModel</name>
     <message>
         <location filename="../walletmodel.cpp" line="+293"/>
-        <location line="+14"/>
+        <location line="+9"/>
+        <location line="+11"/>
         <source>Send Coins</source>
         <translation>Send Coins</translation>
     </message>
     <message>
-        <location line="-14"/>
+        <location line="-20"/>
+        <source>InstantX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 SIB.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>InstantX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 SIB.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4417,7 +4468,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
 <context>
     <name>WalletView</name>
     <message>
-        <location filename="../walletview.cpp" line="+46"/>
+        <location filename="../walletview.cpp" line="+48"/>
         <source>&amp;Export</source>
         <translation>&amp;Export</translation>
     </message>
@@ -4427,12 +4478,12 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Export the data in the current tab to a file</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>Selected amount:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+196"/>
+        <location line="+212"/>
         <source>Backup Wallet</source>
         <translation>Backup Wallet</translation>
     </message>
@@ -4461,1489 +4512,643 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <source>The wallet data was successfully saved to %1.</source>
         <translation>The wallet data was successfully saved to %1.</translation>
     </message>
+    <message>
+        <location line="+64"/>
+        <source>Before sending sibcoins to address please be sure
+that paper wallet has been printed successfully!</source>
+        <translation>Before sending sibcoins to address please be sure
+that paper wallet has been printed successfully!</translation>
+    </message>
 </context>
 <context>
     <name>sibcoin-core</name>
     <message>
-        <location filename="../sibcoinstrings.cpp" line="+22"/>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
-        <translation type="unfinished">Bind to given address and always listen on it. Use [host]:port notation for IPv6</translation>
+        <translation type="obsolete">Bind to given address and always listen on it. Use [host]:port notation for IPv6</translation>
     </message>
     <message>
-        <location line="+10"/>
         <source>Cannot obtain a lock on data directory %s. Sibcoin Core is probably already running.</source>
-        <translation type="unfinished">Cannot obtain a lock on data directory %s. Sibcoin Core is probably already running.</translation>
+        <translation type="obsolete">Cannot obtain a lock on data directory %s. Sibcoin Core is probably already running.</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Darksend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
-        <translation type="unfinished">Darksend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</translation>
+        <translation type="obsolete">Darksend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</translation>
     </message>
     <message>
-        <location line="+18"/>
         <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</source>
-        <translation type="unfinished">Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</translation>
+        <translation type="obsolete">Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
-        <translation type="unfinished">Error: Listening for incoming connections failed (listen returned error %s)</translation>
+        <translation type="obsolete">Error: Listening for incoming connections failed (listen returned error %s)</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</source>
-        <translation type="unfinished">Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</translation>
+        <translation type="obsolete">Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
-        <translation type="unfinished">Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</translation>
+        <translation type="obsolete">Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Execute command when the best block changes (%s in cmd is replaced by block hash)</source>
-        <translation type="unfinished">Execute command when the best block changes (%s in cmd is replaced by block hash)</translation>
+        <translation type="obsolete">Execute command when the best block changes (%s in cmd is replaced by block hash)</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation type="unfinished">Found unconfirmed denominated outputs, will wait till they confirm to continue.</translation>
+        <translation type="obsolete">Found unconfirmed denominated outputs, will wait till they confirm to continue.</translation>
     </message>
     <message>
-        <location line="+8"/>
         <source>In this mode -genproclimit controls how many blocks are generated immediately.</source>
-        <translation type="unfinished">In this mode -genproclimit controls how many blocks are generated immediately.</translation>
+        <translation type="obsolete">In this mode -genproclimit controls how many blocks are generated immediately.</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>InstantX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</source>
-        <translation type="unfinished">InstantX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</translation>
+        <translation type="obsolete">InstantX requires inputs with at least 6 confirmations, you might need to wait a few minutes and try again.</translation>
     </message>
     <message>
-        <location line="+17"/>
         <source>Name to construct url for KeePass entry that stores the wallet passphrase</source>
-        <translation type="unfinished">Name to construct url for KeePass entry that stores the wallet passphrase</translation>
+        <translation type="obsolete">Name to construct url for KeePass entry that stores the wallet passphrase</translation>
     </message>
     <message>
-        <location line="+10"/>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
-        <translation type="unfinished">Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</translation>
+        <translation type="obsolete">Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</translation>
     </message>
     <message>
-        <location line="+7"/>
         <source>Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</source>
-        <translation type="unfinished">Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</translation>
+        <translation type="obsolete">Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</source>
-        <translation type="unfinished">Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</translation>
+        <translation type="obsolete">Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</translation>
     </message>
     <message>
-        <location line="+9"/>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
-        <translation type="unfinished">This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</translation>
+        <translation type="obsolete">This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</translation>
     </message>
     <message>
-        <location line="+20"/>
         <source>Unable to bind to %s on this computer. Sibcoin Core is probably already running.</source>
-        <translation type="unfinished">Unable to bind to %s on this computer. Sibcoin Core is probably already running.</translation>
+        <translation type="obsolete">Unable to bind to %s on this computer. Sibcoin Core is probably already running.</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Unable to locate enough Darksend denominated funds for this transaction.</source>
-        <translation type="unfinished">Unable to locate enough Darksend denominated funds for this transaction.</translation>
+        <translation type="obsolete">Unable to locate enough Darksend denominated funds for this transaction.</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Unable to locate enough Darksend non-denominated funds for this transaction that are not equal 1000 SIB.</source>
-        <translation type="unfinished">Unable to locate enough Darksend non-denominated funds for this transaction that are not equal 1000 SIB.</translation>
+        <translation type="obsolete">Unable to locate enough Darksend non-denominated funds for this transaction that are not equal 1000 SIB.</translation>
     </message>
     <message>
-        <location line="+12"/>
         <source>Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
-        <translation type="unfinished">Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</translation>
+        <translation type="obsolete">Warning: -paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</translation>
     </message>
     <message>
-        <location line="+6"/>
         <source>Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</source>
-        <translation type="unfinished">Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</translation>
+        <translation type="obsolete">Warning: The network does not appear to fully agree! Some miners appear to be experiencing issues.</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Warning: We do not appear to fully agree with our peers! You may need to upgrade, or other nodes may need to upgrade.</source>
-        <translation type="unfinished">Warning: We do not appear to fully agree with our peers! You may need to upgrade, or other nodes may need to upgrade.</translation>
+        <translation type="obsolete">Warning: We do not appear to fully agree with our peers! You may need to upgrade, or other nodes may need to upgrade.</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
-        <translation type="unfinished">Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</translation>
+        <translation type="obsolete">Warning: error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</source>
-        <translation type="unfinished">Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</translation>
+        <translation type="obsolete">Warning: wallet.dat corrupt, data salvaged! Original wallet.dat saved as wallet.{timestamp}.bak in %s; if your balance or transactions are incorrect you should restore from a backup.</translation>
     </message>
     <message>
-        <location line="+10"/>
         <source>You must specify a masternodeprivkey in the configuration. Please see documentation for help.</source>
-        <translation type="unfinished">You must specify a masternodeprivkey in the configuration. Please see documentation for help.</translation>
+        <translation type="obsolete">You must specify a masternodeprivkey in the configuration. Please see documentation for help.</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>(default: 1)</source>
-        <translation type="unfinished">(default: 1)</translation>
+        <translation type="obsolete">(default: 1)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Accept command line and JSON-RPC commands</source>
-        <translation type="unfinished">Accept command line and JSON-RPC commands</translation>
+        <translation type="obsolete">Accept command line and JSON-RPC commands</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Accept connections from outside (default: 1 if no -proxy or -connect)</source>
-        <translation type="unfinished">Accept connections from outside (default: 1 if no -proxy or -connect)</translation>
+        <translation type="obsolete">Accept connections from outside (default: 1 if no -proxy or -connect)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Add a node to connect to and attempt to keep the connection open</source>
-        <translation type="unfinished">Add a node to connect to and attempt to keep the connection open</translation>
+        <translation type="obsolete">Add a node to connect to and attempt to keep the connection open</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Allow DNS lookups for -addnode, -seednode and -connect</source>
-        <translation type="unfinished">Allow DNS lookups for -addnode, -seednode and -connect</translation>
+        <translation type="obsolete">Allow DNS lookups for -addnode, -seednode and -connect</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Already have that input.</source>
-        <translation type="unfinished">Already have that input.</translation>
+        <translation type="obsolete">Already have that input.</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Attempt to recover private keys from a corrupt wallet.dat</source>
-        <translation type="unfinished">Attempt to recover private keys from a corrupt wallet.dat</translation>
+        <translation type="obsolete">Attempt to recover private keys from a corrupt wallet.dat</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Block creation options:</source>
-        <translation type="unfinished">Block creation options:</translation>
+        <translation type="obsolete">Block creation options:</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Can&apos;t denominate: no compatible inputs left.</source>
-        <translation type="unfinished">Can&apos;t denominate: no compatible inputs left.</translation>
+        <translation type="obsolete">Can&apos;t denominate: no compatible inputs left.</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Cannot downgrade wallet</source>
-        <translation type="unfinished">Cannot downgrade wallet</translation>
+        <translation type="obsolete">Cannot downgrade wallet</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Cannot resolve -bind address: &apos;%s&apos;</source>
-        <translation type="unfinished">Cannot resolve -bind address: &apos;%s&apos;</translation>
+        <translation type="obsolete">Cannot resolve -bind address: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Cannot resolve -externalip address: &apos;%s&apos;</source>
-        <translation type="unfinished">Cannot resolve -externalip address: &apos;%s&apos;</translation>
+        <translation type="obsolete">Cannot resolve -externalip address: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Cannot write default address</source>
-        <translation type="unfinished">Cannot write default address</translation>
+        <translation type="obsolete">Cannot write default address</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Collateral not valid.</source>
-        <translation type="unfinished">Collateral not valid.</translation>
+        <translation type="obsolete">Collateral not valid.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Connect only to the specified node(s)</source>
-        <translation type="unfinished">Connect only to the specified node(s)</translation>
+        <translation type="obsolete">Connect only to the specified node(s)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Connect to a node to retrieve peer addresses, and disconnect</source>
-        <translation type="unfinished">Connect to a node to retrieve peer addresses, and disconnect</translation>
+        <translation type="obsolete">Connect to a node to retrieve peer addresses, and disconnect</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Connection options:</source>
-        <translation type="unfinished">Connection options:</translation>
+        <translation type="obsolete">Connection options:</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Corrupted block database detected</source>
-        <translation type="unfinished">Corrupted block database detected</translation>
+        <translation type="obsolete">Corrupted block database detected</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Darksend options:</source>
-        <translation type="unfinished">Darksend options:</translation>
+        <translation type="obsolete">Darksend options:</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Debugging/Testing options:</source>
-        <translation type="unfinished">Debugging/Testing options:</translation>
+        <translation type="obsolete">Debugging/Testing options:</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Discover own IP address (default: 1 when listening and no -externalip)</source>
-        <translation type="unfinished">Discover own IP address (default: 1 when listening and no -externalip)</translation>
+        <translation type="obsolete">Discover own IP address (default: 1 when listening and no -externalip)</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Do not load the wallet and disable wallet RPC calls</source>
-        <translation type="unfinished">Do not load the wallet and disable wallet RPC calls</translation>
+        <translation type="obsolete">Do not load the wallet and disable wallet RPC calls</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Do you want to rebuild the block database now?</source>
-        <translation type="unfinished">Do you want to rebuild the block database now?</translation>
+        <translation type="obsolete">Do you want to rebuild the block database now?</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Done loading</source>
-        <translation type="unfinished">Done loading</translation>
+        <translation type="obsolete">Done loading</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Entries are full.</source>
-        <translation type="unfinished">Entries are full.</translation>
+        <translation type="obsolete">Entries are full.</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Error initializing block database</source>
-        <translation type="unfinished">Error initializing block database</translation>
+        <translation type="obsolete">Error initializing block database</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Error initializing wallet database environment %s!</source>
-        <translation type="unfinished">Error initializing wallet database environment %s!</translation>
+        <translation type="obsolete">Error initializing wallet database environment %s!</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Error loading block database</source>
-        <translation type="unfinished">Error loading block database</translation>
+        <translation type="obsolete">Error loading block database</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Error loading wallet.dat</source>
-        <translation type="unfinished">Error loading wallet.dat</translation>
+        <translation type="obsolete">Error loading wallet.dat</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Error loading wallet.dat: Wallet corrupted</source>
-        <translation type="unfinished">Error loading wallet.dat: Wallet corrupted</translation>
+        <translation type="obsolete">Error loading wallet.dat: Wallet corrupted</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Error opening block database</source>
-        <translation type="unfinished">Error opening block database</translation>
+        <translation type="obsolete">Error opening block database</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Error reading from database, shutting down.</source>
-        <translation type="unfinished">Error reading from database, shutting down.</translation>
+        <translation type="obsolete">Error reading from database, shutting down.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Error recovering public key.</source>
-        <translation type="unfinished">Error recovering public key.</translation>
+        <translation type="obsolete">Error recovering public key.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Error</source>
-        <translation type="unfinished">Error</translation>
+        <translation type="obsolete">Error</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Error: Disk space is low!</source>
-        <translation type="unfinished">Error: Disk space is low!</translation>
+        <translation type="obsolete">Error: Disk space is low!</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Error: Wallet locked, unable to create transaction!</source>
-        <translation type="unfinished">Error: Wallet locked, unable to create transaction!</translation>
+        <translation type="obsolete">Error: Wallet locked, unable to create transaction!</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Error: You already have pending entries in the Darksend pool</source>
-        <translation type="unfinished">Error: You already have pending entries in the Darksend pool</translation>
+        <translation type="obsolete">Error: You already have pending entries in the Darksend pool</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Failed to listen on any port. Use -listen=0 if you want this.</source>
-        <translation type="unfinished">Failed to listen on any port. Use -listen=0 if you want this.</translation>
+        <translation type="obsolete">Failed to listen on any port. Use -listen=0 if you want this.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Failed to read block</source>
-        <translation type="unfinished">Failed to read block</translation>
+        <translation type="obsolete">Failed to read block</translation>
     </message>
     <message>
-        <location line="+8"/>
         <source>If &lt;category&gt; is not supplied, output all debugging information.</source>
-        <translation type="unfinished">If &lt;category&gt; is not supplied, output all debugging information.</translation>
+        <translation type="obsolete">If &lt;category&gt; is not supplied, output all debugging information.</translation>
     </message>
     <message>
-        <location line="-269"/>
-        <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>An error occurred while setting up the RPC address %s port %u for listening: %s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Bind to given address and whitelist peers connecting to it. Use [host]:port notation for IPv6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Change automatic finalized budget voting behavior. mode=auto: Vote for only exact finalized budget match to my generated budget. (string, default: auto)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Continuously rate-limit free transactions to &lt;n&gt;*1000 bytes per minute (default:%u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Disable all Dash specific functionality (Masternodes, Darksend, InstantX, Budgeting) (0-1, default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Enable instantx, show confirmations for locked transactions (bool, default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Enable use of automated darksend for funds stored in this wallet (0-1, default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+8"/>
-        <source>Error: Unsupported argument -socks found. Setting SOCKS version isn&apos;t possible anymore, only SOCKS5 proxies are supported.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+12"/>
-        <source>Fees (in DASH/Kb) smaller than this are considered zero fee for relaying (default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Fees (in DASH/Kb) smaller than this are considered zero fee for transaction creation (default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Flush database activity from memory pool to disk log every &lt;n&gt; megabytes (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>How thorough the block verification of -checkblocks is (0-4, default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Log transaction priority and fee per kB when mining blocks (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Maintain a full transaction index, used by the getrawtransaction rpc call (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Maximum size of data in data carrier transactions we relay and mine (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Maximum total fees to use in a single wallet transaction, setting too low may abort large transactions (default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Number of seconds to keep misbehaving peers from reconnecting (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Output debugging information (default: %u, supplying &lt;category&gt; is optional)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Provide liquidity to Darksend by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Require high priority for relaying free or low-fee transactions (default:%u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Send trace/debug info to console instead of debug.log file (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Set the number of threads for coin generation if enabled (-1 = all cores, default: %d)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Show N confirmations for a successfully locked transaction (0-9999, default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>To use dashd, or the -server option to dash-qt, you must set an rpcpassword in the configuration file:
-%s
-It is recommended you use the following random password:
-rpcuser=sibcoinrpc
-rpcpassword=%s
-(you do not need to remember this password)
-The username and password MUST NOT be the same.
-If the file does not exist, create it with owner-readable-only file permissions.
-It is also recommended to set alertnotify so you are notified of problems;
-for example: alertnotify=echo %%s | mail -s &quot;Sibcoin Alert&quot; admin@foo.com
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+21"/>
-        <source>Unable to locate enough funds for this transaction that are not equal 1000 DASH.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Warning: -maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Warning: Please check that your computer&apos;s date and time are correct! If your clock is wrong Dash Core will not work properly.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>Whitelist peers connecting from the given netmask or IP address. Can be specified multiple times.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>(1945 could be used only on mainnet)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>(default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>(must be 1945 for mainnet)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>&lt;category&gt; can be:
-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Accept public REST requests (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Acceptable ciphers (default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Always query for peer addresses via DNS lookup (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Can&apos;t find random Masternode.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Can&apos;t mix while sync in progress.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Cannot resolve -whitebind address: &apos;%s&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Connect through SOCKS5 proxy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Connect to KeePassHttp on port &lt;port&gt; (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Copyright (C) 2014-%i The Dash Core Developers</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Could not parse -rpcbind value %s as network address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Could not parse masternode.conf</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Darksend is idle.</source>
-        <translation type="unfinished">Darksend is idle.</translation>
+        <translation type="obsolete">Darksend is idle.</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Darksend request complete:</source>
-        <translation type="unfinished">Darksend request complete:</translation>
+        <translation type="obsolete">Darksend request complete:</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Darksend request incomplete:</source>
-        <translation type="unfinished">Darksend request incomplete:</translation>
+        <translation type="obsolete">Darksend request incomplete:</translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Disable safemode, override a real safe mode event (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Enable the client to act as a masternode (0-1, default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Error connecting to Masternode.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+6"/>
-        <source>Error loading wallet.dat: Wallet requires newer version of Sibcoin Core</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Error: A fatal internal error occured, see debug.log for details</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Error: Can&apos;t select current denominated inputs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Error: Unsupported argument -tor found, use -onion.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Fee (in DASH/kB) to add to transactions you send (default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Finalizing transaction.</source>
-        <translation type="unfinished">Finalizing transaction.</translation>
+        <translation type="obsolete">Finalizing transaction.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Force safe mode (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Found enough users, signing ( waiting %s )</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Found enough users, signing ...</source>
-        <translation type="unfinished">Found enough users, signing ...</translation>
+        <translation type="obsolete">Found enough users, signing ...</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Generate coins (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>How many blocks to check at startup (default: %u, 0 = all)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
         <source>Importing...</source>
-        <translation type="unfinished">Importing...</translation>
+        <translation type="obsolete">Importing...</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Imports blocks from external blk000??.dat file</source>
-        <translation type="unfinished">Imports blocks from external blk000??.dat file</translation>
+        <translation type="obsolete">Imports blocks from external blk000??.dat file</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Include IP addresses in debug output (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Incompatible mode.</source>
-        <translation type="unfinished">Incompatible mode.</translation>
+        <translation type="obsolete">Incompatible mode.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Incompatible version.</source>
-        <translation type="unfinished">Incompatible version.</translation>
+        <translation type="obsolete">Incompatible version.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
-        <translation type="unfinished">Incorrect or no genesis block found. Wrong datadir for network?</translation>
+        <translation type="obsolete">Incorrect or no genesis block found. Wrong datadir for network?</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Information</source>
-        <translation type="unfinished">Information</translation>
+        <translation type="obsolete">Information</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Initialization sanity check failed. Sibcoin Core is shutting down.</source>
-        <translation type="unfinished">Initialization sanity check failed. Sibcoin Core is shutting down.</translation>
+        <translation type="obsolete">Initialization sanity check failed. Sibcoin Core is shutting down.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Input is not valid.</source>
-        <translation type="unfinished">Input is not valid.</translation>
+        <translation type="obsolete">Input is not valid.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>InstantX options:</source>
-        <translation type="unfinished">InstantX options:</translation>
+        <translation type="obsolete">InstantX options:</translation>
     </message>
     <message>
-        <location line="+16"/>
-        <source>Keep N DASH anonymized (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Last successful Darksend action was too recent.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Limit size of signature cache to &lt;n&gt; entries (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Line: %d</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: %u or testnet: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Listen for connections on &lt;port&gt; (default: %u or testnet: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Lock is already in place.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Lock masternodes from masternode configuration file (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Maintain at most &lt;n&gt; connections to peers (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
         <source>Mixing in progress...</source>
-        <translation type="unfinished">Mixing in progress...</translation>
+        <translation type="obsolete">Mixing in progress...</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Need to specify a port with -whitebind: &apos;%s&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>No Masternodes detected.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>No compatible Masternode found.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+7"/>
-        <source>Not in the Masternode list.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Number of automatic wallet backups (default: 10)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Only accept block chain matching built-in checkpoints (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Only connect to nodes in network &lt;net&gt; (ipv4, ipv6 or onion)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Prepend debug output with timestamp (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+12"/>
-        <source>Run a thread to flush wallet periodically (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Server certificate file (default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Server private key (default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Session timed out.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Set external address:port to get to this masternode (example: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Set key pool size to &lt;n&gt; (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Set minimum block size in bytes (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Set the number of threads to service RPC calls (default: %d)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Sets the DB_PRIVATE flag in the wallet db environment (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>Signing timed out.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Specify configuration file (default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Specify connection timeout in milliseconds (minimum: 1, default: %d)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Specify masternode configuration file (default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Specify pid file (default: %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>Spend unconfirmed change when sending transactions (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Stop running after importing blocks from disk (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Submitted following entries to masternode: %u / %d</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Submitted to masternode, waiting in queue %s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Synchronization doesn&apos;t yet started</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Synchronization failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Synchronization finished</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Synchronizing budgets...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Synchronizing masternode winners...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Synchronizing masternodes...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Synchronizing sporks...</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+4"/>
-        <source>This is not a Masternode.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+14"/>
-        <source>Use KeePass 2 integration using KeePassHttp plugin (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Use N separate masternodes to anonymize funds  (2-8, default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Use UPnP to map the listening port (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+9"/>
-        <source>Wallet needed to be rewritten: restart Sibcoin Core to complete</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+5"/>
-        <source>Warning: Unsupported argument -benchmark ignored, use -debug=bench.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Warning: Unsupported argument -debugnet ignored, use -debug=net.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Will retry...</source>
-        <translation type="unfinished">Will retry...</translation>
+        <translation type="obsolete">Will retry...</translation>
     </message>
     <message>
-        <location line="-140"/>
         <source>Insufficient funds.</source>
-        <translation type="unfinished">Insufficient funds.</translation>
+        <translation type="obsolete">Insufficient funds.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Invalid -onion address: &apos;%s&apos;</source>
-        <translation type="unfinished">Invalid -onion address: &apos;%s&apos;</translation>
+        <translation type="obsolete">Invalid -onion address: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Invalid -proxy address: &apos;%s&apos;</source>
-        <translation type="unfinished">Invalid -proxy address: &apos;%s&apos;</translation>
+        <translation type="obsolete">Invalid -proxy address: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: &apos;%s&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Invalid amount for -minrelaytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
-        <translation type="unfinished">Invalid amount for -minrelaytxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
+        <translation type="obsolete">Invalid amount for -minrelaytxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Invalid amount for -mintxfee=&lt;amount&gt;: &apos;%s&apos;</source>
-        <translation type="unfinished">Invalid amount for -mintxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
+        <translation type="obsolete">Invalid amount for -mintxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least %s)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
-        <translation type="unfinished">Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
+        <translation type="obsolete">Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Invalid masternodeprivkey. Please see documenation.</source>
-        <translation type="unfinished">Invalid masternodeprivkey. Please see documenation.</translation>
+        <translation type="obsolete">Invalid masternodeprivkey. Please see documenation.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Invalid netmask specified in -whitelist: &apos;%s&apos;</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Invalid port detected in masternode.conf</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Invalid private key.</source>
-        <translation type="unfinished">Invalid private key.</translation>
+        <translation type="obsolete">Invalid private key.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Invalid script detected.</source>
-        <translation type="unfinished">Invalid script detected.</translation>
+        <translation type="obsolete">Invalid script detected.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>KeePassHttp id for the established association</source>
-        <translation type="unfinished">KeePassHttp id for the established association</translation>
+        <translation type="obsolete">KeePassHttp id for the established association</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>KeePassHttp key for AES encrypted communication with KeePass</source>
-        <translation type="unfinished">KeePassHttp key for AES encrypted communication with KeePass</translation>
+        <translation type="obsolete">KeePassHttp key for AES encrypted communication with KeePass</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
-        <translation type="unfinished">Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</translation>
+        <translation type="obsolete">Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Last Darksend was too recent.</source>
-        <translation type="unfinished">Last Darksend was too recent.</translation>
+        <translation type="obsolete">Last Darksend was too recent.</translation>
     </message>
     <message>
-        <location line="+6"/>
         <source>Loading addresses...</source>
-        <translation type="unfinished">Loading addresses...</translation>
+        <translation type="obsolete">Loading addresses...</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Loading block index...</source>
-        <translation type="unfinished">Loading block index...</translation>
+        <translation type="obsolete">Loading block index...</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Loading wallet... (%3.2f %%)</source>
-        <translation type="unfinished">Loading wallet... (%3.2f %%)</translation>
+        <translation type="obsolete">Loading wallet... (%3.2f %%)</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Loading wallet...</source>
-        <translation type="unfinished">Loading wallet...</translation>
+        <translation type="obsolete">Loading wallet...</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Masternode options:</source>
-        <translation type="unfinished">Masternode options:</translation>
+        <translation type="obsolete">Masternode options:</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Masternode queue is full.</source>
-        <translation type="unfinished">Masternode queue is full.</translation>
+        <translation type="obsolete">Masternode queue is full.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Masternode:</source>
-        <translation type="unfinished">Masternode:</translation>
+        <translation type="obsolete">Masternode:</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Missing input transaction information.</source>
-        <translation type="unfinished">Missing input transaction information.</translation>
+        <translation type="obsolete">Missing input transaction information.</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>No funds detected in need of denominating.</source>
-        <translation type="unfinished">No funds detected in need of denominating.</translation>
+        <translation type="obsolete">No funds detected in need of denominating.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>No matching denominations found for mixing.</source>
-        <translation type="unfinished">No matching denominations found for mixing.</translation>
+        <translation type="obsolete">No matching denominations found for mixing.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Node relay options:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Non-standard public key detected.</source>
-        <translation type="unfinished">Non-standard public key detected.</translation>
+        <translation type="obsolete">Non-standard public key detected.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Not compatible with existing transactions.</source>
-        <translation type="unfinished">Not compatible with existing transactions.</translation>
+        <translation type="obsolete">Not compatible with existing transactions.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Not enough file descriptors available.</source>
-        <translation type="unfinished">Not enough file descriptors available.</translation>
+        <translation type="obsolete">Not enough file descriptors available.</translation>
     </message>
     <message>
-        <location line="+5"/>
         <source>Options:</source>
-        <translation type="unfinished">Options:</translation>
+        <translation type="obsolete">Options:</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Password for JSON-RPC connections</source>
-        <translation type="unfinished">Password for JSON-RPC connections</translation>
+        <translation type="obsolete">Password for JSON-RPC connections</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
-        <translation type="unfinished">RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</translation>
+        <translation type="obsolete">RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>RPC server options:</source>
-        <translation type="unfinished">RPC server options:</translation>
+        <translation type="obsolete">RPC server options:</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>RPC support for HTTP persistent connections (default: %d)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Randomly drop 1 of every &lt;n&gt; network messages</source>
-        <translation type="unfinished">Randomly drop 1 of every &lt;n&gt; network messages</translation>
+        <translation type="obsolete">Randomly drop 1 of every &lt;n&gt; network messages</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Randomly fuzz 1 of every &lt;n&gt; network messages</source>
-        <translation type="unfinished">Randomly fuzz 1 of every &lt;n&gt; network messages</translation>
+        <translation type="obsolete">Randomly fuzz 1 of every &lt;n&gt; network messages</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Rebuild block chain index from current blk000??.dat files</source>
-        <translation type="unfinished">Rebuild block chain index from current blk000??.dat files</translation>
+        <translation type="obsolete">Rebuild block chain index from current blk000??.dat files</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Receive and display P2P network alerts (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Relay and mine data carrier transactions (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Relay non-P2SH multisig (default: %u)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Rescan the block chain for missing wallet transactions</source>
-        <translation type="unfinished">Rescan the block chain for missing wallet transactions</translation>
+        <translation type="obsolete">Rescan the block chain for missing wallet transactions</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Rescanning...</source>
-        <translation type="unfinished">Rescanning...</translation>
+        <translation type="obsolete">Rescanning...</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Run in the background as a daemon and accept commands</source>
-        <translation type="unfinished">Run in the background as a daemon and accept commands</translation>
+        <translation type="obsolete">Run in the background as a daemon and accept commands</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>Session not complete!</source>
-        <translation type="unfinished">Session not complete!</translation>
+        <translation type="obsolete">Session not complete!</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Set database cache size in megabytes (%d to %d, default: %d)</source>
-        <translation type="unfinished">Set database cache size in megabytes (%d to %d, default: %d)</translation>
+        <translation type="obsolete">Set database cache size in megabytes (%d to %d, default: %d)</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Set maximum block size in bytes (default: %d)</source>
-        <translation type="unfinished">Set maximum block size in bytes (default: %d)</translation>
+        <translation type="obsolete">Set maximum block size in bytes (default: %d)</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Set the masternode private key</source>
-        <translation type="unfinished">Set the masternode private key</translation>
+        <translation type="obsolete">Set the masternode private key</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Show all debugging options (usage: --help -help-debug)</source>
-        <translation type="unfinished">Show all debugging options (usage: --help -help-debug)</translation>
+        <translation type="obsolete">Show all debugging options (usage: --help -help-debug)</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Shrink debug.log file on client startup (default: 1 when no -debug)</source>
-        <translation type="unfinished">Shrink debug.log file on client startup (default: 1 when no -debug)</translation>
+        <translation type="obsolete">Shrink debug.log file on client startup (default: 1 when no -debug)</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Signing failed.</source>
-        <translation type="unfinished">Signing failed.</translation>
+        <translation type="obsolete">Signing failed.</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Signing transaction failed</source>
-        <translation type="unfinished">Signing transaction failed</translation>
+        <translation type="obsolete">Signing transaction failed</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Specify data directory</source>
-        <translation type="unfinished">Specify data directory</translation>
+        <translation type="obsolete">Specify data directory</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Specify wallet file (within data directory)</source>
-        <translation type="unfinished">Specify wallet file (within data directory)</translation>
+        <translation type="obsolete">Specify wallet file (within data directory)</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Specify your own public address</source>
-        <translation type="unfinished">Specify your own public address</translation>
+        <translation type="obsolete">Specify your own public address</translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>This help message</source>
-        <translation type="unfinished">This help message</translation>
+        <translation type="obsolete">This help message</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>This is experimental software.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>This is intended for regression testing tools and app development.</source>
-        <translation type="unfinished">This is intended for regression testing tools and app development.</translation>
+        <translation type="obsolete">This is intended for regression testing tools and app development.</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Transaction amount too small</source>
-        <translation type="unfinished">Transaction amount too small</translation>
+        <translation type="obsolete">Transaction amount too small</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Transaction amounts must be positive</source>
-        <translation type="unfinished">Transaction amounts must be positive</translation>
+        <translation type="obsolete">Transaction amounts must be positive</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Transaction created successfully.</source>
-        <translation type="unfinished">Transaction created successfully.</translation>
+        <translation type="obsolete">Transaction created successfully.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Transaction fees are too high.</source>
-        <translation type="unfinished">Transaction fees are too high.</translation>
+        <translation type="obsolete">Transaction fees are too high.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Transaction not valid.</source>
-        <translation type="unfinished">Transaction not valid.</translation>
+        <translation type="obsolete">Transaction not valid.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Transaction too large for fee policy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Transaction too large</source>
-        <translation type="unfinished">Transaction too large</translation>
+        <translation type="obsolete">Transaction too large</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Transmitting final transaction.</source>
-        <translation type="unfinished">Transmitting final transaction.</translation>
+        <translation type="obsolete">Transmitting final transaction.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Unable to bind to %s on this computer (bind returned error %s)</source>
-        <translation type="unfinished">Unable to bind to %s on this computer (bind returned error %s)</translation>
+        <translation type="obsolete">Unable to bind to %s on this computer (bind returned error %s)</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Unable to sign spork message, wrong key?</source>
-        <translation type="unfinished">Unable to sign spork message, wrong key?</translation>
+        <translation type="obsolete">Unable to sign spork message, wrong key?</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Unknown network specified in -onlynet: &apos;%s&apos;</source>
-        <translation type="unfinished">Unknown network specified in -onlynet: &apos;%s&apos;</translation>
+        <translation type="obsolete">Unknown network specified in -onlynet: &apos;%s&apos;</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Unknown state: id = %u</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Upgrade wallet to latest format</source>
-        <translation type="unfinished">Upgrade wallet to latest format</translation>
+        <translation type="obsolete">Upgrade wallet to latest format</translation>
     </message>
     <message>
-        <location line="+3"/>
         <source>Use OpenSSL (https) for JSON-RPC connections</source>
-        <translation type="unfinished">Use OpenSSL (https) for JSON-RPC connections</translation>
+        <translation type="obsolete">Use OpenSSL (https) for JSON-RPC connections</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Use UPnP to map the listening port (default: 1 when listening)</source>
-        <translation type="unfinished">Use UPnP to map the listening port (default: 1 when listening)</translation>
+        <translation type="obsolete">Use UPnP to map the listening port (default: 1 when listening)</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Use the test network</source>
-        <translation type="unfinished">Use the test network</translation>
+        <translation type="obsolete">Use the test network</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Username for JSON-RPC connections</source>
-        <translation type="unfinished">Username for JSON-RPC connections</translation>
+        <translation type="obsolete">Username for JSON-RPC connections</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Value more than Darksend pool maximum allows.</source>
-        <translation type="unfinished">Value more than Darksend pool maximum allows.</translation>
+        <translation type="obsolete">Value more than Darksend pool maximum allows.</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Verifying blocks...</source>
-        <translation type="unfinished">Verifying blocks...</translation>
+        <translation type="obsolete">Verifying blocks...</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Verifying wallet...</source>
-        <translation type="unfinished">Verifying wallet...</translation>
+        <translation type="obsolete">Verifying wallet...</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Wallet %s resides outside data directory %s</source>
-        <translation type="unfinished">Wallet %s resides outside data directory %s</translation>
+        <translation type="obsolete">Wallet %s resides outside data directory %s</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Wallet is locked.</source>
-        <translation type="unfinished">Wallet is locked.</translation>
+        <translation type="obsolete">Wallet is locked.</translation>
     </message>
     <message>
-        <location line="+2"/>
         <source>Wallet options:</source>
-        <translation type="unfinished">Wallet options:</translation>
+        <translation type="obsolete">Wallet options:</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Wallet window title</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Warning</source>
-        <translation type="unfinished">Warning</translation>
+        <translation type="obsolete">Warning</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>Warning: This version is obsolete, upgrade required!</source>
-        <translation type="unfinished">Warning: This version is obsolete, upgrade required!</translation>
+        <translation type="obsolete">Warning: This version is obsolete, upgrade required!</translation>
     </message>
     <message>
-        <location line="+4"/>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
-        <translation type="unfinished">You need to rebuild the database using -reindex to change -txindex</translation>
+        <translation type="obsolete">You need to rebuild the database using -reindex to change -txindex</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Your entries added successfully.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Your transaction was accepted into the pool!</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Zapping all transactions from wallet...</source>
-        <translation type="unfinished">Zapping all transactions from wallet...</translation>
+        <translation type="obsolete">Zapping all transactions from wallet...</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>on startup</source>
-        <translation type="unfinished">on startup</translation>
+        <translation type="obsolete">on startup</translation>
     </message>
     <message>
-        <location line="+1"/>
         <source>wallet.dat corrupt, salvage failed</source>
-        <translation type="unfinished">wallet.dat corrupt, salvage failed</translation>
+        <translation type="obsolete">wallet.dat corrupt, salvage failed</translation>
     </message>
 </context>
 </TS>
