@@ -240,6 +240,9 @@ void PrepareShutdown()
 #ifdef ENABLE_WALLET
     if (pwalletMain)
         pwalletMain->Flush(false);
+    if (psibDB)
+        psibDB->Close();
+    //GenerateBitcoins(false, NULL, 0);
 #endif
     MapPort(false);
     UnregisterValidationInterface(peerLogic.get());
