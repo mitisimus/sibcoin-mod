@@ -215,7 +215,7 @@ obj/build.h: FORCE
 	  $(abs_top_srcdir)
 libdash_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between dashd and dash-qt
+# server: shared between sibcoind and sibcoin-qt
 libdash_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libdash_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libdash_server_a_SOURCES = \
@@ -451,7 +451,7 @@ if GLIBC_BACK_COMPAT
 libdash_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
-# cli: shared between dash-cli and dash-qt
+# cli: shared between sibcoin-cli and sibcoin-qt
 libdash_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libdash_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libdash_cli_a_SOURCES = \
