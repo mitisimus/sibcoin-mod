@@ -437,7 +437,7 @@ QString AddressTableModel::labelForAddress(const QString &address) const
 
 static CKeyID getKeyID(const QString &addr)
 {
-    std::string strAddress = addr.toStdString();
+	std::string strAddress = addr.toStdString();
 
 	CBitcoinAddress address;
 	if (!address.SetString(strAddress))
@@ -474,8 +474,8 @@ QString AddressTableModel::privkeyForAddress(const QString &addr) const
         WalletModel::EncryptionStatus encStatus = walletModel->getEncryptionStatus();
         
         // check if wallet encrypted
-        if(encStatus == walletModel->Locked || encStatus == walletModel->UnlockedForAnonymizationOnly) // FIXME: this doesn't work
-        {
+        if(encStatus == walletModel->Locked || encStatus == walletModel->UnlockedForMixingOnly)        
+        {       
             WalletModel::UnlockContext ctx(walletModel->requestUnlock(true));
             if(ctx.isValid())
                 gotKey = wallet->GetKey(keyID, vchSecret);

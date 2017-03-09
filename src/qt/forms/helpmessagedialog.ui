@@ -67,7 +67,7 @@
         <bool>false</bool>
        </property>
        <property name="pixmap">
-        <pixmap resource="../sibcoin.qrc">:/images/drkblue/about</pixmap>
+        <pixmap resource="../sibcoin.qrc">:/images/trad/about</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
