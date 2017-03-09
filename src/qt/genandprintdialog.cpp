@@ -14,10 +14,10 @@
 //#include "allocators.h"
 #include "../rpc/server.h"
 //#include "../rpcprotocol.h"
-#include "json/json_spirit_writer.h"
+#include "univalue/include/univalue.h"
 #include <stdlib.h>
 
-#include "ecwrapper.h"
+//#include "ecwrapper.h"
 #include "bip/bip38.h"
 #include "hash.h"
 
@@ -161,7 +161,7 @@ void GenAndPrintDialog::textChanged()
 
 void GenAndPrintDialog::on_importButton_clicked()
 {
-    json_spirit::Array params;
+    UniValue params;
 
     QString privkey_str = ui->passEdit1->text();
     QString passwd = ui->passEdit2->text();
@@ -218,11 +218,11 @@ void GenAndPrintDialog::on_importButton_clicked()
 //	QMessageBox::information(this, tr("Info"), QString::fromStdString(secret));
 //	return;
 
-    params.push_back(json_spirit::Value(secret.c_str()));
-    params.push_back(json_spirit::Value(label_str.toStdString().c_str()));
+    params.push_back(UniValue(secret.c_str()));
+    params.push_back(UniValue(label_str.toStdString().c_str()));
 
     WalletModel::EncryptionStatus encStatus = model->getEncryptionStatus();
-    if(encStatus == model->Locked || encStatus == model->UnlockedForAnonymizationOnly)
+    if(encStatus == model->Locked || encStatus == model->UnlockedForMixingOnly)
     {
         ui->importButton->setEnabled(false);
         WalletModel::UnlockContext ctx(model->requestUnlock(true));
@@ -245,7 +245,7 @@ void GenAndPrintDialog::on_importButton_clicked()
         // To be investigate
         catch (...)
         {
-            cerr << "Import private key error!" << endl;
+            std::cerr << "Import private key error!" << std::endl;            
 //            for (json_spirit::Object::iterator it = err.begin(); it != err.end(); ++it)
 //            {
 //                cerr << it->name_ << " = " << it->value_.get_str() << endl;
@@ -260,7 +260,7 @@ bool readHtmlTemplate(const QString &res_name, QString &htmlContent)
 {
     QFile  htmlFile(res_name);
     if (!htmlFile.open(QIODevice::ReadOnly | QIODevice::Text)){
-        cerr << "Cant open " << res_name.toStdString() << endl;
+        std::cerr << "Cant open " << res_name.toStdString() << std::endl;
         return false;
     }
 
