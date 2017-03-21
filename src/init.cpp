@@ -237,7 +237,6 @@ void PrepareShutdown()
     StopREST();
     StopRPC();
     StopHTTPServer();
-//    ShutdownRPCMining();
 #ifdef ENABLE_WALLET
     if (pwalletMain)
         pwalletMain->Flush(false);
@@ -1986,8 +1985,6 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
         return InitError(strNodeError);
 
     // ********************************************************* Step 13: finished
-    // InitRPCMining is needed here so getwork/getblocktemplate in the GUI debug console works properly.
-    //InitRPCMining();
 
     SetRPCWarmupFinished();
     uiInterface.InitMessage(_("Done loading"));
