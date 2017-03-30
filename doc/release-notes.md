@@ -1,16 +1,16 @@
-Dash Core version 0.12.3.2
+Sibcoin Core version 0.12.3.2
 ==========================
 
 Release is now available from:
 
-  <https://www.dash.org/downloads/#wallets>
+  <https://sibcoin.money/download>
 
 This is a new minor version release, bringing various bugfixes and other
 improvements.
 
 Please report bugs using the issue tracker at github:
 
-  <https://github.com/dashpay/dash/issues>
+  <https://github.com/ivansib/sibcoin/issues>
 
 
 Upgrading and downgrading
@@ -117,9 +117,9 @@ Darkcoin was rebranded to Dash.
 
 Dash Core tree 0.12.0.x was a fork of Bitcoin Core tree 0.10.
 
-Dash Core tree 0.12.1.x was a fork of Bitcoin Core tree 0.12.
+Sibcoin Core tree 0.15.x was a fork of Dash Core tree 0.11.
 
-These release are considered obsolete. Old release notes can be found here:
+Sibcoin Core tree 0.16.3.x was a fork of Dash Core tree 0.12.3.x.
 
 - [v0.12.3.1](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.12.3.1.md) released Jul/03/2018
 - [v0.12.2.3](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.12.2.3.md) released Jan/12/2018
