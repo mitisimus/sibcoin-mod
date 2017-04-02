@@ -7,7 +7,7 @@ architectures:
 packages:
 - "faketime"
 remotes:
-- "url": "https://github.com/dashpay/dash-detached-sigs.git"
+- "url": "https://github.com/ivansib/sibcoin-detached-sigs.git"
   "dir": "signature"
 files:
 - "sibcoin-osx-unsigned.tar.gz"
