@@ -493,7 +493,7 @@ sibcoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 sibcoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-sibcoin_cli_SOURCES += sibcoind-cli-res.rc
+sibcoin_cli_SOURCES += sibcoin-cli-res.rc
 endif
 
 sibcoin_cli_LDADD = \
