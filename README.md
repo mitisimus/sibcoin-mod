@@ -14,7 +14,7 @@ What is Sibcoin?
 Sibcoin is an experimental new digital currency that enables anonymous, instant
 payments to anyone, anywhere in the world. Sibcoin uses peer-to-peer technology
 to operate with no central authority: managing transactions and issuing money
-are carried out collectively by the network. SibCore is the name of open
+are carried out collectively by the network. Sibcoin Core is the name of open
 source software which enables the use of this currency.
 
 
@@ -62,7 +62,7 @@ to see it.
 
 **testnet and regtest modes**
 
-Run with the -testnet option to run with "play dashs" on the test network, if you
+Run with the -testnet option to run with "play sibcoins" on the test network, if you
 are testing multi-machine code that needs to operate across the internet.
 
 If you are testing something that can run on one machine, run with the -regtest option.

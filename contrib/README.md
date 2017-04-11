@@ -22,8 +22,8 @@ Build Tools and Keys
 ---------------------
 
 ### [Debian](/contrib/debian) ###
-Contains files used to package dashd/dash-qt
-for Debian-based Linux systems. If you compile dashd/dash-qt yourself, there are some useful files here.
+Contains files used to package sibcoind/sibcoin-qt
+for Debian-based Linux systems. If you compile sibcoind/sibcoin-qt yourself, there are some useful files here.
 
 ### [Gitian-descriptors](/contrib/gitian-descriptors) ###
 Notes on getting Gitian builds up and running using KVM.
