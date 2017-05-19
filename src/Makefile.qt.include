@@ -103,6 +103,16 @@ PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
 PROTOBUF_PROTO = qt/paymentrequest.proto
 
+BIP_H = \
+  bip/config.h \
+  bip/scrypt_platform.h \
+  bip/crypto_aesctr.h \
+  bip/crypto_scrypt.h \
+  bip/sha256.h \
+  bip/sysendian.h \
+  bip/crypto.h \
+  bip/bip38.h
+
 BITCOIN_QT_H = \
   qt/addressbookpage.h \
   qt/addresstablemodel.h \
@@ -591,15 +601,26 @@ RES_MOVIES = $(wildcard qt/res/movies/spinner-*.png)
 
 BITCOIN_RC = qt/res/sibcoin-qt-res.rc
 
-BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
+BIP_CPPFLAGS = -I$(srcdir)/bip -msse2
+
+BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt $(BIP_CPPFLAGS) -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
 
 qt_libdashqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(QT_DBUS_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 qt_libdashqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_libdashqt_a_CFLAGS = -fPIC
 
 qt_libdashqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
-  $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_HTML) $(RES_MOVIES)
+  $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_HTML) $(RES_MOVIES) \
+  bip/crypto_aesctr.c \
+  bip/crypto_scrypt-nosse.c \
+  bip/crypto_scrypt-ref.c \
+  bip/crypto_scrypt-sse.c \
+  bip/sha256.c \
+  bip/crypto.c \
+  bip/bip38.cpp \
+  $(BIP_H)
 
 nodist_qt_libdashqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
   $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
