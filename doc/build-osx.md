@@ -29,7 +29,7 @@ Build Sibcoin Core
 
 1. Clone the Sibcoin Core source code and cd into `dash`
 
-        git clone https://github.com/ivansib/sib16.git
+        git clone https://github.com/ivansib/sibcoin.git
         cd sibcoin
 
 2.  Build Sibcoin Core:
