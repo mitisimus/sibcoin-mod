@@ -163,6 +163,8 @@ void GenAndPrintDialog::on_importButton_clicked()
 {
     UniValue params;
 
+    params.setArray();
+
     QString privkey_str = ui->passEdit1->text();
     QString passwd = ui->passEdit2->text();
     QString label_str = ui->passEdit3->text();
