@@ -238,6 +238,7 @@ void GenAndPrintDialog::on_importButton_clicked()
         
         try
         {
+            ui->importButton->setEnabled(false);
             importprivkey(params, false);
             QMessageBox::information(this, tr(""), tr("Private key imported"));
             close();
