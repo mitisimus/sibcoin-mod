@@ -311,11 +311,10 @@ void GenAndPrintDialog::on_printButton_clicked()
     std::string crypted = EncodeBase58Check(crypted_key);
 
     QString qcrypted = QString::fromStdString(crypted);
-    QPrinter printer;
-    printer.setResolution(QPrinter::HighResolution);
-    printer.setPageMargins(0, 10, 0, 0, QPrinter::Millimeter);
+    QPrinter *printer = new QPrinter(QPrinter::HighResolution);
+    printer->setPageMargins(0, 10, 0, 0, QPrinter::Millimeter);
     
-    QPrintDialog *dlg = new QPrintDialog(&printer, this);
+    QPrintDialog *dlg = new QPrintDialog(printer, this);
     if(dlg->exec() == QDialog::Accepted) {
         
         QImage img1(200, 200, QImage::Format_ARGB32);
@@ -347,8 +346,8 @@ void GenAndPrintDialog::on_printButton_clicked()
         document->addResource(QTextDocument::ImageResource, QUrl(":qr1.png" ), img1);
         document->addResource(QTextDocument::ImageResource, QUrl(":qr2.png" ), img2);
         document->setHtml(html);
-        document->setPageSize(QSizeF(printer.pageRect().size()));
-        document->print(&printer);
+        document->setPageSize(QSizeF(printer->pageRect(QPrinter::Point).size()));
+        document->print(printer);
         
         model->setAddressBook(keyid, strAccount.toStdString(), "send");
         SendCoinsRecipient rcp(qaddress, strAccount, 0, "");
@@ -357,6 +356,7 @@ void GenAndPrintDialog::on_printButton_clicked()
         accept();
     }
     delete dlg;
+    delete printer;
 }
 
 void GenAndPrintDialog::printAsQR(QPainter &painter, QString &vchKey, int shift)
