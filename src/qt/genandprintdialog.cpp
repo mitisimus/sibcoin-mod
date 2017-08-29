@@ -308,7 +308,7 @@ void GenAndPrintDialog::on_printButton_clicked()
     // Test address (BTC) for key above
     //address = "1Jq6MksXQVWzrznvZzxkV6oY57oWXD9TXB";
 
-    std::vector<unsigned char> crypted_key = encrypt_bip38(priv_data, address, passwd.toStdString());
+    std::vector<unsigned char> crypted_key = encrypt_bip38(priv_data, address, passwd.toStdString(), secret.IsCompressed());
     std::string crypted = EncodeBase58Check(crypted_key);
 
     QString qcrypted = QString::fromStdString(crypted);

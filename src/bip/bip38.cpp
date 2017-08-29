@@ -269,7 +269,7 @@ std::vector<unsigned char> decrypt_bip38(const std::vector<unsigned char> enc_da
 }
 
 std::vector<unsigned char> encrypt_bip38(const std::vector<unsigned char> priv_key,
-		const std::string& address, const std::string& passwd)
+		const std::string& address, const std::string& passwd, bool isCompressed)
 {
     unsigned char key[64];
     unsigned char derivedhalf1[32], derivedhalf2[32];
@@ -335,6 +335,11 @@ std::vector<unsigned char> encrypt_bip38(const std::vector<unsigned char> priv_k
 	//		return enc.b58encode(privkey + check)
 
 	unsigned char flagbyte = 0xc0;// 0b11100000; // 11 no-ec 1 compressed-pub 00 future 0 ec only 00 future
+        
+        if (isCompressed) {
+            flagbyte = 0xe0;
+        }       
+        
 	unsigned char pref1 = 0x01;
 	unsigned char pref2 = 0x42;
 
