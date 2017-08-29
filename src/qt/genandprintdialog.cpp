@@ -4,6 +4,7 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
+#include <QApplication>
 #include "genandprintdialog.h"
 #include "ui_genandprintdialog.h"
 
@@ -161,6 +162,7 @@ void GenAndPrintDialog::textChanged()
 
 void GenAndPrintDialog::on_importButton_clicked()
 {
+    qApp->setOverrideCursor(Qt::WaitCursor);
     UniValue params;
 
     params.setArray();
@@ -179,6 +181,7 @@ void GenAndPrintDialog::on_importButton_clicked()
 
     if (!DecodeBase58(secret, priv_data)) {
         LogPrintf("DecodeBase58 failed: str=%s\n", secret.c_str());
+        qApp->setOverrideCursor(Qt::ArrowCursor);
         QMessageBox::critical(this, tr("Error"), tr("Import error: Incorrect key format"));
         return;
     }
@@ -210,6 +213,7 @@ void GenAndPrintDialog::on_importButton_clicked()
             secret = CBitcoinSecret(key).ToString();
         }
         else {
+	    qApp->setOverrideCursor(Qt::ArrowCursor);
             QMessageBox::information(this, tr(""), QString::fromStdString("This BIP38 mode is not implemented"));
             return;
         }
@@ -232,6 +236,7 @@ void GenAndPrintDialog::on_importButton_clicked()
         if(!ctx.isValid())
         {
             // Unlock wallet was cancelled
+            qApp->setOverrideCursor(Qt::ArrowCursor);
             QMessageBox::critical(this, tr("Error"), tr("Cant import key into locked wallet"));
             ui->importButton->setEnabled(true);
             return;
@@ -242,6 +247,7 @@ void GenAndPrintDialog::on_importButton_clicked()
     {
         ui->importButton->setEnabled(false);
         importprivkey(params, false);
+        qApp->setOverrideCursor(Qt::ArrowCursor);
         QMessageBox::information(this, tr(""), tr("Private key imported"));
         close();
     }
@@ -255,9 +261,12 @@ void GenAndPrintDialog::on_importButton_clicked()
 //            {
 //                cerr << it->name_ << " = " << it->value_.get_str() << endl;
 //            }
+        qApp->setOverrideCursor(Qt::ArrowCursor);
         QMessageBox::critical(this, tr("Error"), tr("Private key import error"));
         ui->importButton->setEnabled(true);
     }
+
+    qApp->setOverrideCursor(Qt::ArrowCursor);
 }
 
 bool readHtmlTemplate(const QString &res_name, QString &htmlContent)
