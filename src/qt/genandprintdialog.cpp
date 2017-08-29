@@ -179,6 +179,7 @@ void GenAndPrintDialog::on_importButton_clicked()
 
     if (!DecodeBase58(secret, priv_data)) {
         LogPrintf("DecodeBase58 failed: str=%s\n", secret.c_str());
+        QMessageBox::critical(this, tr("Error"), tr("Import error: Incorrect key format"));
         return;
     }
 
@@ -234,28 +235,28 @@ void GenAndPrintDialog::on_importButton_clicked()
             QMessageBox::critical(this, tr("Error"), tr("Cant import key into locked wallet"));
             ui->importButton->setEnabled(true);
             return;
-        }
-        
-        try
-        {
-            ui->importButton->setEnabled(false);
-            importprivkey(params, false);
-            QMessageBox::information(this, tr(""), tr("Private key imported"));
-            close();
-        }
-        //catch (json_spirit::Object &err)
-        // TODO: Cant catch exception of type json_spirit::Object &
-        // To be investigate
-        catch (...)
-        {
-            std::cerr << "Import private key error!" << std::endl;
+        }        
+    }
+    
+    try
+    {
+        ui->importButton->setEnabled(false);
+        importprivkey(params, false);
+        QMessageBox::information(this, tr(""), tr("Private key imported"));
+        close();
+    }
+    //catch (json_spirit::Object &err)
+    // TODO: Cant catch exception of type json_spirit::Object &
+    // To be investigate
+    catch (...)
+    {
+        LogPrintf("Import private key error!\n");
 //            for (json_spirit::Object::iterator it = err.begin(); it != err.end(); ++it)
 //            {
 //                cerr << it->name_ << " = " << it->value_.get_str() << endl;
 //            }
-            QMessageBox::critical(this, tr("Error"), tr("Private key import error"));
-            ui->importButton->setEnabled(true);
-        }
+        QMessageBox::critical(this, tr("Error"), tr("Private key import error"));
+        ui->importButton->setEnabled(true);
     }
 }
 
@@ -263,7 +264,7 @@ bool readHtmlTemplate(const QString &res_name, QString &htmlContent)
 {
     QFile  htmlFile(res_name);
     if (!htmlFile.open(QIODevice::ReadOnly | QIODevice::Text)){
-        std::cerr << "Cant open " << res_name.toStdString() << std::endl;
+        LogPrintf("Cant open %s\n", res_name.toStdString());
         return false;
     }
 

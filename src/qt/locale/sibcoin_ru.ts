@@ -1478,6 +1478,10 @@ Address: %4
         <translation type="obsolete">Приватный ключ не валиден! (Корректно ли был введен пароль?)</translation>
     </message>
     <message>
+        <source>Import error: Incorrect key format</source>
+        <translation>Ошибка импорта: некорректный формат</translation>
+    </message>
+    <message>
         <location line="-21"/>
         <source>Cant import key into locked wallet</source>
         <translation>Не могу импортировать ключ, когда бумажник заблокирован</translation>
