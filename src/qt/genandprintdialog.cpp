@@ -46,7 +46,7 @@
 #include <qrencode.h>
 //#endif
 
-
+#include <QDebug>
 
 GenAndPrintDialog::GenAndPrintDialog(Mode mode, QWidget *parent) :
     QDialog(parent),
@@ -112,6 +112,25 @@ void GenAndPrintDialog::setModel(WalletModel *model)
 
 QString GenAndPrintDialog::getURI(){
     return uri;
+}
+
+bool GenAndPrintDialog::checkPasswd(const CKey &key, const QString &passwd, const QString &privkey_str)
+{
+    std::string address = CBitcoinAddress(key.GetPubKey().GetID()).ToString();
+    std::vector<unsigned char> priv_data;
+    for (const unsigned char *i = key.begin(); i != key.end(); i++ ) {
+        priv_data.push_back(*i);
+    }
+
+    std::vector<unsigned char> crypted_key = encrypt_bip38(priv_data, address, passwd.toStdString(), key.IsCompressed());
+    std::string crypted = EncodeBase58Check(crypted_key);
+    QString qcrypted = QString::fromStdString(crypted);
+
+    if (qcrypted == privkey_str) {
+        return true;
+    }
+
+    return false;
 }
 
 void GenAndPrintDialog::accept()
@@ -211,12 +230,18 @@ void GenAndPrintDialog::on_importButton_clicked()
             priv_data = decrypt_bip38(priv_data, passwd.toStdString());
             key.Set(priv_data.begin(), priv_data.end(), compressed);
             secret = CBitcoinSecret(key).ToString();
-        }
-        else {
-	    qApp->setOverrideCursor(Qt::ArrowCursor);
+
+            if (!checkPasswd(key, passwd, privkey_str)) {
+                qApp->setOverrideCursor(Qt::ArrowCursor);
+                QMessageBox::information(this, tr(""), QString::fromStdString("Password is incorrect"));
+                return;
+            }
+    	}
+    	else {
+            qApp->setOverrideCursor(Qt::ArrowCursor);
             QMessageBox::information(this, tr(""), QString::fromStdString("This BIP38 mode is not implemented"));
             return;
-        }
+    	}
     }
     else {
         // use secret as is
