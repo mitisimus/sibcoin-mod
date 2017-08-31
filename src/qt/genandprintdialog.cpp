@@ -117,20 +117,30 @@ QString GenAndPrintDialog::getURI(){
 bool GenAndPrintDialog::checkPasswd(const CKey &key, const QString &passwd, const QString &privkey_str)
 {
     std::string address = CBitcoinAddress(key.GetPubKey().GetID()).ToString();
-    std::vector<unsigned char> priv_data;
-    for (const unsigned char *i = key.begin(); i != key.end(); i++ ) {
-        priv_data.push_back(*i);
-    }
-
-    std::vector<unsigned char> crypted_key = encrypt_bip38(priv_data, address, passwd.toStdString(), key.IsCompressed());
-    std::string crypted = EncodeBase58Check(crypted_key);
-    QString qcrypted = QString::fromStdString(crypted);
+    QString qcrypted = cryptedKey(key, address, passwd);
 
     if (qcrypted == privkey_str) {
         return true;
     }
 
     return false;
+}
+
+QString GenAndPrintDialog::cryptedKey(const CKey &secret, const std::string &address, const QString &passwd) {
+    std::vector<unsigned char> priv_data;
+    for (const unsigned char *i = secret.begin(); i != secret.end(); i++ ) {
+        priv_data.push_back(*i);
+    }
+
+    // Test address (BTC) for key above
+    //address = "1Jq6MksXQVWzrznvZzxkV6oY57oWXD9TXB";
+
+    std::vector<unsigned char> crypted_key = encrypt_bip38(priv_data, address, passwd.toStdString(), secret.IsCompressed());
+    std::string crypted = EncodeBase58Check(crypted_key);
+
+    QString qcrypted = QString::fromStdString(crypted);
+
+    return qcrypted;
 }
 
 void GenAndPrintDialog::accept()
@@ -333,19 +343,7 @@ void GenAndPrintDialog::on_printButton_clicked()
     
     QString qsecret = QString::fromStdString(secret_str);
     QString qaddress = QString::fromStdString(address);
-    
-    std::vector<unsigned char> priv_data;
-    for (const unsigned char *i = secret.begin(); i != secret.end(); i++ ) {
-    	priv_data.push_back(*i);
-    }
-
-    // Test address (BTC) for key above
-    //address = "1Jq6MksXQVWzrznvZzxkV6oY57oWXD9TXB";
-
-    std::vector<unsigned char> crypted_key = encrypt_bip38(priv_data, address, passwd.toStdString(), secret.IsCompressed());
-    std::string crypted = EncodeBase58Check(crypted_key);
-
-    QString qcrypted = QString::fromStdString(crypted);
+    QString qcrypted = cryptedKey(secret, address, passwd);
     QPrinter *printer = new QPrinter(QPrinter::HighResolution);
     printer->setPageMargins(0, 10, 0, 0, QPrinter::Millimeter);
     
