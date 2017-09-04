@@ -42,7 +42,6 @@ private:
     std::string salt;
     QString uri;
 
-    bool checkPasswd(const CKey &key, const QString &passwd, const QString &privkey_str);
     QString cryptedKey(const CKey &secret, const std::__cxx11::string &address, const QString &passwd);
    
 private Q_SLOTS:

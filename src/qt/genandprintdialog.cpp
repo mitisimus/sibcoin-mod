@@ -46,8 +46,6 @@
 #include <qrencode.h>
 //#endif
 
-#include <QDebug>
-
 GenAndPrintDialog::GenAndPrintDialog(Mode mode, QWidget *parent) :
     QDialog(parent),
     ui(new Ui::GenAndPrintDialog),
@@ -112,18 +110,6 @@ void GenAndPrintDialog::setModel(WalletModel *model)
 
 QString GenAndPrintDialog::getURI(){
     return uri;
-}
-
-bool GenAndPrintDialog::checkPasswd(const CKey &key, const QString &passwd, const QString &privkey_str)
-{
-    std::string address = CBitcoinAddress(key.GetPubKey().GetID()).ToString();
-    QString qcrypted = cryptedKey(key, address, passwd);
-
-    if (qcrypted == privkey_str) {
-        return true;
-    }
-
-    return false;
 }
 
 QString GenAndPrintDialog::cryptedKey(const CKey &secret, const std::string &address, const QString &passwd) {
@@ -208,11 +194,17 @@ void GenAndPrintDialog::on_importButton_clicked()
     // Without EC
     // secret = "6PRVWUbkzzsbcVac2qwfssoUJAN1Xhrg6bNk8J7Nzm5H7kxEbn2Nh2ZoGg";
 
-    if (!DecodeBase58(secret, priv_data)) {
+    if (!DecodeBase58Check(secret, priv_data)) {
         LogPrintf("DecodeBase58 failed: str=%s\n", secret.c_str());
         qApp->setOverrideCursor(Qt::ArrowCursor);
         QMessageBox::critical(this, tr("Error"), tr("Import error: Incorrect key format"));
         return;
+    }
+
+    std::vector<unsigned char> prefix;
+
+    for (int i = 0; i < 7; i++) {
+        prefix.push_back(priv_data[i]);
     }
 
     CKey key;
@@ -241,7 +233,8 @@ void GenAndPrintDialog::on_importButton_clicked()
             key.Set(priv_data.begin(), priv_data.end(), compressed);
             secret = CBitcoinSecret(key).ToString();
 
-            if (!checkPasswd(key, passwd, privkey_str)) {
+            std::string address = CBitcoinAddress(key.GetPubKey().GetID()).ToString();
+            if (!check_bip38(address, prefix, key.IsCompressed())) {
                 qApp->setOverrideCursor(Qt::ArrowCursor);
                 QMessageBox::information(this, tr(""), QString::fromStdString("Password is incorrect"));
                 return;

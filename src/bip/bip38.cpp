@@ -354,3 +354,37 @@ std::vector<unsigned char> encrypt_bip38(const std::vector<unsigned char> priv_k
 
 	return std::vector<unsigned char>(&enc_key[0], &enc_key[3 + ADDRESSHASH_SIZE + 32]);
 }
+
+bool check_bip38(const std::string &address, const std::vector<unsigned char> &prefix, bool isCompressed)
+{
+    const unsigned char *p_address = reinterpret_cast<const unsigned char*>(address.data());
+    unsigned char addresshash[32];
+    bu_Hash(addresshash, &p_address[0], 34);
+
+
+    unsigned char flagbyte = 0xc0;
+
+    if (isCompressed) {
+        flagbyte = 0xe0;
+    }
+
+    unsigned char pref1 = 0x01;
+    unsigned char pref2 = 0x42;
+
+    unsigned char enc_key[128];
+    enc_key[0] = pref1;
+    enc_key[1] = pref2;
+    enc_key[2] = flagbyte;
+    memcpy(enc_key + 3, addresshash, 4);
+
+    std::vector<unsigned char> prefHas;
+    for (int i = 0; i < 7; i++) {
+        prefHas.push_back(*(enc_key + i));
+    }
+
+    if (prefHas == prefix) {
+        return true;
+    }
+
+    return false;
+}
