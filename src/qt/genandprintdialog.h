@@ -42,7 +42,7 @@ private:
     std::string salt;
     QString uri;
 
-    QString cryptedKey(const CKey &secret, const std::__cxx11::string &address, const QString &passwd);
+    QString cryptedKey(const CKey &secret, const std::string &address, const QString &passwd);
    
 private Q_SLOTS:
     void textChanged();
