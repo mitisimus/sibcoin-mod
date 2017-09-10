@@ -253,11 +253,12 @@ public:
             ( 285000, uint256S("0x0000000015154aede63086af920588b23c0373ecd54cc2a6ce6a3b13716ccf54"))
             ( 320120, uint256S("0x00000000005edc464fae36f0fc017180790b1b8ea4c47e22d14dac84397c3bdf"))
             ( 382500, uint256S("0x000000000162cf9f60425d4d29878aa9405d20cc71498e9f3c376a9d603f73d1"))
+            ( 470000, uint256S("0x000000000072204721fb38827230766fdbc2eddd32cadf38b4823412f39a6e8a"))
         };
 
         chainTxData = ChainTxData{
-            1491065946, // * UNIX timestamp of last known number of transactions
-            636501,    // * total number of transactions between genesis and that timestamp
+            1504949109, // * UNIX timestamp of last known number of transactions
+            804201,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.1         // * estimated number of transactions per second after that timestamp
         };
@@ -382,11 +383,12 @@ public:
             ( 5650, uint256S("0x000000131d2a832c254b06d37ee035a5a92d4266b3e489ed1ecb185e4f06ea0f"))
             (36000, uint256S("0x00000052f0544f3bac8783fc7423bec0bfd129bf61bdcdd0d63efb2d06159fdf"))
             (66500, uint256S("0x00000173bae72f2b196f494de1d68aa52a6345cf56f6e2553e560b203910ba4b"))
+            (124000, uint256S("0x000003a62774640efb599b2e542f318530d8258b49ac1fe644d5222ad3664db6"))
             };
 
         chainTxData = ChainTxData{        
-            1491095097, // * UNIX timestamp of last known number of transactions
-            66853,    // * total number of transactions between genesis and that timestamp
+            1504838932, // * UNIX timestamp of last known number of transactions
+            125436,    // * total number of transactions between genesis and that timestamp
                         //   (the tx=... number in the SetBestChain debug.log lines)
             0.01        // * estimated number of transactions per second after that timestamp
         };
