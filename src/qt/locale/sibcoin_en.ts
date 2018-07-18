@@ -49,7 +49,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;New</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+10"/>
         <source>Copy the currently selected address to the system clipboard</source>
         <translation>Copy the currently selected address to the system clipboard</translation>
     </message>
@@ -59,7 +59,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Copy</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+10"/>
         <source>Delete the currently selected address from the list</source>
         <translation>Delete the currently selected address from the list</translation>
     </message>
@@ -69,7 +69,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Delete</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+23"/>
         <source>Export the data in the current tab to a file</source>
         <translation>Export the data in the current tab to a file</translation>
     </message>
@@ -79,7 +79,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Export</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+16"/>
         <source>C&amp;lose</source>
         <translation>C&amp;lose</translation>
     </message>
@@ -187,7 +187,7 @@ This product includes software developed by the OpenSSL Project for use in the O
 <context>
     <name>AddressTableModel</name>
     <message>
-        <location filename="../addresstablemodel.cpp" line="+169"/>
+        <location filename="../addresstablemodel.cpp" line="+171"/>
         <source>Label</source>
         <translation>Label</translation>
     </message>
@@ -231,8 +231,8 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
     <message>
         <location line="+3"/>
-        <source>For anonymization only</source>
-        <translation>For anonymization only</translation>
+        <source>Only for mixing via PrivateSend</source>
+        <translation>Only for mixing via PrivateSend</translation>
     </message>
     <message>
         <location filename="../askpassphrasedialog.cpp" line="+47"/>
@@ -265,14 +265,14 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Change passphrase</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Enter the old and new passphrase to the wallet.</source>
-        <translation>Enter the old and new passphrase to the wallet.</translation>
-    </message>
-    <message>
         <location line="+46"/>
         <source>Confirm wallet encryption</source>
         <translation>Confirm wallet encryption</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SIBCOINS&lt;/b&gt;!</source>
+        <translation>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SIBCOINS&lt;/b&gt;!</translation>
     </message>
     <message>
         <location line="-72"/>
@@ -283,11 +283,6 @@ This product includes software developed by the OpenSSL Project for use in the O
         <location line="+73"/>
         <source>Are you sure you wish to encrypt your wallet?</source>
         <translation>Are you sure you wish to encrypt your wallet?</translation>
-    </message>
-    <message>
-        <location line="+0"/>
-        <source>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SIBCOINS&lt;/b&gt;!</source>
-        <translation>Warning: If you encrypt your wallet and lose your passphrase, you will &lt;b&gt;LOSE ALL OF YOUR SIBCOINS&lt;/b&gt;!</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -354,6 +349,17 @@ This product includes software developed by the OpenSSL Project for use in the O
     </message>
 </context>
 <context>
+    <name>BanTableModel</name>
+    <message>
+        <source>IP/Netmask</source>
+        <translation>IP/Netmask</translation>
+    </message>
+    <message>
+        <source>Banned Until</source>
+        <translation>Banned Until</translation>
+    </message>
+</context>
+<context>
     <name>BitcoinGUI</name>
     <message>
         <location filename="../bitcoingui.cpp" line="+111"/>
@@ -372,7 +378,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Node</translation>
     </message>
     <message>
-        <location line="+144"/>
+        <location line="+138"/>
         <source>&amp;Overview</source>
         <translation>&amp;Overview</translation>
     </message>
@@ -392,7 +398,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Send coins to a Sibcoin address</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+14"/>
         <source>&amp;Receive</source>
         <translation>&amp;Receive</translation>
     </message>
@@ -402,7 +408,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Request payments (generates QR codes and sibcoin: URIs)</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+14"/>
         <source>&amp;Transactions</source>
         <translation>&amp;Transactions</translation>
     </message>
@@ -410,6 +416,14 @@ This product includes software developed by the OpenSSL Project for use in the O
         <location line="+1"/>
         <source>Browse transaction history</source>
         <translation>Browse transaction history</translation>
+    </message>
+    <message>
+        <source>&amp;Masternodes</source>
+        <translation>&amp;Masternodes</translation>
+    </message>
+    <message>
+        <source>Browse masternodes</source>
+        <translation>Browse masternodes</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -423,7 +437,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation type="unfinished">Show links to services that accept sibcoins</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="+29"/>
         <source>E&amp;xit</source>
         <translation>E&amp;xit</translation>
     </message>
@@ -443,13 +457,11 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+3"/>
-        <location line="+2"/>
         <source>About &amp;Qt</source>
         <translation>About &amp;Qt</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+1"/>
         <source>Show information about Qt</source>
         <translation>Show information about Qt</translation>
     </message>
@@ -594,12 +606,12 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Open &amp;Configuration File</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+2"/>
         <source>Open configuration file</source>
         <translation>Open configuration file</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <location line="+3"/>
         <source>Show Automatic &amp;Backups</source>
         <translation>Show Automatic &amp;Backups</translation>
     </message>
@@ -609,7 +621,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Show automatically created wallet backups</translation>
     </message>
     <message>
-        <location line="+2"/>
+        <location line="+8"/>
         <source>&amp;Sending addresses...</source>
         <translation>&amp;Sending addresses...</translation>
     </message>
@@ -694,7 +706,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>&amp;Tools</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+12"/>
         <source>&amp;Help</source>
         <translation>&amp;Help</translation>
     </message>
@@ -761,8 +773,43 @@ This product includes software developed by the OpenSSL Project for use in the O
             <numerusform>%n hour(s)</numerusform>
         </translation>
     </message>
+    <message>
+        <location line="+31"/>
+        <source>Open Wallet &amp;Configuration File</source>
+        <translation>Open Wallet &amp;Configuration File</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Open &amp;Masternode Configuration File</source>
+        <translation>Open &amp;Masternode Configuration File</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Open Masternode configuration file</source>
+        <translation>Open Masternode configuration file</translation>
+    </message>
+    <message>
+        <location line="+20"/>
+        <source>Show the Sibcoin Core help message to get a list with possible Sibcoin Core command-line options</source>
+        <translation>Show the Sibcoin Core help message to get a list with possible Sibcoin Core command-line options</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>&amp;PrivateSend information</source>
+        <translation>&amp;PrivateSend information</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Show the PrivateSend basic information</source>
+        <translation>Show the PrivateSend basic information</translation>
+    </message>
     <message numerus="yes">
-        <location line="+4"/>
+        <location line="+494"/>
+        <source>Processed %n block(s) of transaction history.</source>
+        <translation><numerusform>Processed %n block(s) of transaction history.</numerusform><numerusform>Processed %n block(s) of transaction history.</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <location line="+19"/>
         <source>%n day(s)</source>
         <translation>
             <numerusform>%n day(s)</numerusform>
@@ -812,7 +859,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Transactions after this will not yet be visible.</translation>
     </message>
     <message>
-        <location line="+27"/>
+        <location line="+79"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -827,7 +874,36 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Information</translation>
     </message>
     <message>
-        <location line="+74"/>
+        <source>Date: %1
+</source>
+        <translation>Date: %1
+</translation>
+    </message>
+    <message>
+        <source>Amount: %1
+</source>
+        <translation>Amount: %1
+</translation>
+    </message>
+    <message>
+        <source>Type: %1
+</source>
+        <translation>Type: %1
+</translation>
+    </message>
+    <message>
+        <source>Label: %1
+</source>
+        <translation>Label: %1
+</translation>
+    </message>
+    <message>
+        <source>Address: %1
+</source>
+        <translation>Address: %1
+</translation>
+    </message>
+    <message>
         <source>Sent transaction</source>
         <translation>Sent transaction</translation>
     </message>
@@ -837,30 +913,17 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Incoming transaction</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Date: %1
-Amount: %2
-Type: %3
-Address: %4
-</source>
-        <translation>Date: %1
-Amount: %2
-Type: %3
-Address: %4
-</translation>
+        <location line="+75"/>
+        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for mixing only</source>
+        <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for mixing only</translation>
     </message>
     <message>
-        <location line="+70"/>
+        <location line="-10"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</source>
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt;</translation>
     </message>
     <message>
-        <location line="+10"/>
-        <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonimization only</source>
-        <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;unlocked&lt;/b&gt; for anonimization only</translation>
-    </message>
-    <message>
-        <location line="+10"/>
+        <location line="+20"/>
         <source>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</source>
         <translation>Wallet is &lt;b&gt;encrypted&lt;/b&gt; and currently &lt;b&gt;locked&lt;/b&gt;</translation>
     </message>
@@ -868,12 +931,11 @@ Address: %4
 <context>
     <name>ClientModel</name>
     <message>
-        <location filename="../clientmodel.cpp" line="+73"/>
-        <source>Total: %1 (DS compatible: %2 / Enabled: %3)</source>
-        <translation type="unfinished"></translation>
+        <source>Total: %1 (PS compatible: %2 / Enabled: %3)</source>
+        <translation>Total: %1 (PS compatible: %2 / Enabled: %3)</translation>
     </message>
     <message>
-        <location line="+107"/>
+        <location line="+91"/>
         <source>Network Alert</source>
         <translation>Network Alert</translation>
     </message>
@@ -933,7 +995,7 @@ Address: %4
     <message>
         <location line="+16"/>
         <source>toggle lock state</source>
-        <translation type="unfinished"></translation>
+        <translation>toggle lock state</translation>
     </message>
     <message>
         <location line="+16"/>
@@ -966,9 +1028,8 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+5"/>
-        <source>DS Rounds</source>
-        <translation type="unfinished"></translation>
+        <source>PS Rounds</source>
+        <translation>PS Rounds</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -991,7 +1052,7 @@ Address: %4
         <translation>Priority</translation>
     </message>
     <message>
-        <location filename="../coincontroldialog.cpp" line="+49"/>
+        <location filename="../coincontroldialog.cpp" line="+54"/>
         <source>Copy address</source>
         <translation>Copy address</translation>
     </message>
@@ -1057,14 +1118,14 @@ Address: %4
         <translation>Copy change</translation>
     </message>
     <message>
-        <location line="+162"/>
+        <location line="+163"/>
         <source>Please switch to &quot;List mode&quot; to use this function.</source>
-        <translation type="unfinished"></translation>
+        <translation>Please switch to &quot;List mode&quot; to use this function.</translation>
     </message>
     <message>
-        <location line="+204"/>
-        <source>Non-anonymized input selected. &lt;b&gt;Darksend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use Darksend, please deselect all non-nonymized inputs first and then check Darksend checkbox again.</source>
-        <translation type="unfinished"></translation>
+        <location line="+205"/>
+        <source>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-nonymized inputs first and then check PrivateSend checkbox again.</source>
+        <translation>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-nonymized inputs first and then check PrivateSend checkbox again.</translation>
     </message>
     <message>
         <location line="+32"/>
@@ -1087,18 +1148,31 @@ Address: %4
         <translation>medium-high</translation>
     </message>
     <message>
-        <location line="+216"/>
+        <source>This label turns red if the transaction size is greater than 1000 bytes.</source>
+        <translation>This label turns red if the transaction size is greater than 1000 bytes.</translation>
+    </message>
+    <message>
+        <source>This label turns red if the priority is smaller than &quot;medium&quot;.</source>
+        <translation>This label turns red if the priority is smaller than &quot;medium&quot;.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>This label turns red if any recipient receives an amount smaller than %1.</source>
+        <translation>This label turns red if any recipient receives an amount smaller than %1.</translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Can vary +/- %1 duff(s) per input.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+132"/>
+        <location line="+131"/>
         <source>n/a</source>
         <translation>n/a</translation>
     </message>
     <message>
         <location filename="../forms/coincontroldialog.ui" line="-334"/>
-        <location filename="../coincontroldialog.cpp" line="-347"/>
+        <location filename="../coincontroldialog.cpp" line="-363"/>
         <source>medium</source>
         <translation>medium</translation>
     </message>
@@ -1133,7 +1207,7 @@ Address: %4
         <translation>none</translation>
     </message>
     <message>
-        <location line="+141"/>
+        <location line="+157"/>
         <source>yes</source>
         <translation>yes</translation>
     </message>
@@ -1144,12 +1218,7 @@ Address: %4
         <translation>no</translation>
     </message>
     <message>
-        <location filename="../coincontroldialog.cpp" line="+16"/>
-        <source>This label turns red, if the transaction size is greater than 1000 bytes.</source>
-        <translation>This label turns red, if the transaction size is greater than 1000 bytes.</translation>
-    </message>
-    <message>
-        <location line="+1"/>
+        <location filename="../coincontroldialog.cpp" line="+17"/>
         <location line="+5"/>
         <source>This means a fee of at least %1 per kB is required.</source>
         <translation>This means a fee of at least %1 per kB is required.</translation>
@@ -1165,18 +1234,8 @@ Address: %4
         <translation>Transactions with higher priority are more likely to get included into a block.</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>This label turns red, if the priority is smaller than &quot;medium&quot;.</source>
-        <translation>This label turns red, if the priority is smaller than &quot;medium&quot;.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
-        <source>This label turns red, if any recipient receives an amount smaller than %1.</source>
-        <translation>This label turns red, if any recipient receives an amount smaller than %1.</translation>
-    </message>
-    <message>
-        <location line="+55"/>
-        <location line="+65"/>
+        <location line="+60"/>
+        <location line="+64"/>
         <source>(no label)</source>
         <translation>(no label)</translation>
     </message>
@@ -1194,9 +1253,8 @@ Address: %4
 <context>
     <name>DarksendConfig</name>
     <message>
-        <location filename="../forms/darksendconfig.ui" line="+14"/>
-        <source>Configure Darksend</source>
-        <translation>Configure Darksend</translation>
+        <source>Configure PrivateSend</source>
+        <translation>Configure PrivateSend</translation>
     </message>
     <message>
         <location line="+12"/>
@@ -1257,23 +1315,23 @@ Address: %4
         <location filename="../darksendconfig.cpp" line="+43"/>
         <location line="+15"/>
         <location line="+15"/>
-        <source>Darksend Configuration</source>
-        <translation>Darksend Configuration</translation>
+        <source>PrivateSend Configuration</source>
+        <translation>PrivateSend Configuration</translation>
     </message>
     <message>
         <location line="-29"/>
-        <source>Darksend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Sibcoin&apos;s configuration screen.</source>
-        <translation>Darksend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Sibcoin&apos;s configuration screen.</translation>
+        <source>PrivateSend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Sibcoin&apos;s configuration screen.</source>
+        <translation>PrivateSend was successfully set to basic (%1 and 2 rounds). You can change this at any time by opening Sibcoin&apos;s configuration screen.</translation>
     </message>
     <message>
         <location line="+15"/>
-        <source>Darksend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Sibcoin&apos;s configuration screen.</source>
-        <translation>Darksend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Sibcoin&apos;s configuration screen.</translation>
+        <source>PrivateSend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Sibcoin&apos;s configuration screen.</source>
+        <translation>PrivateSend was successfully set to high (%1 and 8 rounds). You can change this at any time by opening Sibcoin&apos;s configuration screen.</translation>
     </message>
     <message>
         <location line="+15"/>
-        <source>Darksend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Sibcoin&apos;s configuration screen.</source>
-        <translation>Darksend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Sibcoin&apos;s configuration screen.</translation>
+        <source>PrivateSend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Sibcoin&apos;s configuration screen.</source>
+        <translation>PrivateSend was successfully set to maximum (%1 and 16 rounds). You can change this at any time by opening Sibcoin&apos;s configuration screen.</translation>
     </message>
 </context>
 <context>
@@ -1347,7 +1405,7 @@ Address: %4
 <context>
     <name>FreespaceChecker</name>
     <message>
-        <location filename="../intro.cpp" line="+70"/>
+        <location filename="../intro.cpp" line="+75"/>
         <source>A new data directory will be created.</source>
         <translation>A new data directory will be created.</translation>
     </message>
@@ -1515,7 +1573,7 @@ Address: %4
         <translation type="unfinished">About Sibcoin Core</translation>
     </message>
     <message>
-        <location line="+19"/>
+        <location line="+20"/>
         <source>Command-line options</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1530,17 +1588,31 @@ Address: %4
         <translation>command-line options</translation>
     </message>
     <message>
-        <location line="+4"/>
-        <source>UI options</source>
-        <translation>UI options</translation>
+        <source>UI Options:</source>
+        <translation>UI Options:</translation>
     </message>
     <message>
-        <location line="+1"/>
-        <source>Choose data directory on startup (default: 0)</source>
-        <translation>Choose data directory on startup (default: 0)</translation>
+        <source>Choose data directory on startup (default: %u)</source>
+        <translation>Choose data directory on startup (default: %u)</translation>
     </message>
     <message>
-        <location line="+1"/>
+        <source>Show splash screen on startup (default: %u)</source>
+        <translation>Show splash screen on startup (default: %u)</translation>
+    </message>
+    <message>
+        <source>Reset all settings changes made over the GUI</source>
+        <translation>Reset all settings changes made over the GUI</translation>
+    </message>
+    <message>
+        <source>PrivateSend information</source>
+        <translation>PrivateSend information</translation>
+    </message>
+    <message>
+        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the Sibcoin in your wallet is comprised of different &quot;inputs&quot; which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times..&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type=&quot;1&quot;&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.1 SIB, 1 SIB, 10 SIB and 100 SIB -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called &quot;masternodes.&quot; These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know &quot;who&quot; you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users&apos; wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it&apos;s called a &quot;round.&quot; Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these &quot;change addresses.&quot; Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more info see &lt;a href=&quot;http://sibcoin.org/privatesend&quot;&gt;http://sibcoin.org/privatesend&lt;/a&gt;         </source>
+        <translation>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the Sibcoin in your wallet is comprised of different &quot;inputs&quot; which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times..&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type=&quot;1&quot;&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.1 SIB, 1 SIB, 10 SIB and 100 SIB -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called &quot;masternodes.&quot; These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know &quot;who&quot; you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users&apos; wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it&apos;s called a &quot;round.&quot; Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these &quot;change addresses.&quot; Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more info see &lt;a href=&quot;http://sibcoin.org/en/privatesend&quot;&gt;http://sibcoin.org/en/privatesend&lt;/a&gt;         </translation>
+    </message>
+    <message>
+        <location line="-50"/>
         <source>Set language, for example &quot;de_DE&quot; (default: system locale)</source>
         <translation>Set language, for example &quot;de_DE&quot; (default: system locale)</translation>
     </message>
@@ -1553,11 +1625,6 @@ Address: %4
         <location line="+1"/>
         <source>Set SSL root certificates for payment request (default: -system-)</source>
         <translation>Set SSL root certificates for payment request (default: -system-)</translation>
-    </message>
-    <message>
-        <location line="+1"/>
-        <source>Show splash screen on startup (default: 1)</source>
-        <translation>Show splash screen on startup (default: 1)</translation>
     </message>
 </context>
 <context>
@@ -1603,7 +1670,7 @@ Address: %4
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+25"/>
         <source>Error</source>
         <translation>Error</translation>
     </message>
@@ -1616,6 +1683,126 @@ Address: %4
         <location line="+3"/>
         <source>(of %1 GB needed)</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>MasternodeList</name>
+    <message>
+        <source>Form</source>
+        <translation>Form</translation>
+    </message>
+    <message>
+        <source>My Masternodes</source>
+        <translation>My Masternodes</translation>
+    </message>
+    <message>
+        <source>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your masternode should be running but you still do not see &quot;ENABLED&quot; in &quot;Status&quot; field.</source>
+        <translation>Note: Status of your masternodes in local wallet can potentially be slightly incorrect.&lt;br /&gt;Always wait for wallet to sync additional data and then double check from another node&lt;br /&gt;if your masternode should be running but you still do not see &quot;ENABLED&quot; in &quot;Status&quot; field.</translation>
+    </message>
+    <message>
+        <source>Alias</source>
+        <translation>Alias</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation>Address</translation>
+    </message>
+    <message>
+        <source>Protocol</source>
+        <translation>Protocol</translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation>Status</translation>
+    </message>
+    <message>
+        <source>Active</source>
+        <translation>Active</translation>
+    </message>
+    <message>
+        <source>Last Seen</source>
+        <translation>Last Seen</translation>
+    </message>
+    <message>
+        <source>Payee</source>
+        <translation>Payee</translation>
+    </message>
+    <message>
+        <source>S&amp;tart alias</source>
+        <translation>S&amp;tart alias</translation>
+    </message>
+    <message>
+        <source>Start &amp;all</source>
+        <translation>Start &amp;all</translation>
+    </message>
+    <message>
+        <source>Start &amp;MISSING</source>
+        <translation>Start &amp;MISSING</translation>
+    </message>
+    <message>
+        <source>&amp;Update status</source>
+        <translation>&amp;Update status</translation>
+    </message>
+    <message>
+        <source>Status will be updated automatically in (sec):</source>
+        <translation>Status will be updated automatically in (sec):</translation>
+    </message>
+    <message>
+        <location line="+15"/>
+        <source>Amount of Sibcoin to keep anonymized</source>
+        <translation>Amount of Sibcoin to keep anonymized</translation>
+    </message>
+    <message>
+        <source>All Masternodes</source>
+        <translation>All Masternodes</translation>
+    </message>
+    <message>
+        <source>Filter List:</source>
+        <translation>Filter List:</translation>
+    </message>
+    <message>
+        <source>Filter masternode list</source>
+        <translation>Filter masternode list</translation>
+    </message>
+    <message>
+        <source>Node Count:</source>
+        <translation>Node Count:</translation>
+    </message>
+    <message>
+        <source>Start alias</source>
+        <translation>Start alias</translation>
+    </message>
+    <message>
+        <source>Confirm masternode start</source>
+        <translation>Confirm masternode start</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to start masternode %1?</source>
+        <translation>Are you sure you want to start masternode %1?</translation>
+    </message>
+    <message>
+        <source>Confirm all masternodes start</source>
+        <translation>Confirm all masternodes start</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to start ALL masternodes?</source>
+        <translation>Are you sure you want to start ALL masternodes?</translation>
+    </message>
+    <message>
+        <source>Command is not available right now</source>
+        <translation>Command is not available right now</translation>
+    </message>
+    <message>
+        <source>You can&apos;t use this command until masternode list is synced</source>
+        <translation>You can&apos;t use this command until masternode list is synced</translation>
+    </message>
+    <message>
+        <source>Confirm missing masternodes start</source>
+        <translation>Confirm missing masternodes start</translation>
+    </message>
+    <message>
+        <source>Are you sure you want to start MISSING masternodes?</source>
+        <translation>Are you sure you want to start MISSING masternodes?</translation>
     </message>
 </context>
 <context>
@@ -1641,7 +1828,7 @@ Address: %4
         <translation>Select payment request file</translation>
     </message>
     <message>
-        <location filename="../openuridialog.cpp" line="+49"/>
+        <location filename="../openuridialog.cpp" line="+48"/>
         <source>Select payment request file to open</source>
         <translation>Select payment request file to open</translation>
     </message>
@@ -1669,7 +1856,7 @@ Address: %4
         <translation>&amp;Start Sibcoin on system login</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+18"/>
         <source>Size of &amp;database cache</source>
         <translation>Size of &amp;database cache</translation>
     </message>
@@ -1689,32 +1876,94 @@ Address: %4
         <translation>(0 = auto, &lt;0 = leave that many cores free)</translation>
     </message>
     <message>
-        <location line="+49"/>
-        <source>Darksend rounds to use</source>
-        <translation>Darksend rounds to use</translation>
-    </message>
-    <message>
-        <location line="+24"/>
-        <source>This amount acts as a threshold to turn off Darksend once it&apos;s reached.</source>
-        <translation>This amount acts as a threshold to turn off Darksend once it&apos;s reached.</translation>
-    </message>
-    <message>
-        <location line="+15"/>
+        <location line="+155"/>
         <source>Amount of Sibcoin to keep anonymized</source>
         <translation>Amount of Sibcoin to keep anonymized</translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="-119"/>
         <source>W&amp;allet</source>
         <translation>W&amp;allet</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-104"/>
+        <source>Automatically start Sibcoin Core after logging in to the system.</source>
+        <translation>Automatically start Sibcoin Core after logging in to the system.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>&amp;Start Sibcoin Core on system login</source>
+        <translation>&amp;Start Sibcoin Core on system login</translation>
+    </message>
+    <message>
+        <location line="+123"/>
+        <source>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</source>
+        <translation>Show additional tab listing all your masternodes in first sub-tab&lt;br/&gt;and all masternodes on the network in second sub-tab.</translation>
+    </message>
+    <message>
+        <source>Show Masternodes Tab</source>
+        <translation>Show Masternodes Tab</translation>
+    </message>
+    <message>
+        <source>Show additional information and buttons for PrivateSend on overview screen.</source>
+        <translation>Show additional information and buttons for PrivateSend on overview screen.</translation>
+    </message>
+    <message>
+        <source>Enable advanced PrivateSend interface</source>
+        <translation>Enable advanced PrivateSend interface</translation>
+    </message>
+    <message>
+        <source>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</source>
+        <translation>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</translation>
+    </message>
+    <message>
+        <source>Warn if PrivateSend is running out of keys</source>
+        <translation>Warn if PrivateSend is running out of keys</translation>
+    </message>
+    <message>
+        <source>Whether to use experimental PrivateSend mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
+        <translation>Whether to use experimental PrivateSend mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</translation>
+    </message>
+    <message>
+        <source>Enable PrivateSend &amp;multi-session</source>
+        <translation>Enable PrivateSend &amp;multi-session</translation>
+    </message>
+    <message>
+        <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
+        <translation>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</translation>
+    </message>
+    <message>
+        <source>PrivateSend rounds to use</source>
+        <translation>PrivateSend rounds to use</translation>
+    </message>
+    <message>
+        <source>This amount acts as a threshold to turn off PrivateSend once it&apos;s reached.</source>
+        <translation>This amount acts as a threshold to turn off PrivateSend once it&apos;s reached.</translation>
+    </message>
+     <message>
+        <location line="+3"/>
+        <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
+        <translation>&amp;Connect through SOCKS5 proxy (default proxy):</translation>
+    </message>
+    <message>
+        <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Exit in the menu.</source>
+        <translation>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Exit in the menu.</translation>
+    </message>
+    <message>
+        <source>The user interface language can be set here. This setting will take effect after restarting Sibcoin Core.</source>
+        <translation>The user interface language can be set here. This setting will take effect after restarting Sibcoin Core.</translation>
+    </message>
+    <message>
+        <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items.&lt;br/&gt;%s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
+        <translation>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items.&lt;br/&gt;%s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</translation>
+    </message>
+    <message>
+        <location line="-643"/>
         <source>Expert</source>
         <translation>Expert</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="-65"/>
         <source>Whether to show coin control features or not.</source>
         <translation>Whether to show coin control features or not.</translation>
     </message>
@@ -1724,12 +1973,12 @@ Address: %4
         <translation>Enable coin &amp;control features</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+50"/>
         <source>&amp;Spend unconfirmed change</source>
         <translation>&amp;Spend unconfirmed change</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+93"/>
         <source>&amp;Network</source>
         <translation>&amp;Network</translation>
     </message>
@@ -1745,32 +1994,55 @@ Address: %4
     </message>
     <message>
         <location line="+29"/>
+        <location line="+187"/>
         <source>Proxy &amp;IP:</source>
         <translation>Proxy &amp;IP:</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="-162"/>
+        <location line="+187"/>
         <source>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</source>
         <translation>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="-180"/>
+        <location line="+187"/>
         <source>&amp;Port:</source>
         <translation>&amp;Port:</translation>
     </message>
     <message>
-        <location line="+25"/>
+        <location line="-162"/>
+        <location line="+187"/>
         <source>Port of the proxy (e.g. 9050)</source>
         <translation>Port of the proxy (e.g. 9050)</translation>
     </message>
     <message>
-        <location line="-212"/>
-        <source>This setting determines the amount of individual masternodes that an input will be anonymized through.&lt;br/&gt;More rounds of anonymization gives a higher degree of privacy, but also costs more in fees.</source>
-        <translation type="unfinished"></translation>
+        <source>Shows, if the supplied default SOCKS5 proxy is used to reach peers via this network type.</source>
+        <translation>Shows, if the supplied default SOCKS5 proxy is used to reach peers via this network type.</translation>
     </message>
     <message>
-        <location line="+90"/>
-        <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
+        <source>IPv4</source>
+        <translation>IPv4</translation>
+    </message>
+    <message>
+        <source>IPv6</source>
+        <translation>IPv6</translation>
+    </message>
+    <message>
+        <source>Tor</source>
+        <translation>Tor</translation>
+    </message>
+    <message>
+        <source>Connect to the Sibcoin network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Connect to the Sibcoin network through a separate SOCKS5 proxy for Tor hidden services.</translation>
+    </message>
+    <message>
+        <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</source>
+        <translation>Use separate SOCKS5 proxy to reach peers via Tor hidden services:</translation>
+    </message>
+    <message>
+        <location line="-212"/>
+        <source>This setting determines the amount of individual masternodes that an input will be anonymized through.&lt;br/&gt;More rounds of anonymization gives a higher degree of privacy, but also costs more in fees.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1792,6 +2064,9 @@ Address: %4
         <location line="+3"/>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
         <translation type="unfinished"></translation>
+        <location line="-163"/>
+        <source>Used for reaching peers via:</source>
+        <translation>Used for reaching peers via:</translation>
     </message>
     <message>
         <location line="+102"/>
@@ -1809,12 +2084,7 @@ Address: %4
         <translation>&amp;Minimize to the tray instead of the taskbar</translation>
     </message>
     <message>
-        <location line="+7"/>
-        <source>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</source>
-        <translation>Minimize instead of exit the application when the window is closed. When this option is enabled, the application will be closed only after selecting Quit in the menu.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+10"/>
         <source>M&amp;inimize on close</source>
         <translation>M&amp;inimize on close</translation>
     </message>
@@ -1861,13 +2131,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+14"/>
-        <location line="+13"/>
-        <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
-        <translation>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items. %s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</translation>
-    </message>
-    <message>
-        <location line="-10"/>
+        <location line="+17"/>
         <source>Third party transaction URLs</source>
         <translation>Third party transaction URLs</translation>
     </message>
@@ -1897,33 +2161,33 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>&amp;Cancel</translation>
     </message>
     <message>
-        <location filename="../optionsdialog.cpp" line="+91"/>
+        <location filename="../optionsdialog.cpp" line="+100"/>
         <source>default</source>
         <translation>default</translation>
     </message>
     <message>
-        <location line="+60"/>
+        <location line="+64"/>
         <source>none</source>
         <translation>none</translation>
     </message>
     <message>
-        <location line="+87"/>
+        <location line="+83"/>
         <source>Confirm options reset</source>
         <translation>Confirm options reset</translation>
     </message>
     <message>
         <location line="+1"/>
-        <location line="+31"/>
+        <location line="+32"/>
         <source>Client restart required to activate changes.</source>
         <translation>Client restart required to activate changes.</translation>
     </message>
     <message>
-        <location line="-31"/>
-        <source>Client will be shutdown, do you want to proceed?</source>
-        <translation>Client will be shutdown, do you want to proceed?</translation>
+        <location line="-32"/>
+        <source>Client will be shut down. Do you want to proceed?</source>
+        <translation>Client will be shut down. Do you want to proceed?</translation>
     </message>
     <message>
-        <location line="+35"/>
+        <location line="+36"/>
         <source>This change would require a client restart.</source>
         <translation>This change would require a client restart.</translation>
     </message>
@@ -1978,7 +2242,27 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Mined balance that has not yet matured</translation>
     </message>
     <message>
-        <location line="-16"/>
+        <location line="-160"/>
+        <source>Balances</source>
+        <translation>Balances</translation>
+    </message>
+    <message>
+        <location line="+52"/>
+        <source>Unconfirmed transactions to watch-only addresses</source>
+        <translation>Unconfirmed transactions to watch-only addresses</translation>
+    </message>
+    <message>
+        <location line="+50"/>
+        <source>Mined balance in watch-only addresses that has not yet matured</source>
+        <translation>Mined balance in watch-only addresses that has not yet matured</translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Spendable:</source>
+        <translation>Spendable:</translation>
+    </message>
+    <message>
+        <location line="+42"/>
         <source>Total:</source>
         <translation>Total:</translation>
     </message>
@@ -1993,22 +2277,51 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Status:</translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+16"/>
+        <source>Watch-only:</source>
+        <translation>Watch-only:</translation>
+    </message>
+    <message>
+        <location line="+51"/>
+        <source>Your current balance in watch-only addresses</source>
+        <translation>Your current balance in watch-only addresses</translation>
+    </message>
+    <message>
+        <source>PrivateSend</source>
+        <translation>PrivateSend</translation>
+    </message>
+    <message>
+        <location line="+7"/>
         <source>Enabled/Disabled</source>
         <translation>Enabled/Disabled</translation>
     </message>
     <message>
-        <location line="-71"/>
+        <location line="+7"/>
         <source>Completion:</source>
         <translation>Completion:</translation>
     </message>
     <message>
-        <location line="+20"/>
-        <source>Darksend Balance:</source>
-        <translation>Darksend Balance:</translation>
+        <location line="+109"/>
+        <source>Try to manually submit a PrivateSend request.</source>
+        <translation>Try to manually submit a PrivateSend request.</translation>
     </message>
     <message>
-        <location line="+20"/>
+        <location line="+16"/>
+        <source>Reset the current status of PrivateSend (can interrupt PrivateSend if it&apos;s in the process of Mixing, which can cost you money!)</source>
+        <translation>Reset the current status of PrivateSend (can interrupt PrivateSend if it&apos;s in the process of Mixing, which can cost you money!)</translation>
+    </message>
+    <message>
+        <location line="+19"/>
+        <source>Information about PrivateSend and Mixing</source>
+        <translation>Information about PrivateSend and Mixing</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Info</source>
+        <translation>Info</translation>
+    </message>
+    <message>
+        <location line="-107"/>
         <source>Amount and Rounds:</source>
         <translation>Amount and Rounds:</translation>
     </message>
@@ -2028,81 +2341,32 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>n/a</translation>
     </message>
     <message>
-        <location line="+573"/>
-        <location filename="../overviewpage.cpp" line="+487"/>
-        <location line="+10"/>
-        <location line="+10"/>
-        <location line="+14"/>
-        <source>Darksend</source>
-        <translation>Darksend</translation>
-    </message>
-    <message>
-        <location line="-107"/>
+        <location line="-101"/>
         <source>Start/Stop Mixing</source>
         <translation>Start/Stop Mixing</translation>
     </message>
     <message>
-        <location line="-917"/>
-        <source>Balances</source>
-        <translation type="unfinished"></translation>
+        <location line="-74"/>
+        <source>PrivateSend Balance:</source>
+        <translation>PrivateSend Balance:</translation>
     </message>
     <message>
-        <location line="+55"/>
-        <source>Unconfirmed transactions to watch-only addresses</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+50"/>
-        <source>Mined balance in watch-only addresses that has not yet matured</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+128"/>
-        <source>Current total balance in watch-only addresses</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+16"/>
-        <source>Watch-only:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+51"/>
-        <source>Your current balance in watch-only addresses</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+23"/>
-        <source>Spendable:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+125"/>
+        <location line="+41"/>
         <source>The denominations you submitted to the Masternode.&lt;br&gt;To mix, other users must submit the exact same denominations.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+501"/>
+        <location line="+14"/>
         <source>(Last Message)</source>
         <translation>(Last Message)</translation>
     </message>
     <message>
-        <location line="+25"/>
-        <source>Try to manually submit a Darksend request.</source>
-        <translation>Try to manually submit a Darksend request.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+37"/>
         <source>Try Mix</source>
         <translation>Try Mix</translation>
     </message>
     <message>
         <location line="+19"/>
-        <source>Reset the current status of Darksend (can interrupt Darksend if it&apos;s in the process of Mixing, which can cost you money!)</source>
-        <translation>Reset the current status of Darksend (can interrupt Darksend if it&apos;s in the process of Mixing, which can cost you money!)</translation>
-    </message>
-    <message>
-        <location line="+6"/>
         <source>Reset</source>
         <translation>Reset</translation>
     </message>
@@ -2119,45 +2383,23 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>out of sync</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <location line="+1"/>
-        <location line="+1"/>
-        <location line="+292"/>
         <source>Disabled</source>
         <translation>Disabled</translation>
     </message>
     <message>
-        <location line="-288"/>
-        <location line="+290"/>
-        <location line="+91"/>
-        <source>Start Darksend Mixing</source>
-        <translation>Start Darksend Mixing</translation>
-    </message>
-    <message>
-        <location line="-379"/>
-        <location line="+382"/>
-        <source>Stop Darksend Mixing</source>
-        <translation>Stop Darksend Mixing</translation>
-    </message>
-    <message>
-        <location line="-211"/>
+        <location line="-332"/>
         <location line="+6"/>
         <source>No inputs detected</source>
         <translation>No inputs detected</translation>
     </message>
     <message numerus="yes">
         <location line="-2"/>
-        <location line="+35"/>
+        <location line="+32"/>
         <location line="+10"/>
         <source>%n Rounds</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
-    </message>
-    <message>
-        <location line="-13"/>
-        <source>Found enough compatible inputs to anonymize %1</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+6"/>
@@ -2176,11 +2418,6 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Mixed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+1"/>
         <source>Anonymized</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2192,50 +2429,124 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         </translation>
     </message>
     <message>
-        <location line="+38"/>
+        <location line="-56"/>
+        <source>Found enough compatible inputs to anonymize %1</source>
+        <translation>Found enough compatible inputs to anonymize %1</translation>
+    </message>
+    <message>
+        <location line="-203"/>
+        <source>Automatic backups are disabled, no mixing available!</source>
+        <translation>Automatic backups are disabled, no mixing available!</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <location line="+303"/>
+        <location line="+155"/>
+        <source>Start Mixing</source>
+        <translation>Start Mixing</translation>
+    </message>
+    <message>
+        <location line="-456"/>
+        <location line="+459"/>
+        <source>Stop Mixing</source>
+        <translation>Stop Mixing</translation>
+    </message>
+    <message>
+        <source>Mixed</source>
+        <translation>Mixed</translation>
+    </message>
+    <message>
+        <location line="+37"/>
+        <source>keys left: %1</source>
+        <translation>keys left: %1</translation>
+    </message>
+    <message>
+        <location line="+28"/>
+        <source>Very low number of keys left since last automatic backup!</source>
+        <translation>Very low number of keys left since last automatic backup!</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>We are about to create a new automatic backup for you, however &lt;span style=&apos;color:red;&apos;&gt; you should always make sure you have backups saved in some safe place&lt;/span&gt;!</source>
+        <translation>We are about to create a new automatic backup for you, however &lt;span style=&apos;color:red;&apos;&gt; you should always make sure you have backups saved in some safe place&lt;/span&gt;!</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Note: You turn this message off in options.</source>
+        <translation>Note: You turn this message off in options.</translation>
+    </message>
+    <message>
+        <location line="+16"/>
+        <source>WARNING! Something went wrong on automatic backup</source>
+        <translation>WARNING! Something went wrong on automatic backup</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <location line="+16"/>
+        <source>ERROR! Failed to create automatic backup</source>
+        <translation>ERROR! Failed to create automatic backup</translation>
+    </message>
+    <message>
+        <location line="-15"/>
+        <location line="+17"/>
+        <source>Mixing is disabled, please close your wallet and fix the issue!</source>
+        <translation>Mixing is disabled, please close your wallet and fix the issue!</translation>
+    </message>
+    <message>
+        <location line="-11"/>
         <source>Enabled</source>
         <translation>Enabled</translation>
     </message>
     <message>
-        <location line="+5"/>
-        <source>Last Darksend message:
+        <location line="+10"/>
+        <source>see debug.log for details.</source>
+        <translation>see debug.log for details.</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>WARNING! Failed to replenish keypool, please unlock your wallet to do so.</source>
+        <translation>WARNING! Failed to replenish keypool, please unlock your wallet to do so.</translation>
+    </message>
+    <message>
+        <location line="+13"/>
+        <source>Last PrivateSend message:
 </source>
-        <translation>Last Darksend message:
+        <translation>Last PrivateSend message:
 </translation>
     </message>
     <message>
-        <location line="+8"/>
-        <source>N/A</source>
-        <translation>N/A</translation>
+        <location line="+24"/>
+        <source>PrivateSend was successfully reset.</source>
+        <translation>PrivateSend was successfully reset.</translation>
     </message>
     <message>
-        <location line="+18"/>
-        <source>Darksend was successfully reset.</source>
-        <translation>Darksend was successfully reset.</translation>
+        <location line="+15"/>
+        <source>If you don&apos;t want to see internal PrivateSend fees/transactions select &quot;Most Common&quot; as Type on the &quot;Transactions&quot; tab.</source>
+        <translation>If you don&apos;t want to see internal PrivateSend fees/transactions select &quot;Most Common&quot; as Type on the &quot;Transactions&quot; tab.</translation>
     </message>
     <message>
-        <location line="+10"/>
-        <source>If you don&apos;t want to see internal Darksend fees/transactions select &quot;Most Common&quot; as Type on the &quot;Transactions&quot; tab.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location line="+10"/>
-        <source>Darksend requires at least %1 to use.</source>
-        <translation>Darksend requires at least %1 to use.</translation>
+        <location line="+9"/>
+        <source>PrivateSend requires at least %1 to use.</source>
+        <translation>PrivateSend requires at least %1 to use.</translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>Wallet is locked and user declined to unlock. Disabling Darksend.</source>
-        <translation>Wallet is locked and user declined to unlock. Disabling Darksend.</translation>
+        <source>Wallet is locked and user declined to unlock. Disabling PrivateSend.</source>
+        <translation>Wallet is locked and user declined to unlock. Disabling PrivateSend.</translation>
+    </message>
+    <message>
+        <location line="-54"/>
+        <source>N/A</source>
+        <translation>N/A</translation>
     </message>
 </context>
 <context>
     <name>PaymentServer</name>
     <message>
-        <location filename="../paymentserver.cpp" line="+318"/>
-        <location line="+226"/>
-        <location line="+34"/>
-        <location line="+109"/>
+        <location filename="../paymentserver.cpp" line="+329"/>
+        <location line="+216"/>
+        <location line="+42"/>
+        <location line="+113"/>
         <location line="+14"/>
         <location line="+18"/>
         <source>Payment request error</source>
@@ -2247,7 +2558,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Cannot start sibcoin: click-to-pay handler</translation>
     </message>
     <message>
-        <location line="+104"/>
+        <location line="+103"/>
         <location line="+14"/>
         <location line="+7"/>
         <source>URI handling</source>
@@ -2264,7 +2575,12 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Payment request file handling</translation>
     </message>
     <message>
-        <location line="-21"/>
+        <location line="+71"/>
+        <source>Payment request expired.</source>
+        <translation>Payment request expired.</translation>
+    </message>
+    <message>
+        <location line="-92"/>
         <source>Invalid payment address %1</source>
         <translation type="unfinished">Invalid payment address %1</translation>
     </message>
@@ -2279,14 +2595,17 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+69"/>
+        <location line="+61"/>
         <location line="+9"/>
-        <location line="+32"/>
+        <location line="+31"/>
+        <location line="+10"/>
+        <location line="+17"/>
+        <location line="+88"/>
         <source>Payment request rejected</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="-41"/>
+        <location line="-155"/>
         <source>Payment request network doesn&apos;t match client network.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2306,17 +2625,23 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Unverified payment requests to custom payment scripts are unsupported.</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
+        <location line="+17"/>
+        <source>Invalid payment request.</source>
+        <translation>Invalid payment request.</translation>
+    </message>
+    <message>
+        <location line="-10"/>
         <source>Requested payment amount of %1 is too small (considered dust).</source>
         <translation>Requested payment amount of %1 is too small (considered dust).</translation>
     </message>
     <message>
-        <location line="+50"/>
+        <location line="+55"/>
         <source>Refund from %1</source>
         <translation>Refund from %1</translation>
     </message>
     <message>
-        <location line="+43"/>
+        <location line="+44"/>
         <source>Payment request %1 is too large (%2 bytes, allowed %3 bytes).</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2368,6 +2693,11 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <source>Ping Time</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location line="+0"/>
+        <source>Node/Service</source>
+        <translation>Node/Service</translation>
+    </message>
 </context>
 <context>
     <name>QObject</name>
@@ -2382,7 +2712,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+760"/>
+        <location line="+857"/>
         <source>%1 d</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2398,6 +2728,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+2"/>
+        <location line="+44"/>
         <source>%1 s</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2453,7 +2784,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
 <context>
     <name>RPCConsole</name>
     <message>
-        <location filename="../forms/rpcconsole.ui" line="+14"/>
+        <location filename="../forms/debugwindow.ui" line="+14"/>
         <source>Tools window</source>
         <translation>Tools window</translation>
     </message>
@@ -2463,33 +2794,30 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>&amp;Information</translation>
     </message>
     <message>
-        <location line="+51"/>
+        <location line="+15"/>
         <source>General</source>
         <translation>General</translation>
     </message>
     <message>
-        <location line="+204"/>
+        <location line="+164"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
     <message>
-        <location line="-197"/>
+        <location line="-157"/>
         <source>Client name</source>
         <translation>Client name</translation>
     </message>
     <message>
-        <location line="-36"/>
         <location line="+10"/>
         <location line="+36"/>
         <location line="+30"/>
         <location line="+23"/>
-        <location line="+23"/>
-        <location line="+62"/>
-        <location line="+23"/>
         <location line="+36"/>
-        <location line="+26"/>
         <location line="+23"/>
-        <location line="+425"/>
+        <location line="+536"/>
+        <location line="+23"/>
+        <location line="+23"/>
         <location line="+23"/>
         <location line="+23"/>
         <location line="+23"/>
@@ -2506,7 +2834,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>N/A</translation>
     </message>
     <message>
-        <location line="-927"/>
+        <location line="-1049"/>
         <source>Number of connections</source>
         <translation>Number of connections</translation>
     </message>
@@ -2516,47 +2844,47 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>&amp;Open</translation>
     </message>
     <message>
-        <location line="-56"/>
+        <location line="-242"/>
         <source>Startup time</source>
         <translation>Startup time</translation>
     </message>
     <message>
-        <location line="+137"/>
+        <location line="+29"/>
         <source>Network</source>
         <translation>Network</translation>
     </message>
     <message>
-        <location line="-91"/>
+        <location line="+103"/>
         <source>Last block time</source>
         <translation>Last block time</translation>
     </message>
     <message>
-        <location line="+26"/>
+        <location line="+100"/>
         <source>Debug log file</source>
         <translation>Debug log file</translation>
     </message>
     <message>
-        <location line="+95"/>
-        <source>Using OpenSSL version</source>
-        <translation>Using OpenSSL version</translation>
-    </message>
-    <message>
-        <location line="-197"/>
+        <location line="-255"/>
         <source>Build date</source>
         <translation>Build date</translation>
     </message>
     <message>
-        <location line="+53"/>
+        <location line="+132"/>
         <source>Current number of blocks</source>
         <translation>Current number of blocks</translation>
     </message>
     <message>
-        <location line="+85"/>
+        <location line="-207"/>
         <source>Client version</source>
         <translation>Client version</translation>
     </message>
     <message>
-        <location line="-204"/>
+        <location line="+49"/>
+        <source>Using BerkeleyDB version</source>
+        <translation>Using BerkeleyDB version</translation>
+    </message>
+    <message>
+        <location line="+151"/>
         <source>Block chain</source>
         <translation>Block chain</translation>
     </message>
@@ -2571,12 +2899,27 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+23"/>
-        <source>Using BerkeleyDB version</source>
-        <translation type="unfinished"></translation>
+        <location line="+79"/>
+        <source>Memory Pool</source>
+        <translation>Memory Pool</translation>
     </message>
     <message>
-        <location line="+11"/>
+        <location line="+7"/>
+        <source>Current number of transactions</source>
+        <translation>Current number of transactions</translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Memory usage</source>
+        <translation>Memory usage</translation>
+    </message>
+    <message>
+        <location line="+48"/>
+        <source>Open the Sibcoin Core debug log file from the current data directory. This can take a few seconds for large log files.</source>
+        <translation>Open the Sibcoin Core debug log file from the current data directory. This can take a few seconds for large log files.</translation>
+    </message>
+    <message>
+        <location line="+29"/>
         <source>&amp;Console</source>
         <translation>&amp;Console</translation>
     </message>
@@ -2602,28 +2945,40 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+64"/>
+        <location line="+554"/>
         <source>Received</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+80"/>
+        <location line="-474"/>
+        <location line="+451"/>
         <source>Sent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+41"/>
+        <location line="-410"/>
         <source>&amp;Peers</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+41"/>
-        <location filename="../rpcconsole.cpp" line="+253"/>
-        <location line="+426"/>
+        <location line="+50"/>
+        <source>Banned peers</source>
+        <translation>Banned peers</translation>
+    </message>
+    <message>
+        <location line="+59"/>
+        <location filename="../rpcconsole.cpp" line="+302"/>
+        <location line="+672"/>
         <source>Select a peer to view detailed information.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+25"/>
+        <source>Whitelisted</source>
+        <translation>Whitelisted</translation>
+    </message>
+    <message>
+        <location line="+23"/>
         <source>Direction</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2634,12 +2989,27 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+23"/>
-        <source>User Agent</source>
-        <translation type="unfinished"></translation>
+        <source>Synced Headers</source>
+        <translation>Synced Headers</translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Synced Blocks</source>
+        <translation>Synced Blocks</translation>
+    </message>
+    <message>
+        <location line="+511"/>
+        <source>Wallet Path</source>
+        <translation>Wallet Path</translation>
     </message>
     <message>
         <location line="+23"/>
         <source>Services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>User Agent</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2651,9 +3021,12 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <location line="+23"/>
         <source>Sync Height</source>
         <translation type="unfinished"></translation>
+        <location line="+69"/>
+        <source>Starting Block</source>
+        <translation>Starting Block</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+92"/>
         <source>Ban Score</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2686,6 +3059,24 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <location line="+23"/>
         <source>Ping Time</source>
         <translation type="unfinished"></translation>
+        <location line="+69"/>
+        <source>Ping Time</source>
+        <translation>Ping Time</translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>The duration of a currently outstanding ping.</source>
+        <translation>The duration of a currently outstanding ping.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Ping Wait</source>
+        <translation>Ping Wait</translation>
+    </message>
+    <message>
+        <location line="+23"/>
+        <source>Time Offset</source>
+        <translation>Time Offset</translation>
     </message>
     <message>
         <location line="+40"/>
@@ -2763,7 +3154,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../rpcconsole.cpp" line="-203"/>
+        <location filename="../rpcconsole.cpp" line="-348"/>
         <source>In:</source>
         <translation>In:</translation>
     </message>
@@ -2774,6 +3165,47 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="-35"/>
+        <source>Welcome to the Sibcoin RPC console.</source>
+        <translation>Welcome to the Sibcoin RPC console.</translation>
+        <location line="-234"/>
+        <source>&amp;Disconnect Node</source>
+        <translation>&amp;Disconnect Node</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <location line="+1"/>
+        <source>Ban Node for</source>
+        <translation>Ban Node for</translation>
+    </message>
+    <message>
+        <location line="-3"/>
+        <source>1 &amp;hour</source>
+        <translation>1 &amp;hour</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>1 &amp;day</source>
+        <translation>1 &amp;day</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>1 &amp;week</source>
+        <translation>1 &amp;week</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>1 &amp;year</source>
+        <translation>1 &amp;year</translation>
+    </message>
+    <message>
+        <location line="+46"/>
+        <source>&amp;Unban Node</source>
+        <translation>&amp;Unban Node</translation>
+    </message>
+    <message>
+        <location line="+148"/>
         <source>Welcome to the Sibcoin RPC console.</source>
         <translation>Welcome to the Sibcoin RPC console.</translation>
     </message>
@@ -2788,7 +3220,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Type &lt;b&gt;help&lt;/b&gt; for an overview of available commands.</translation>
     </message>
     <message>
-        <location line="+139"/>
+        <location line="+149"/>
         <source>%1 B</source>
         <translation>%1 B</translation>
     </message>
@@ -2808,7 +3240,12 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>%1 GB</translation>
     </message>
     <message>
-        <location line="+128"/>
+        <location line="+88"/>
+        <source>(node id: %1)</source>
+        <translation>(node id: %1)</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>via %1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2819,7 +3256,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+9"/>
         <source>Inbound</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2829,7 +3266,6 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+13"/>
         <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2838,6 +3274,14 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <location line="+1"/>
         <source>Fetching...</source>
         <translation type="unfinished"></translation>
+        <location line="+2"/>
+        <source>Yes</source>
+        <translation>Yes</translation>
+    </message>
+    <message>
+        <location line="+0"/>
+        <source>No</source>
+        <translation>No</translation>
     </message>
 </context>
 <context>
@@ -2900,7 +3344,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>&amp;Request payment</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+13"/>
         <source>Clear all fields of the form.</source>
         <translation>Clear all fields of the form.</translation>
     </message>
@@ -2910,7 +3354,12 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Clear</translation>
     </message>
     <message>
-        <location line="+75"/>
+        <location line="+32"/>
+        <source>Request InstantSend</source>
+        <translation>Request InstantSend</translation>
+    </message>
+    <message>
+        <location line="+49"/>
         <source>Requested payments history</source>
         <translation>Requested payments history</translation>
     </message>
@@ -2925,7 +3374,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Show</translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="+13"/>
         <source>Remove the selected entries from the list</source>
         <translation>Remove the selected entries from the list</translation>
     </message>
@@ -2935,7 +3384,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Remove</translation>
     </message>
     <message>
-        <location filename="../receivecoinsdialog.cpp" line="+39"/>
+        <location filename="../receivecoinsdialog.cpp" line="+47"/>
         <source>Copy label</source>
         <translation>Copy label</translation>
     </message>
@@ -3008,6 +3457,12 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Message</translation>
     </message>
     <message>
+        <location line="+2"/>
+        <location line="+2"/>
+        <source>InstantSend</source>
+        <translation>InstantSend</translation>
+    </message>
+    <message>
         <location line="+10"/>
         <source>Resulting URI too long, try to reduce the text for label / message.</source>
         <translation>Resulting URI too long, try to reduce the text for label / message.</translation>
@@ -3021,7 +3476,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
 <context>
     <name>RecentRequestsTableModel</name>
     <message>
-        <location filename="../recentrequeststablemodel.cpp" line="+28"/>
+        <location filename="../recentrequeststablemodel.cpp" line="+29"/>
         <source>Date</source>
         <translation>Date</translation>
     </message>
@@ -3060,8 +3515,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     <name>SendCoinsDialog</name>
     <message>
         <location filename="../forms/sendcoinsdialog.ui" line="+14"/>
-        <location filename="../sendcoinsdialog.cpp" line="+639"/>
-        <location line="+12"/>
+        <location filename="../sendcoinsdialog.cpp" line="+659"/>
         <source>Send Coins</source>
         <translation>Send Coins</translation>
     </message>
@@ -3156,7 +3610,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+7"/>
+        <location line="+37"/>
         <source>collapse fee-settings</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3164,9 +3618,17 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <location line="+3"/>
         <source>Minimize</source>
         <translation type="unfinished"></translation>
+        <location line="+520"/>
+        <source>PrivateSend</source>
+        <translation>PrivateSend</translation>
     </message>
     <message>
-        <location line="+78"/>
+        <location line="+19"/>
+        <source>InstantSend</source>
+        <translation>InstantSend</translation>
+    </message>
+    <message>
+        <location line="-488"/>
         <source>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 duffs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3190,6 +3652,10 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <location line="+13"/>
         <source>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for sibcoin transactions than the network can process.</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hide</source>
+        <translation>Hide</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3247,7 +3713,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>S&amp;end</translation>
     </message>
     <message>
-        <location line="+23"/>
+        <location line="+19"/>
         <source>Clear all fields of the form.</source>
         <translation>Clear all fields of the form.</translation>
     </message>
@@ -3257,7 +3723,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Clear &amp;All</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+10"/>
         <source>Send to multiple recipients at once</source>
         <translation>Send to multiple recipients at once</translation>
     </message>
@@ -3267,22 +3733,12 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Add &amp;Recipient</translation>
     </message>
     <message>
-        <location line="+44"/>
-        <source>Darksend</source>
-        <translation>Darksend</translation>
-    </message>
-    <message>
-        <location line="+25"/>
-        <source>InstantX</source>
-        <translation>InstantX</translation>
-    </message>
-    <message>
-        <location line="+7"/>
+        <location line="+60"/>
         <source>Balance:</source>
         <translation>Balance:</translation>
     </message>
     <message>
-        <location filename="../sendcoinsdialog.cpp" line="-567"/>
+        <location filename="../sendcoinsdialog.cpp" line="-565"/>
         <source>Copy quantity</source>
         <translation>Copy quantity</translation>
     </message>
@@ -3331,21 +3787,41 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>(darksend requires this amount to be rounded up to the nearest %1).</source>
-        <translation>(darksend requires this amount to be rounded up to the nearest %1).</translation>
+        <source>(privatesend requires this amount to be rounded up to the nearest %1).</source>
+        <translation>(privatesend requires this amount to be rounded up to the nearest %1).</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>any available funds (not recommended)</source>
-        <translation>any available funds (not recommended)</translation>
+        <source>any available funds (not anonymous)</source>
+        <translation>any available funds (not anonymous)</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>and InstantX</source>
-        <translation>and InstantX</translation>
+        <source>and InstantSend</source>
+        <translation>and InstantSend</translation>
     </message>
     <message>
-        <location line="+24"/>
+        <location line="+359"/>
+        <source>Duplicate address found: addresses should only be used once each.</source>
+        <translation>Duplicate address found: addresses should only be used once each.</translation>
+    </message>
+    <message>
+        <location line="+11"/>
+        <source>A fee higher than %1 is considered an absurdly high fee.</source>
+        <translation>A fee higher than %1 is considered an absurdly high fee.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Payment request expired.</source>
+        <translation>Payment request expired.</translation>
+    </message>
+    <message>
+        <location line="+91"/>
+        <source>Pay only the required fee of %1</source>
+        <translation>Pay only the required fee of %1</translation>
+    </message>
+    <message>
+        <location line="-397"/>
         <location line="+5"/>
         <location line="+5"/>
         <location line="+4"/>
@@ -3353,7 +3829,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>%1 to %2</translation>
     </message>
     <message>
-        <location line="+49"/>
+        <location line="+6"/>
         <source>Are you sure you want to send?</source>
         <translation>Are you sure you want to send?</translation>
     </message>
@@ -3378,7 +3854,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+17"/>
+        <location line="-357"/>
         <source>&lt;b&gt;(%1 of %2 entries displayed)&lt;/b&gt;</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3386,6 +3862,11 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <location line="+217"/>
         <source>The recipient address is not valid, please recheck.</source>
         <translation>The recipient address is not valid, please recheck.</translation>
+    </message>
+    <message>
+        <location line="+215"/>
+        <source>The recipient address is not valid. Please recheck.</source>
+        <translation>The recipient address is not valid. Please recheck.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3403,12 +3884,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>The total exceeds your balance when the %1 transaction fee is included.</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Duplicate address found, can only send to each address once per send operation.</source>
-        <translation>Duplicate address found, can only send to each address once per send operation.</translation>
-    </message>
-    <message>
-        <location line="+3"/>
+        <location line="+6"/>
         <source>Transaction creation failed!</source>
         <translation>Transaction creation failed!</translation>
     </message>
@@ -3445,7 +3921,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Warning: Invalid Sibcoin address</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+8"/>
         <source>Warning: Unknown change address</source>
         <translation>Warning: Unknown change address</translation>
     </message>
@@ -3463,7 +3939,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>This is a normal payment.</translation>
     </message>
     <message>
-        <location line="+15"/>
+        <location line="+21"/>
         <source>Pay &amp;To:</source>
         <translation>Pay &amp;To:</translation>
     </message>
@@ -3478,7 +3954,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Choose previously used address</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+12"/>
         <source>Alt+A</source>
         <translation>Alt+A</translation>
     </message>
@@ -3488,19 +3964,19 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Paste address from clipboard</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+12"/>
         <source>Alt+P</source>
         <translation>Alt+P</translation>
     </message>
     <message>
         <location line="+7"/>
-        <location line="+524"/>
-        <location line="+536"/>
+        <location line="+544"/>
+        <location line="+529"/>
         <source>Remove this entry</source>
         <translation>Remove this entry</translation>
     </message>
     <message>
-        <location line="-1044"/>
+        <location line="-1055"/>
         <source>&amp;Label:</source>
         <translation>&amp;Label:</translation>
     </message>
@@ -3511,13 +3987,23 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+7"/>
-        <location line="+521"/>
-        <location line="+536"/>
+        <location line="+535"/>
+        <location line="+529"/>
         <source>A&amp;mount:</source>
         <translation>A&amp;mount:</translation>
     </message>
     <message>
-        <location line="-1041"/>
+        <location line="-1046"/>
+        <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of Sibcoin than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
+        <translation>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of Sibcoin than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>S&amp;ubtract fee from amount</source>
+        <translation>S&amp;ubtract fee from amount</translation>
+    </message>
+    <message>
+        <location line="+9"/>
         <source>Message:</source>
         <translation>Message:</translation>
     </message>
@@ -3527,29 +4013,29 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>A message that was attached to the sibcoin: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Sibcoin network.</translation>
     </message>
     <message>
-        <location line="+426"/>
-        <source>This is an unverified payment request.</source>
-        <translation>This is an unverified payment request.</translation>
+        <location line="+433"/>
+        <source>This is an unauthenticated payment request.</source>
+        <translation>This is an unauthenticated payment request.</translation>
     </message>
     <message>
-        <location line="+18"/>
-        <location line="+532"/>
+        <location line="+525"/>
+        <source>This is an authenticated payment request.</source>
+        <translation>This is an authenticated payment request.</translation>
+    </message>
+    <message>
+        <location line="-510"/>
+        <location line="+525"/>
         <source>Pay To:</source>
         <translation>Pay To:</translation>
     </message>
     <message>
-        <location line="-498"/>
-        <location line="+536"/>
+        <location line="-495"/>
+        <location line="+529"/>
         <source>Memo:</source>
         <translation>Memo:</translation>
     </message>
     <message>
-        <location line="-56"/>
-        <source>This is a verified payment request.</source>
-        <translation>This is a verified payment request.</translation>
-    </message>
-    <message>
-        <location filename="../sendcoinsentry.cpp" line="+31"/>
+        <location filename="../sendcoinsentry.cpp" line="+32"/>
         <source>Enter a label for this address to add it to your address book</source>
         <translation>Enter a label for this address to add it to your address book</translation>
     </message>
@@ -3581,8 +4067,8 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
-        <translation>You can sign messages with your addresses to prove you own them. Be careful not to sign anything vague, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</translation>
+        <source>You can sign messages/agreements with your addresses to prove you can receive Sibcoin sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
+        <translation>You can sign messages/agreements with your addresses to prove you can receive Sibcoin sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</translation>
     </message>
     <message>
         <location line="+18"/>
@@ -3591,23 +4077,23 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+7"/>
-        <location line="+210"/>
+        <location line="+190"/>
         <source>Choose previously used address</source>
         <translation>Choose previously used address</translation>
     </message>
     <message>
-        <location line="-200"/>
-        <location line="+210"/>
+        <location line="-184"/>
+        <location line="+190"/>
         <source>Alt+A</source>
         <translation>Alt+A</translation>
     </message>
     <message>
-        <location line="-200"/>
+        <location line="-180"/>
         <source>Paste address from clipboard</source>
         <translation>Paste address from clipboard</translation>
     </message>
     <message>
-        <location line="+10"/>
+        <location line="+6"/>
         <source>Alt+P</source>
         <translation>Alt+P</translation>
     </message>
@@ -3637,25 +4123,25 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Sign &amp;Message</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+10"/>
         <source>Reset all sign message fields</source>
         <translation>Reset all sign message fields</translation>
     </message>
     <message>
         <location line="+3"/>
-        <location line="+143"/>
+        <location line="+131"/>
         <source>Clear &amp;All</source>
         <translation>Clear &amp;All</translation>
     </message>
     <message>
-        <location line="-84"/>
+        <location line="-76"/>
         <source>&amp;Verify Message</source>
         <translation>&amp;Verify Message</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</source>
-        <translation>Enter the signing address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack.</translation>
+        <source>Enter the receiver&apos;s address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack. Note that this only proves the signing party receives with the address, it cannot prove sendership of any transaction!</source>
+        <translation>Enter the receiver&apos;s address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack. Note that this only proves the signing party receives with the address, it cannot prove sendership of any transaction!</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -3673,7 +4159,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Verify &amp;Message</translation>
     </message>
     <message>
-        <location line="+14"/>
+        <location line="+10"/>
         <source>Reset all verify message fields</source>
         <translation>Reset all verify message fields</translation>
     </message>
@@ -3683,7 +4169,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Click &quot;Sign Message&quot; to generate signature</translation>
     </message>
     <message>
-        <location line="+83"/>
+        <location line="+104"/>
         <location line="+80"/>
         <source>The entered address is invalid.</source>
         <translation>The entered address is invalid.</translation>
@@ -3806,30 +4292,12 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Open until %1</translation>
     </message>
     <message>
-        <location line="+11"/>
-        <location line="+11"/>
-        <location line="+10"/>
-        <location line="+12"/>
+        <location line="+5"/>
         <source>conflicted</source>
         <translation>conflicted</translation>
     </message>
     <message>
-        <location line="-31"/>
-        <source>%1/offline (verified via instantx)</source>
-        <translation>%1/offline (verified via instantx)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>%1/confirmed (verified via instantx)</source>
-        <translation>%1/confirmed (verified via instantx)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>%1 confirmations (verified via instantx)</source>
-        <translation>%1 confirmations (verified via instantx)</translation>
-    </message>
-    <message>
-        <location line="+29"/>
+        <location line="+6"/>
         <source>%1/offline</source>
         <translation>%1/offline</translation>
     </message>
@@ -3839,38 +4307,27 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>%1/unconfirmed</translation>
     </message>
     <message>
-        <location line="-10"/>
-        <location line="+12"/>
+        <location line="+2"/>
         <source>%1 confirmations</source>
         <translation>%1 confirmations</translation>
     </message>
     <message>
-        <location line="-26"/>
-        <source>%1/offline (InstantX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1/offline (InstantX verification in progress - %2 of %3 signatures)</translation>
+        <location line="+10"/>
+        <source>verified via InstantSend</source>
+        <translation>verified via InstantSend</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>%1/confirmed (InstantX verification in progress - %2 of %3 signatures )</source>
-        <translation>%1/confirmed (InstantX verification in progress - %2 of %3 signatures )</translation>
+        <source>InstantSend verification in progress - %1 of %2 signatures</source>
+        <translation>InstantSend verification in progress - %1 of %2 signatures</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>%1 confirmations (InstantX verification in progress - %2 of %3 signatures)</source>
-        <translation>%1 confirmations (InstantX verification in progress - %2 of %3 signatures)</translation>
+        <source>InstantSend verification failed</source>
+        <translation>InstantSend verification failed</translation>
     </message>
     <message>
-        <location line="+6"/>
-        <source>%1/offline (InstantX verification failed)</source>
-        <translation>%1/offline (InstantX verification failed)</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>%1/confirmed (InstantX verification failed)</source>
-        <translation>%1/confirmed (InstantX verification failed)</translation>
-    </message>
-    <message>
-        <location line="+32"/>
+        <location line="+21"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
@@ -4061,7 +4518,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
 <context>
     <name>TransactionTableModel</name>
     <message>
-        <location filename="../transactiontablemodel.cpp" line="+229"/>
+        <location filename="../transactiontablemodel.cpp" line="+246"/>
         <source>Date</source>
         <translation>Date</translation>
     </message>
@@ -4072,8 +4529,8 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+0"/>
-        <source>Address</source>
-        <translation>Address</translation>
+        <source>Address / Label</source>
+        <translation>Address / Label</translation>
     </message>
     <message numerus="yes">
         <location line="+58"/>
@@ -4140,11 +4597,41 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Received via Darksend</source>
-        <translation>Received via Darksend</translation>
+        <source>Received via PrivateSend</source>
+        <translation>Received via PrivateSend</translation>
     </message>
     <message>
-        <location line="+3"/>
+        <location line="+10"/>
+        <source>PrivateSend Denominate</source>
+        <translation>PrivateSend Denominate</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>PrivateSend Collateral Payment</source>
+        <translation>PrivateSend Collateral Payment</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>PrivateSend Make Collateral Inputs</source>
+        <translation>PrivateSend Make Collateral Inputs</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>PrivateSend Create Denominations</source>
+        <translation>PrivateSend Create Denominations</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>PrivateSend</source>
+        <translation>PrivateSend</translation>
+    </message>
+    <message>
+        <location line="+280"/>
+        <source>User-defined intent/purpose of the transaction.</source>
+        <translation>User-defined intent/purpose of the transaction.</translation>
+    </message>
+    <message>
+        <location line="-295"/>
         <source>Sent to</source>
         <translation>Sent to</translation>
     </message>
@@ -4159,32 +4646,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Mined</translation>
     </message>
     <message>
-        <location line="+3"/>
-        <source>Darksend Denominate</source>
-        <translation>Darksend Denominate</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Darksend Collateral Payment</source>
-        <translation>Darksend Collateral Payment</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Darksend Make Collateral Inputs</source>
-        <translation>Darksend Make Collateral Inputs</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Darksend Create Denominations</source>
-        <translation>Darksend Create Denominations</translation>
-    </message>
-    <message>
-        <location line="+2"/>
-        <source>Darksent</source>
-        <translation>Darksent</translation>
-    </message>
-    <message>
-        <location line="+30"/>
+        <location line="+42"/>
         <source>watch-only</source>
         <translation type="unfinished"></translation>
     </message>
@@ -4194,7 +4656,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>(n/a)</translation>
     </message>
     <message>
-        <location line="+210"/>
+        <location line="+224"/>
         <source>Transaction status. Hover over this field to show number of confirmations.</source>
         <translation>Transaction status. Hover over this field to show number of confirmations.</translation>
     </message>
@@ -4214,12 +4676,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+2"/>
-        <source>Destination address of transaction.</source>
-        <translation>Destination address of transaction.</translation>
-    </message>
-    <message>
-        <location line="+2"/>
+        <location line="+4"/>
         <source>Amount removed from or added to balance.</source>
         <translation>Amount removed from or added to balance.</translation>
     </message>
@@ -4227,7 +4684,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
 <context>
     <name>TransactionView</name>
     <message>
-        <location filename="../transactionview.cpp" line="+69"/>
+        <location filename="../transactionview.cpp" line="+73"/>
         <location line="+17"/>
         <source>All</source>
         <translation>All</translation>
@@ -4279,28 +4736,28 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Darksent</source>
-        <translation>Darksent</translation>
+        <source>PrivateSend</source>
+        <translation>PrivateSend</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Darksend Make Collateral Inputs</source>
-        <translation>Darksend Make Collateral Inputs</translation>
+        <source>PrivateSend Make Collateral Inputs</source>
+        <translation>PrivateSend Make Collateral Inputs</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Darksend Create Denominations</source>
-        <translation>Darksend Create Denominations</translation>
+        <source>PrivateSend Create Denominations</source>
+        <translation>PrivateSend Create Denominations</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Darksend Denominate</source>
-        <translation>Darksend Denominate</translation>
+        <source>PrivateSend Denominate</source>
+        <translation>PrivateSend Denominate</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Darksend Collateral Payment</source>
-        <translation>Darksend Collateral Payment</translation>
+        <source>PrivateSend Collateral Payment</source>
+        <translation>PrivateSend Collateral Payment</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4323,12 +4780,12 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Enter address or label to search</translation>
     </message>
     <message>
-        <location line="+6"/>
+        <location line="+7"/>
         <source>Min amount</source>
         <translation>Min amount</translation>
     </message>
     <message>
-        <location line="+36"/>
+        <location line="+37"/>
         <source>Copy address</source>
         <translation>Copy address</translation>
     </message>
@@ -4349,6 +4806,11 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+1"/>
+        <source>Copy raw transaction</source>
+        <translation>Copy raw transaction</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Edit label</source>
         <translation>Edit label</translation>
     </message>
@@ -4358,7 +4820,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Show transaction details</translation>
     </message>
     <message>
-        <location line="+201"/>
+        <location line="+206"/>
         <source>Export Transaction History</source>
         <translation>Export Transaction History</translation>
     </message>
@@ -4423,12 +4885,12 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>The transaction history was successfully saved to %1.</translation>
     </message>
     <message>
-        <location line="+126"/>
+        <location line="+136"/>
         <source>Range:</source>
         <translation>Range:</translation>
     </message>
     <message>
-        <location line="+8"/>
+        <location line="+9"/>
         <source>to</source>
         <translation>to</translation>
     </message>
@@ -4444,7 +4906,7 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
 <context>
     <name>WalletFrame</name>
     <message>
-        <location filename="../walletframe.cpp" line="+26"/>
+        <location filename="../walletframe.cpp" line="+27"/>
         <source>No wallet has been loaded.</source>
         <translation>No wallet has been loaded.</translation>
     </message>
@@ -4459,20 +4921,21 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Send Coins</translation>
     </message>
     <message>
-        <location line="-20"/>
-        <source>InstantX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 SIB.</source>
-        <translation type="unfinished"></translation>
+        <location line="-28"/>
+        <location line="+12"/>
+        <source>InstantSend doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 SIB.</source>
+        <translation>InstantSend doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 SIB.</translation>
     </message>
     <message>
-        <location line="+9"/>
-        <source>InstantX doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 SIB.</source>
-        <translation type="unfinished"></translation>
+        <location line="+5"/>
+        <source>Used way too many inputs (&gt;%1) for this InstantSend transaction, fees could be huge.</source>
+        <translation>Used way too many inputs (&gt;%1) for this InstantSend transaction, fees could be huge.</translation>
     </message>
 </context>
 <context>
     <name>WalletView</name>
     <message>
-        <location filename="../walletview.cpp" line="+48"/>
+        <location filename="../walletview.cpp" line="+49"/>
         <source>&amp;Export</source>
         <translation>&amp;Export</translation>
     </message>
@@ -4482,12 +4945,12 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
         <translation>Export the data in the current tab to a file</translation>
     </message>
     <message>
-        <location line="+9"/>
+        <location line="+10"/>
         <source>Selected amount:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location line="+212"/>
+        <location line="+224"/>
         <source>Backup Wallet</source>
         <translation>Backup Wallet</translation>
     </message>
@@ -4527,6 +4990,7 @@ that paper wallet has been printed successfully!</translation>
 <context>
     <name>sibcoin-core</name>
     <message>
+        <location filename="../dashstrings.cpp" line="+34"/>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
         <translation type="obsolete">Bind to given address and always listen on it. Use [host]:port notation for IPv6</translation>
     </message>
@@ -4535,14 +4999,7 @@ that paper wallet has been printed successfully!</translation>
         <translation type="obsolete">Cannot obtain a lock on data directory %s. Sibcoin Core is probably already running.</translation>
     </message>
     <message>
-        <source>Darksend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
-        <translation type="obsolete">Darksend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</translation>
-    </message>
-    <message>
-        <source>Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</source>
-        <translation type="obsolete">Enter regression test mode, which uses a special chain in which blocks can be solved instantly.</translation>
-    </message>
-    <message>
+        <location line="+32"/>
         <source>Error: Listening for incoming connections failed (listen returned error %s)</source>
         <translation type="obsolete">Error: Listening for incoming connections failed (listen returned error %s)</translation>
     </message>
@@ -4551,6 +5008,7 @@ that paper wallet has been printed successfully!</translation>
         <translation type="obsolete">Execute command when a relevant alert is received or we see a really long fork (%s in cmd is replaced by message)</translation>
     </message>
     <message>
+        <location line="+6"/>
         <source>Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</source>
         <translation type="obsolete">Execute command when a wallet transaction changes (%s in cmd is replaced by TxID)</translation>
     </message>
@@ -4560,7 +5018,7 @@ that paper wallet has been printed successfully!</translation>
     </message>
     <message>
         <source>Found unconfirmed denominated outputs, will wait till they confirm to continue.</source>
-        <translation type="obsolete">Found unconfirmed denominated outputs, will wait till they confirm to continue.</translation>
+        <translation>Found unconfirmed denominated outputs, will wait till they confirm to continue.</translation>
     </message>
     <message>
         <source>In this mode -genproclimit controls how many blocks are generated immediately.</source>
@@ -4575,10 +5033,12 @@ that paper wallet has been printed successfully!</translation>
         <translation type="obsolete">Name to construct url for KeePass entry that stores the wallet passphrase</translation>
     </message>
     <message>
+        <location line="+21"/>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</source>
         <translation type="obsolete">Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect)</translation>
     </message>
     <message>
+        <location line="+14"/>
         <source>Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</source>
         <translation type="obsolete">Set maximum size of high-priority/low-fee transactions in bytes (default: %d)</translation>
     </message>
@@ -4587,6 +5047,7 @@ that paper wallet has been printed successfully!</translation>
         <translation type="obsolete">Set the number of script verification threads (%u to %d, 0 = auto, &lt;0 = leave that many cores free, default: %d)</translation>
     </message>
     <message>
+        <location line="+20"/>
         <source>This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</source>
         <translation type="obsolete">This is a pre-release test build - use at your own risk - do not use for mining or merchant applications</translation>
     </message>
@@ -4699,10 +5160,7 @@ that paper wallet has been printed successfully!</translation>
         <translation type="obsolete">Corrupted block database detected</translation>
     </message>
     <message>
-        <source>Darksend options:</source>
-        <translation type="obsolete">Darksend options:</translation>
-    </message>
-    <message>
+        <location line="+2"/>
         <source>Debugging/Testing options:</source>
         <translation type="obsolete">Debugging/Testing options:</translation>
     </message>
@@ -4755,14 +5213,12 @@ that paper wallet has been printed successfully!</translation>
         <translation type="obsolete">Error reading from database, shutting down.</translation>
     </message>
     <message>
-        <source>Error recovering public key.</source>
-        <translation type="obsolete">Error recovering public key.</translation>
-    </message>
-    <message>
+        <location line="+1"/>
         <source>Error</source>
         <translation type="obsolete">Error</translation>
     </message>
     <message>
+        <location line="+2"/>
         <source>Error: Disk space is low!</source>
         <translation type="obsolete">Error: Disk space is low!</translation>
     </message>
@@ -4804,35 +5260,19 @@ that paper wallet has been printed successfully!</translation>
     </message>
     <message>
         <source>Found enough users, signing ...</source>
-        <translation type="obsolete">Found enough users, signing ...</translation>
-    </message>
-    <message>
-        <source>Importing...</source>
-        <translation type="obsolete">Importing...</translation>
+        <translation>Found enough users, signing ...</translation>
     </message>
     <message>
         <source>Imports blocks from external blk000??.dat file</source>
         <translation type="obsolete">Imports blocks from external blk000??.dat file</translation>
     </message>
     <message>
-        <source>Incompatible mode.</source>
-        <translation type="obsolete">Incompatible mode.</translation>
-    </message>
-    <message>
-        <source>Incompatible version.</source>
-        <translation type="obsolete">Incompatible version.</translation>
-    </message>
-    <message>
-        <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
-        <translation type="obsolete">Incorrect or no genesis block found. Wrong datadir for network?</translation>
-    </message>
-    <message>
         <source>Information</source>
-        <translation type="obsolete">Information</translation>
+        <translation>Information</translation>
     </message>
     <message>
         <source>Initialization sanity check failed. Sibcoin Core is shutting down.</source>
-        <translation type="obsolete">Initialization sanity check failed. Sibcoin Core is shutting down.</translation>
+        <translation>Initialization sanity check failed. Sibcoin Core is shutting down.</translation>
     </message>
     <message>
         <source>Input is not valid.</source>
@@ -4843,64 +5283,830 @@ that paper wallet has been printed successfully!</translation>
         <translation type="obsolete">InstantX options:</translation>
     </message>
     <message>
-        <source>Mixing in progress...</source>
-        <translation type="obsolete">Mixing in progress...</translation>
-    </message>
-    <message>
-        <source>Will retry...</source>
-        <translation type="obsolete">Will retry...</translation>
-    </message>
-    <message>
         <source>Insufficient funds.</source>
-        <translation type="obsolete">Insufficient funds.</translation>
+        <translation>Insufficient funds.</translation>
     </message>
     <message>
         <source>Invalid -onion address: &apos;%s&apos;</source>
-        <translation type="obsolete">Invalid -onion address: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <source>Invalid -proxy address: &apos;%s&apos;</source>
-        <translation type="obsolete">Invalid -proxy address: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -minrelaytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
-        <translation type="obsolete">Invalid amount for -minrelaytxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -mintxfee=&lt;amount&gt;: &apos;%s&apos;</source>
-        <translation type="obsolete">Invalid amount for -mintxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
-        <translation type="obsolete">Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
-    </message>
-    <message>
-        <source>Invalid masternodeprivkey. Please see documenation.</source>
-        <translation type="obsolete">Invalid masternodeprivkey. Please see documenation.</translation>
+        <translation>Invalid -onion address: &apos;%s&apos;</translation>
     </message>
     <message>
         <source>Invalid private key.</source>
         <translation type="obsolete">Invalid private key.</translation>
     </message>
     <message>
+        <source>Last Darksend was too recent.</source>
+        <translation type="obsolete">Last Darksend was too recent.</translation>
+        <location line="-336"/>
+        <source>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</source>
+        <translation>(1 = keep tx meta data e.g. account owner and payment request information, 2 = drop tx meta data)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>-fallbackfee is set very high! This is the transaction fee you may pay when fee estimates are not available.</source>
+        <translation>-fallbackfee is set very high! This is the transaction fee you may pay when fee estimates are not available.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</source>
+        <translation>-maxtxfee is set very high! Fees this large could be paid on a single transaction.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>-paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</source>
+        <translation>-paytxfee is set very high! This is the transaction fee you will pay if you send a transaction.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>A fee rate (in %s/kB) that will be used when fee estimation has insufficient data (default: %s)</source>
+        <translation>A fee rate (in %s/kB) that will be used when fee estimation has insufficient data (default: %s)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Accept relayed transactions received from whitelisted peers even when not relaying transactions (default: %d)</source>
+        <translation>Accept relayed transactions received from whitelisted peers even when not relaying transactions (default: %d)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</source>
+        <translation>Allow JSON-RPC connections from specified source. Valid for &lt;ip&gt; are a single IP (e.g. 1.2.3.4), a network/netmask (e.g. 1.2.3.4/255.255.255.0) or a network/CIDR (e.g. 1.2.3.4/24). This option can be specified multiple times</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Bind to given address and whitelist peers connecting to it. Use [host]:port notation for IPv6</source>
+        <translation>Bind to given address and whitelist peers connecting to it. Use [host]:port notation for IPv6</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</source>
+        <translation>Bind to given address to listen for JSON-RPC connections. Use [host]:port notation for IPv6. This option can be specified multiple times (default: bind to all interfaces)</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)</source>
+        <translation>Create new files with system default permissions, instead of umask 077 (only effective with disabled wallet functionality)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</source>
+        <translation>Delete all wallet transactions and only recover those parts of the blockchain through -rescan on startup</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</source>
+        <translation>Distributed under the MIT software license, see the accompanying file COPYING or &lt;http://www.opensource.org/licenses/mit-license.php&gt;.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>How thorough the block verification of -checkblocks is (0-4, default: %u)</source>
+        <translation>How thorough the block verification of -checkblocks is (0-4, default: %u)</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</source>
+        <translation>If paytxfee is not set, include enough fee so transactions begin confirmation on average within n blocks (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least the minrelay fee of %s to prevent stuck transactions)</source>
+        <translation>Invalid amount for -maxtxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least the minrelay fee of %s to prevent stuck transactions)</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Maintain a full transaction index, used by the getrawtransaction rpc call (default: %u)</source>
+        <translation>Maintain a full transaction index, used by the getrawtransaction rpc call (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+9"/>
+        <source>Maximum size of data in data carrier transactions we relay and mine (default: %u)</source>
+        <translation>Maximum size of data in data carrier transactions we relay and mine (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+8"/>
+        <source>Number of seconds to keep misbehaving peers from reconnecting (default: %u)</source>
+        <translation>Number of seconds to keep misbehaving peers from reconnecting (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Output debugging information (default: %u, supplying &lt;category&gt; is optional)</source>
+        <translation>Output debugging information (default: %u, supplying &lt;category&gt; is optional)</translation>
+    </message>
+    <message>
+        <location line="+36"/>
+        <source>Set the number of threads for coin generation if enabled (-1 = all cores, default: %d)</source>
+        <translation>Set the number of threads for coin generation if enabled (-1 = all cores, default: %d)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Show N confirmations for a successfully locked transaction (0-9999, default: %u)</source>
+        <translation>Show N confirmations for a successfully locked transaction (0-9999, default: %u)</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</source>
+        <translation>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit &lt;https://www.openssl.org/&gt; and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</translation>
+    </message>
+    <message>
+        <location line="+17"/>
+        <source>Unable to locate enough funds for this transaction that are not equal %d SIB.</source>
+        <translation>Unable to locate enough funds for this transaction that are not equal %d SIB.</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</source>
+        <translation>Use separate SOCKS5 proxy to reach peers via Tor hidden services (default: %s)</translation>
+    </message>
+    <message>
+        <location line="+31"/>
+        <source>Whitelist peers connecting from the given netmask or IP address. Can be specified multiple times.</source>
+        <translation>Whitelist peers connecting from the given netmask or IP address. Can be specified multiple times.</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</source>
+        <translation>Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>(default: %s)</source>
+        <translation>(default: %s)</translation>
+    </message>
+    <message>
+        <location line="+7"/>
+        <source>Accept public REST requests (default: %u)</source>
+        <translation>Accept public REST requests (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Always query for peer addresses via DNS lookup (default: %u)</source>
+        <translation>Always query for peer addresses via DNS lookup (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>Cannot resolve -whitebind address: &apos;%s&apos;</source>
+        <translation>Cannot resolve -whitebind address: &apos;%s&apos;</translation>
+    </message>
+    <message>
+        <location line="+4"/>
+        <source>Connect through SOCKS5 proxy</source>
+        <translation>Connect through SOCKS5 proxy</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Connect to KeePassHttp on port &lt;port&gt; (default: %u)</source>
+        <translation>Connect to KeePassHttp on port &lt;port&gt; (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Copyright (C) 2009-%i The Bitcoin Core Developers</source>
+        <translation>Copyright (C) 2009-%i The Bitcoin Core Developers</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Copyright (C) 2014-%i The Dash Core Developers</source>
+        <translation>Copyright (C) 2014-%i The Dash Core Developers</translation>
+    </message>
+    <message>
+        <location line="+14"/>
+        <source>Enable the client to act as a masternode (0-1, default: %u)</source>
+        <translation>Enable the client to act as a masternode (0-1, default: %u)</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>Error connecting to Masternode.</source>
+        <translation>Error connecting to Masternode.</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>Error loading wallet.dat: Wallet requires newer version of Sibcoin Core</source>
+        <translation>Error loading wallet.dat: Wallet requires newer version of Sibcoin Core</translation>
+    </message>
+    <message>
+        <location line="+12"/>
+        <source>Found enough users, signing ( waiting %s )</source>
+        <translation>Found enough users, signing ( waiting %s )</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Generate coins (default: %u)</source>
+        <translation>Generate coins (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>How many blocks to check at startup (default: %u, 0 = all)</source>
+        <translation>How many blocks to check at startup (default: %u, 0 = all)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Importing...</source>
+        <translation>Importing...</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Include IP addresses in debug output (default: %u)</source>
+        <translation>Include IP addresses in debug output (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Incompatible mode.</source>
+        <translation>Incompatible mode.</translation>
+    </message>
+    <message>
+        <source>Incompatible version.</source>
+        <translation>Incompatible version.</translation>
+    </message>
+    <message>
+        <source>Incorrect or no genesis block found. Wrong datadir for network?</source>
+        <translation>Incorrect or no genesis block found. Wrong datadir for network?</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Invalid -proxy address: &apos;%s&apos;</source>
+        <translation>Invalid -proxy address: &apos;%s&apos;</translation>
+    </message>
+    <message>
+        <source>Invalid amount for -maxtxfee=&lt;amount&gt;: &apos;%s&apos;</source>
+        <translation>Invalid amount for -maxtxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
+    </message>
+    <message>
+        <source>Invalid amount for -minrelaytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
+        <translation>Invalid amount for -minrelaytxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
+    </message>
+    <message>
+        <source>Invalid amount for -mintxfee=&lt;amount&gt;: &apos;%s&apos;</source>
+        <translation>Invalid amount for -mintxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
+    </message>
+    <message>
+        <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least %s)</source>
+        <translation>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos; (must be at least %s)</translation>
+    </message>
+    <message>
+        <source>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</source>
+        <translation>Invalid amount for -paytxfee=&lt;amount&gt;: &apos;%s&apos;</translation>
+    </message>
+    <message>
+        <source>Listen for JSON-RPC connections on &lt;port&gt; (default: %u or testnet: %u)</source>
+        <translation>Listen for JSON-RPC connections on &lt;port&gt; (default: %u or testnet: %u)</translation>
+    </message>
+    <message>
+        <source>Listen for connections on &lt;port&gt; (default: %u or testnet: %u)</source>
+        <translation>Listen for connections on &lt;port&gt; (default: %u or testnet: %u)</translation>
+    </message>
+    <message>
+        <source>Loading masternode cache...</source>
+        <translation>Loading masternode cache...</translation>
+    </message>
+    <message>
+        <source>Loading masternode payment cache...</source>
+        <translation>Loading masternode payment cache...</translation>
+    </message>
+    <message>
+        <source>Lock is already in place.</source>
+        <translation>Lock is already in place.</translation>
+    </message>
+    <message>
+        <source>Lock masternodes from masternode configuration file (default: %u)</source>
+        <translation>Lock masternodes from masternode configuration file (default: %u)</translation>
+    </message>
+    <message>
+        <source>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
+        <translation>Maximum per-connection receive buffer, &lt;n&gt;*1000 bytes (default: %u)</translation>
+    </message>
+    <message>
+        <source>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: %u)</source>
+        <translation>Maximum per-connection send buffer, &lt;n&gt;*1000 bytes (default: %u)</translation>
+    </message>
+    <message>
+        <source>Mixing in progress...</source>
+        <translation>Mixing in progress...</translation>
+    </message>
+    <message>
+        <source>Need to specify a port with -whitebind: &apos;%s&apos;</source>
+        <translation>Need to specify a port with -whitebind: &apos;%s&apos;</translation>
+    </message>
+    <message>
+        <source>No Masternodes detected.</source>
+        <translation>No Masternodes detected.</translation>
+    </message>
+    <message>
+        <source>No compatible Masternode found.</source>
+        <translation>No compatible Masternode found.</translation>
+    </message>
+    <message>
+        <source>Not in the Masternode list.</source>
+        <translation>Not in the Masternode list.</translation>
+    </message>
+    <message>
+        <source>Only connect to nodes in network &lt;net&gt; (ipv4, ipv6 or onion)</source>
+        <translation>Only connect to nodes in network &lt;net&gt; (ipv4, ipv6 or onion)</translation>
+    </message>
+    <message>
+        <source>Port: %d</source>
+        <translation>Port: %d</translation>
+    </message>
+    <message>
+        <source>Prepend debug output with timestamp (default: %u)</source>
+        <translation>Prepend debug output with timestamp (default: %u)</translation>
+    </message>
+    <message>
+        <source>Send trace/debug info to debug.log file (default: %u)</source>
+        <translation>Send trace/debug info to debug.log file (default: %u)</translation>
+    </message>
+    <message>
+        <source>Send transactions as zero-fee transactions if possible (default: %u)</source>
+        <translation>Send transactions as zero-fee transactions if possible (default: %u)</translation>
+    </message>
+    <message>
+        <source>Set key pool size to &lt;n&gt; (default: %u)</source>
+        <translation>Set key pool size to &lt;n&gt; (default: %u)</translation>
+    </message>
+    <message>
+        <source>Set minimum block size in bytes (default: %u)</source>
+        <translation>Set minimum block size in bytes (default: %u)</translation>
+    </message>
+    <message>
+        <source>Set the number of threads to service RPC calls (default: %d)</source>
+        <translation>Set the number of threads to service RPC calls (default: %d)</translation>
+    </message>
+    <message>
+        <source>Specify configuration file (default: %s)</source>
+        <translation>Specify configuration file (default: %s)</translation>
+    </message>
+    <message>
+        <source>Specify connection timeout in milliseconds (minimum: 1, default: %d)</source>
+        <translation>Specify connection timeout in milliseconds (minimum: 1, default: %d)</translation>
+    </message>
+    <message>
+        <source>Specify masternode configuration file (default: %s)</source>
+        <translation>Specify masternode configuration file (default: %s)</translation>
+    </message>
+    <message>
+        <source>Specify pid file (default: %s)</source>
+        <translation>Specify pid file (default: %s)</translation>
+    </message>
+    <message>
+        <source>Spend unconfirmed change when sending transactions (default: %u)</source>
+        <translation>Spend unconfirmed change when sending transactions (default: %u)</translation>
+    </message>
+    <message>
+        <source>Submitted following entries to masternode: %u / %d</source>
+        <translation>Submitted following entries to masternode: %u / %d</translation>
+    </message>
+    <message>
+        <source>Submitted to masternode, waiting for more entries ( %u / %d ) %s</source>
+        <translation>Submitted to masternode, waiting for more entries ( %u / %d ) %s</translation>
+    </message>
+    <message>
+        <source>Submitted to masternode, waiting in queue %s</source>
+        <translation>Submitted to masternode, waiting in queue %s</translation>
+    </message>
+    <message>
+        <source>Synchronization failed</source>
+        <translation>Synchronization failed</translation>
+    </message>
+    <message>
+        <source>Synchronization finished</source>
+        <translation>Synchronization finished</translation>
+    </message>
+    <message>
+        <source>Synchronizing masternodes...</source>
+        <translation>Synchronizing masternodes...</translation>
+    </message>
+    <message>
+        <source>Synchronizing sporks...</source>
+        <translation>Synchronizing sporks...</translation>
+    </message>
+    <message>
+        <source>This is not a Masternode.</source>
+        <translation>This is not a Masternode.</translation>
+    </message>
+    <message>
+        <source>Threshold for disconnecting misbehaving peers (default: %u)</source>
+        <translation>Threshold for disconnecting misbehaving peers (default: %u)</translation>
+    </message>
+    <message>
+        <source>Too many %f denominations, removing.</source>
+        <translation>Too many %f denominations, removing.</translation>
+    </message>
+    <message>
+        <source>Tor control port password (default: empty)</source>
+        <translation>Tor control port password (default: empty)</translation>
+    </message>
+    <message>
+        <source>Tor control port to use if onion listening enabled (default: %s)</source>
+        <translation>Tor control port to use if onion listening enabled (default: %s)</translation>
+    </message>
+    <message>
+        <source>Unable to start HTTP server. See debug log for details.</source>
+        <translation>Unable to start HTTP server. See debug log for details.</translation>
+    </message>
+    <message>
+        <source>Unknown response.</source>
+        <translation>Unknown response.</translation>
+    </message>
+    <message>
+        <source>Unsupported argument -benchmark ignored, use -debug=bench.</source>
+        <translation>Unsupported argument -benchmark ignored, use -debug=bench.</translation>
+    </message>
+    <message>
+        <source>Unsupported argument -debugnet ignored, use -debug=net.</source>
+        <translation>Unsupported argument -debugnet ignored, use -debug=net.</translation>
+    </message>
+    <message>
+        <source>Unsupported argument -tor found, use -onion.</source>
+        <translation>Unsupported argument -tor found, use -onion.</translation>
+    </message>
+    <message>
+        <source>Upgrade wallet to latest format on startup</source>
+        <translation>Upgrade wallet to latest format on startup</translation>
+    </message>
+    <message>
+        <source>Use KeePass 2 integration using KeePassHttp plugin (default: %u)</source>
+        <translation>Use KeePass 2 integration using KeePassHttp plugin (default: %u)</translation>
+    </message>
+    <message>
+        <source>Use UPnP to map the listening port (default: %u)</source>
+        <translation>Use UPnP to map the listening port (default: %u)</translation>
+    </message>
+    <message>
+        <source>User Agent comment (%s) contains unsafe characters.</source>
+        <translation>User Agent comment (%s) contains unsafe characters.</translation>
+    </message>
+    <message>
+        <source>Value more than PrivateSend pool maximum allows.</source>
+        <translation>Value more than PrivateSend pool maximum allows.</translation>
+    </message>
+    <message>
+        <source>Wallet needed to be rewritten: restart Sibcoin Core to complete</source>
+        <translation>Wallet needed to be rewritten: restart Sibcoin Core to complete</translation>
+    </message>
+    <message>
+        <source>Will retry...</source>
+        <translation>Will retry...</translation>
+    </message>
+    <message>
+        <source>Invalid masternodeprivkey. Please see documenation.</source>
+        <translation>Invalid masternodeprivkey. Please see documenation.</translation>
+    </message>
+    <message>
+        <source>Can&apos;t find random Masternode.</source>
+        <translation>Can&apos;t find random Masternode.</translation>
+    </message>
+    <message>
+        <source>Can&apos;t mix while sync in progress.</source>
+        <translation>Can&apos;t mix while sync in progress.</translation>
+    </message>
+    <message>
+        <source>Could not parse masternode.conf</source>
+        <translation>Could not parse masternode.conf</translation>
+    </message>
+    <message>
+        <source>Invalid netmask specified in -whitelist: &apos;%s&apos;</source>
+        <translation>Invalid netmask specified in -whitelist: &apos;%s&apos;</translation>
+    </message>
+    <message>
+        <source>Invalid port detected in masternode.conf</source>
+        <translation>Invalid port detected in masternode.conf</translation>
+    </message>
+    <message>
         <source>Invalid script detected.</source>
-        <translation type="obsolete">Invalid script detected.</translation>
+        <translation>Invalid script detected.</translation>
     </message>
     <message>
         <source>KeePassHttp id for the established association</source>
-        <translation type="obsolete">KeePassHttp id for the established association</translation>
+        <translation>KeePassHttp id for the established association</translation>
     </message>
     <message>
         <source>KeePassHttp key for AES encrypted communication with KeePass</source>
-        <translation type="obsolete">KeePassHttp key for AES encrypted communication with KeePass</translation>
+        <translation>KeePassHttp key for AES encrypted communication with KeePass</translation>
+    </message>
+    <message>
+        <source>Keep N SIB anonymized (default: %u)</source>
+        <translation>Keep N SIB anonymized (default: %u)</translation>
     </message>
     <message>
         <source>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</source>
-        <translation type="obsolete">Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</translation>
+        <translation>Keep at most &lt;n&gt; unconnectable transactions in memory (default: %u)</translation>
     </message>
     <message>
-        <source>Last Darksend was too recent.</source>
-        <translation type="obsolete">Last Darksend was too recent.</translation>
+        <source>Disable all Dash/Sibcoin specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
+        <translation>Disable all Dash/Sibcoin specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</translation>
+    </message>
+    <message>
+        <source>Discover own IP addresses (default: 1 when listening and no -externalip or -proxy)</source>
+        <translation>Discover own IP addresses (default: 1 when listening and no -externalip or -proxy)</translation>
+    </message>
+    <message>
+        <source>Do not keep transactions in the mempool longer than &lt;n&gt; hours (default: %u)</source>
+        <translation>Do not keep transactions in the mempool longer than &lt;n&gt; hours (default: %u)</translation>
+    </message>
+    <message>
+        <source>Enable InstantSend, show confirmations for locked transactions (0-1, default: %u)</source>
+        <translation>Enable InstantSend, show confirmations for locked transactions (0-1, default: %u)</translation>
+    </message>
+    <message>
+        <source>Enable multiple PrivateSend mixing sessions per block, experimental (0-1, default: %u)</source>
+        <translation>Enable multiple PrivateSend mixing sessions per block, experimental (0-1, default: %u)</translation>
+    </message>
+    <message>
+        <source>Enable use of automated PrivateSend for funds stored in this wallet (0-1, default: %u)</source>
+        <translation>Enable use of automated PrivateSend for funds stored in this wallet (0-1, default: %u)</translation>
+    </message>
+    <message>
+        <source>Error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</source>
+        <translation>Error reading wallet.dat! All keys read correctly, but transaction data or address book entries might be missing or incorrect.</translation>
+    </message>
+    <message>
+        <source>Execute command when a wallet InstantSend transaction is successfully locked (%s in cmd is replaced by TxID)</source>
+        <translation>Execute command when a wallet InstantSend transaction is successfully locked (%s in cmd is replaced by TxID)</translation>
+    </message>
+    <message>
+        <source>Failed to create backup, file already exists! This could happen if you restarted wallet in less than 60 seconds. You can continue if you are ok with this.</source>
+        <translation>Failed to create backup, file already exists! This could happen if you restarted wallet in less than 60 seconds. You can continue if you are ok with this.</translation>
+    </message>
+    <message>
+        <source>Fees (in %s/kB) smaller than this are considered zero fee for relaying, mining and transaction creation (default: %s)</source>
+        <translation>Fees (in %s/kB) smaller than this are considered zero fee for relaying, mining and transaction creation (default: %s)</translation>
+    </message>
+    <message>
+        <source>Fees (in %s/kB) smaller than this are considered zero fee for transaction creation (default: %s)</source>
+        <translation>Fees (in %s/kB) smaller than this are considered zero fee for transaction creation (default: %s)</translation>
+    </message>
+    <message>
+        <source>Force relay of transactions from whitelisted peers even they violate local relay policy (default: %d)</source>
+        <translation>Force relay of transactions from whitelisted peers even they violate local relay policy (default: %d)</translation>
+    </message>
+    <message>
+        <source>If &lt;category&gt; is not supplied or if &lt;category&gt; = 1, output all debugging information.</source>
+        <translation>If &lt;category&gt; is not supplied or if &lt;category&gt; = 1, output all debugging information.</translation>
+    </message>
+    <message>
+        <source>InstantSend doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 SIB.</source>
+        <translation>InstantSend doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 SIB.</translation>
+    </message>
+    <message>
+        <source>InstantSend requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>InstantSend requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</translation>
+    </message>
+    <message>
+        <source>Maintain a full address index, used to query for the balance, txids and unspent outputs for addresses (default: %u)</source>
+        <translation>Maintain a full address index, used to query for the balance, txids and unspent outputs for addresses (default: %u)</translation>
+    </message>
+    <message>
+        <source>Maintain a full spent index, used to query the spending txid and input index for an outpoint (default: %u)</source>
+        <translation>Maintain a full spent index, used to query the spending txid and input index for an outpoint (default: %u)</translation>
+    </message>
+    <message>
+        <source>Maintain a timestamp index for block hashes, used to query blocks hashes by a range of timestamps (default: %u)</source>
+        <translation>Maintain a timestamp index for block hashes, used to query blocks hashes by a range of timestamps (default: %u)</translation>
+    </message>
+    <message>
+        <source>Maintain at most &lt;n&gt; connections to peers (temporary service connections excluded) (default: %u)</source>
+        <translation>Maintain at most &lt;n&gt; connections to peers (temporary service connections excluded) (default: %u)</translation>
+    </message>
+    <message>
+        <source>Maximum total fees (in %s) to use in a single wallet transaction; setting this too low may abort large transactions (default: %s)</source>
+        <translation>Maximum total fees (in %s) to use in a single wallet transaction; setting this too low may abort large transactions (default: %s)</translation>
+    </message>
+    <message>
+        <source>Please check that your computer&apos;s date and time are correct! If your clock is wrong Sibcoin Core will not work properly.</source>
+        <translation>Please check that your computer&apos;s date and time are correct! If your clock is wrong Sibcoin Core will not work properly.</translation>
+    </message>
+    <message>
+        <source>PrivateSend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
+        <translation>PrivateSend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</translation>
+    </message>
+    <message>
+        <source>Provide liquidity to PrivateSend by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)</source>
+        <translation>Provide liquidity to PrivateSend by infrequently mixing coins on a continual basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, low fees)</translation>
+    </message>
+    <message>
+        <source>Prune configured below the minimum of %d MiB.  Please use a higher number.</source>
+        <translation>Prune configured below the minimum of %d MiB.  Please use a higher number.</translation>
+    </message>
+    <message>
+        <source>Prune: last wallet synchronisation goes beyond pruned data. You need to -reindex (download the whole blockchain again in case of pruned node)</source>
+        <translation>Prune: last wallet synchronisation goes beyond pruned data. You need to -reindex (download the whole blockchain again in case of pruned node)</translation>
+    </message>
+    <message>
+        <source>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</source>
+        <translation>Randomize credentials for every proxy connection. This enables Tor stream isolation (default: %u)</translation>
+    </message>
+    <message>
+        <source>Reduce storage requirements by pruning (deleting) old blocks. This mode is incompatible with -txindex and -rescan. Warning: Reverting this setting requires re-downloading the entire blockchain. (default: 0 = disable pruning blocks, &gt;%u = target size in MiB to use for block files)</source>
+        <translation>Reduce storage requirements by pruning (deleting) old blocks. This mode is incompatible with -txindex and -rescan. Warning: Reverting this setting requires re-downloading the entire blockchain. (default: 0 = disable pruning blocks, &gt;%u = target size in MiB to use for block files)</translation>
+    </message>
+    <message>
+        <source>Rescans are not possible in pruned mode. You will need to use -reindex which will download the whole blockchain again.</source>
+        <translation>Rescans are not possible in pruned mode. You will need to use -reindex which will download the whole blockchain again.</translation>
+    </message>
+    <message>
+        <source>Specify full path to directory for automatic wallet backups (must exist)</source>
+        <translation>Specify full path to directory for automatic wallet backups (must exist)</translation>
+    </message>
+    <message>
+        <source>Support filtering of blocks and transaction with bloom filters (default: %u)</source>
+        <translation>Support filtering of blocks and transaction with bloom filters (default: %u)</translation>
+    </message>
+    <message>
+        <source>The block database contains a block which appears to be from the future. This may be due to your computer&apos;s date and time being set incorrectly. Only rebuild the block database if you are sure that your computer&apos;s date and time are correct</source>
+        <translation>The block database contains a block which appears to be from the future. This may be due to your computer&apos;s date and time being set incorrectly. Only rebuild the block database if you are sure that your computer&apos;s date and time are correct</translation>
+    </message>
+    <message>
+        <source>The transaction amount is too small to send after the fee has been deducted</source>
+        <translation>The transaction amount is too small to send after the fee has been deducted</translation>
+    </message>
+    <message>
+        <source>Total length of network version string (%i) exceeds maximum length (%i). Reduce the number or size of uacomments.</source>
+        <translation>Total length of network version string (%i) exceeds maximum length (%i). Reduce the number or size of uacomments.</translation>
+    </message>
+    <message>
+        <source>Tries to keep outbound traffic under the given target (in MiB per 24h), 0 = no limit (default: %d)</source>
+        <translation>Tries to keep outbound traffic under the given target (in MiB per 24h), 0 = no limit (default: %d)</translation>
+    </message>
+    <message>
+        <source>Unable to locate enough PrivateSend denominated funds for this transaction.</source>
+        <translation>Unable to locate enough PrivateSend denominated funds for this transaction.</translation>
+    </message>
+    <message>
+        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal %d SIB.</source>
+        <translation>Unable to locate enough PrivateSend non-denominated funds for this transaction that are not equal %d SIB.</translation>
+    </message>
+    <message>
+        <source>Unsupported argument -socks found. Setting SOCKS version isn&apos;t possible anymore, only SOCKS5 proxies are supported.</source>
+        <translation>Unsupported argument -socks found. Setting SOCKS version isn&apos;t possible anymore, only SOCKS5 proxies are supported.</translation>
+    </message>
+    <message>
+        <source>Unsupported argument -whitelistalwaysrelay ignored, use -whitelistrelay and/or -whitelistforcerelay.</source>
+        <translation>Unsupported argument -whitelistalwaysrelay ignored, use -whitelistrelay and/or -whitelistforcerelay.</translation>
+    </message>
+    <message>
+        <source>Use N separate masternodes for each denominated input to mix funds (2-16, default: %u)</source>
+        <translation>Use N separate masternodes for each denominated input to mix funds (2-16, default: %u)</translation>
+    </message>
+    <message>
+        <source>Use UPnP to map the listening port (default: 1 when listening and no -proxy)</source>
+        <translation>Use UPnP to map the listening port (default: 1 when listening and no -proxy)</translation>
+    </message>
+    <message>
+        <source>Username and hashed password for JSON-RPC connections. The field &lt;userpw&gt; comes in the format: &lt;USERNAME&gt;:&lt;SALT&gt;$&lt;HASH&gt;. A canonical python script is included in share/rpcuser. This option can be specified multiple times</source>
+        <translation>Username and hashed password for JSON-RPC connections. The field &lt;userpw&gt; comes in the format: &lt;USERNAME&gt;:&lt;SALT&gt;$&lt;HASH&gt;. A canonical python script is included in share/rpcuser. This option can be specified multiple times</translation>
+    </message>
+    <message>
+        <source>WARNING! Failed to replenish keypool, please unlock your wallet to do so.</source>
+        <translation>WARNING! Failed to replenish keypool, please unlock your wallet to do so.</translation>
+    </message>
+    <message>
+        <source>WARNING: abnormally high number of blocks generated, %d blocks received in the last %d hours (%d expected)</source>
+        <translation>WARNING: abnormally high number of blocks generated, %d blocks received in the last %d hours (%d expected)</translation>
+    </message>
+    <message>
+        <source>WARNING: check your network connection, %d blocks received in the last %d hours (%d expected)</source>
+        <translation>WARNING: check your network connection, %d blocks received in the last %d hours (%d expected)</translation>
+    </message>
+    <message>
+        <source>Wallet is locked, can&apos;t replenish keypool! Automatic backups and mixing are disabled, please unlock your wallet to replenish keypool.</source>
+        <translation>Wallet is locked, can&apos;t replenish keypool! Automatic backups and mixing are disabled, please unlock your wallet to replenish keypool.</translation>
+    </message>
+    <message>
+        <source>Warning: Unknown block versions being mined! It&apos;s possible unknown rules are in effect</source>
+        <translation>Warning: Unknown block versions being mined! It&apos;s possible unknown rules are in effect</translation>
+    </message>
+    <message>
+        <source>You need to rebuild the database using -reindex to go back to unpruned mode.  This will redownload the entire blockchain</source>
+        <translation>You need to rebuild the database using -reindex to go back to unpruned mode.  This will redownload the entire blockchain</translation>
+    </message>
+    <message>
+        <source>masternodeaddr option is deprecated. Please use masternode.conf to manage your remote masternodes.</source>
+        <translation>masternodeaddr option is deprecated. Please use masternode.conf to manage your remote masternodes.</translation>
+    </message>
+    <message>
+        <source>%s - %d confirmations</source>
+        <translation>%s - %d confirmations</translation>
+    </message>
+    <message>
+        <source>(%d could be used only on mainnet)</source>
+        <translation>(%d could be used only on mainnet)</translation>
+    </message>
+    <message>
+        <source>(default: %u)</source>
+        <translation>(default: %u)</translation>
+    </message>
+    <message>
+        <source>(must be %d for mainnet)</source>
+        <translation>(must be %d for mainnet)</translation>
+    </message>
+    <message>
+        <source>-maxmempool must be at least %d MB</source>
+        <translation>-maxmempool must be at least %d MB</translation>
+    </message>
+    <message>
+        <source>&lt;category&gt; can be:</source>
+        <translation>&lt;category&gt; can be:</translation>
+    </message>
+    <message>
+        <source>Activating best chain...</source>
+        <translation>Activating best chain...</translation>
+    </message>
+    <message>
+        <source>Append comment to the user agent string</source>
+        <translation>Append comment to the user agent string</translation>
+    </message>
+    <message>
+        <source>Attempt to recover private keys from a corrupt wallet.dat on startup</source>
+        <translation>Attempt to recover private keys from a corrupt wallet.dat on startup</translation>
+    </message>
+    <message>
+        <source>Automatic backups disabled</source>
+        <translation>Automatic backups disabled</translation>
+    </message>
+    <message>
+        <source>Automatically create Tor hidden service (default: %d)</source>
+        <translation>Automatically create Tor hidden service (default: %d)</translation>
+    </message>
+    <message>
+        <source>ERROR! Failed to create automatic backup</source>
+        <translation>ERROR! Failed to create automatic backup</translation>
+    </message>
+    <message>
+        <source>Enable publish hash block in &lt;address&gt;</source>
+        <translation>Enable publish hash block in &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable publish hash transaction (locked via InstantSend) in &lt;address&gt;</source>
+        <translation>Enable publish hash transaction (locked via InstantSend) in &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable publish hash transaction in &lt;address&gt;</source>
+        <translation>Enable publish hash transaction in &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable publish raw block in &lt;address&gt;</source>
+        <translation>Enable publish raw block in &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable publish raw transaction (locked via InstantSend) in &lt;address&gt;</source>
+        <translation>Enable publish raw transaction (locked via InstantSend) in &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable publish raw transaction in &lt;address&gt;</source>
+        <translation>Enable publish raw transaction in &lt;address&gt;</translation>
+    </message>
+    <message>
+        <source>Enable transaction replacement in the memory pool (default: %u)</source>
+        <translation>Enable transaction replacement in the memory pool (default: %u)</translation>
+    </message>
+    <message>
+        <source>Error: A fatal internal error occurred, see debug.log for details</source>
+        <translation>Error: A fatal internal error occurred, see debug.log for details</translation>
+    </message>
+    <message>
+        <source>Failed to create backup %s!</source>
+        <translation>Failed to create backup %s!</translation>
+    </message>
+    <message>
+        <source>Failed to create backup, error: %s</source>
+        <translation>Failed to create backup, error: %s</translation>
+    </message>
+    <message>
+        <source>Failed to delete backup, error: %s</source>
+        <translation>Failed to delete backup, error: %s</translation>
+    </message>
+    <message>
+        <source>Failed to parse host:port string</source>
+        <translation>Failed to parse host:port string</translation>
+    </message>
+    <message>
+        <source>Fee (in %s/kB) to add to transactions you send (default: %s)</source>
+        <translation>Fee (in %s/kB) to add to transactions you send (default: %s)</translation>
+    </message>
+    <message>
+        <source>Imports blocks from external blk000??.dat file on startup</source>
+        <translation>Imports blocks from external blk000??.dat file on startup</translation>
+    </message>
+    <message>
+        <source>InstantSend options:</source>
+        <translation>InstantSend options:</translation>
+    </message>
+    <message>
+        <source>Invalid amount for -fallbackfee=&lt;amount&gt;: &apos;%s&apos;</source>
+        <translation>Invalid amount for -fallbackfee=&lt;amount&gt;: &apos;%s&apos;</translation>
+    </message>
+    <message>
+        <source>Keep the transaction memory pool below &lt;n&gt; megabytes (default: %u)</source>
+        <translation>Keep the transaction memory pool below &lt;n&gt; megabytes (default: %u)</translation>
+    </message>
+    <message>
+        <source>Last PrivateSend was too recent.</source>
+        <translation>Last PrivateSend was too recent.</translation>
+    </message>
+    <message>
+        <source>Last successful PrivateSend action was too recent.</source>
+        <translation>Last successful PrivateSend action was too recent.</translation>
+    </message>
+    <message>
+        <source>Line: %d</source>
+        <translation>Line: %d</translation>
     </message>
     <message>
         <source>Loading addresses...</source>
@@ -4911,12 +6117,32 @@ that paper wallet has been printed successfully!</translation>
         <translation type="obsolete">Loading block index...</translation>
     </message>
     <message>
+        <source>Loading fullfiled requests cache...</source>
+        <translation>Loading fullfiled requests cache...</translation>
+    </message>
+    <message>
+        <source>Loading governance cache...</source>
+        <translation>Loading governance cache...</translation>
+    </message>
+    <message>
         <source>Loading wallet... (%3.2f %%)</source>
         <translation type="obsolete">Loading wallet... (%3.2f %%)</translation>
     </message>
     <message>
         <source>Loading wallet...</source>
         <translation type="obsolete">Loading wallet...</translation>
+    </message>
+    <message>
+        <source>Location of the auth cookie (default: data dir)</source>
+        <translation>Location of the auth cookie (default: data dir)</translation>
+    </message>
+    <message>
+        <source>Make the wallet broadcast transactions</source>
+        <translation>Make the wallet broadcast transactions</translation>
+    </message>
+    <message>
+        <source>Masternode cache is empty, skipping payments and governance cache...</source>
+        <translation>Masternode cache is empty, skipping payments and governance cache...</translation>
     </message>
     <message>
         <source>Masternode options:</source>
@@ -4931,10 +6157,22 @@ that paper wallet has been printed successfully!</translation>
         <translation type="obsolete">Masternode:</translation>
     </message>
     <message>
+        <location line="+3"/>
+        <source>Minimum bytes per sigop in transactions we relay and mine (default: %u)</source>
+        <translation>Minimum bytes per sigop in transactions we relay and mine (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Missing input transaction information.</source>
         <translation type="obsolete">Missing input transaction information.</translation>
     </message>
     <message>
+        <location line="+5"/>
+        <source>No errors detected.</source>
+        <translation>No errors detected.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>No funds detected in need of denominating.</source>
         <translation type="obsolete">No funds detected in need of denominating.</translation>
     </message>
@@ -4955,6 +6193,17 @@ that paper wallet has been printed successfully!</translation>
         <translation type="obsolete">Not enough file descriptors available.</translation>
     </message>
     <message>
+        <location line="+1"/>
+        <source>Not enough funds to anonymize.</source>
+        <translation>Not enough funds to anonymize.</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Number of automatic wallet backups (default: %u)</source>
+        <translation>Number of automatic wallet backups (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Options:</source>
         <translation type="obsolete">Options:</translation>
     </message>
@@ -4963,12 +6212,8 @@ that paper wallet has been printed successfully!</translation>
         <translation type="obsolete">Password for JSON-RPC connections</translation>
     </message>
     <message>
-        <source>RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</source>
-        <translation type="obsolete">RPC SSL options: (see the Bitcoin Wiki for SSL setup instructions)</translation>
-    </message>
-    <message>
         <source>RPC server options:</source>
-        <translation type="obsolete">RPC server options:</translation>
+        <translation>RPC server options:</translation>
     </message>
     <message>
         <source>Randomly drop 1 of every &lt;n&gt; network messages</source>
@@ -4987,14 +6232,122 @@ that paper wallet has been printed successfully!</translation>
         <translation type="obsolete">Rescan the block chain for missing wallet transactions</translation>
     </message>
     <message>
+        <location line="+3"/>
+        <source>Print version and exit</source>
+        <translation>Print version and exit</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>PrivateSend is idle.</source>
+        <translation>PrivateSend is idle.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>PrivateSend options:</source>
+        <translation>PrivateSend options:</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>PrivateSend request complete:</source>
+        <translation>PrivateSend request complete:</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>PrivateSend request incomplete:</source>
+        <translation>PrivateSend request incomplete:</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Prune cannot be configured with a negative value.</source>
+        <translation>Prune cannot be configured with a negative value.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Prune mode is incompatible with -txindex.</source>
+        <translation>Prune mode is incompatible with -txindex.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Pruning blockstore...</source>
+        <translation>Pruning blockstore...</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Rebuild block chain index from current blk000??.dat files on startup</source>
+        <translation>Rebuild block chain index from current blk000??.dat files on startup</translation>
+    </message>
+    <message>
+        <location line="+5"/>
+        <source>Rescan the block chain for missing wallet transactions on startup</source>
+        <translation>Rescan the block chain for missing wallet transactions on startup</translation>
+    </message>
+    <message>
+        <location line="+74"/>
+        <source>Warning: unknown new rules activated (versionbit %i)</source>
+        <translation>Warning: unknown new rules activated (versionbit %i)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Wasn&apos;t able to create wallet backup folder %s!</source>
+        <translation>Wasn&apos;t able to create wallet backup folder %s!</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Whether to operate in a blocks only mode (default: %u)</source>
+        <translation>Whether to operate in a blocks only mode (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+6"/>
+        <source>ZeroMQ notification options:</source>
+        <translation>ZeroMQ notification options:</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>no mixing available.</source>
+        <translation>no mixing available.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>see debug.log for details.</source>
+        <translation>see debug.log for details.</translation>
+    </message>
+    <message>
+        <location line="+2"/>
+        <source>Receive and display P2P network alerts (default: %u)</source>
+        <translation>Receive and display P2P network alerts (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Reducing -maxconnections from %d to %d, because of system limitations.</source>
+        <translation>Reducing -maxconnections from %d to %d, because of system limitations.</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Relay and mine data carrier transactions (default: %u)</source>
+        <translation>Relay and mine data carrier transactions (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Relay non-P2SH multisig (default: %u)</source>
+        <translation>Relay non-P2SH multisig (default: %u)</translation>
+    </message>
+    <message>
+        <location line="+2"/>
         <source>Rescanning...</source>
         <translation type="obsolete">Rescanning...</translation>
     </message>
     <message>
+        <location line="+1"/>
         <source>Run in the background as a daemon and accept commands</source>
         <translation type="obsolete">Run in the background as a daemon and accept commands</translation>
     </message>
     <message>
+        <location line="+1"/>
+        <source>Send trace/debug info to console instead of debug.log file</source>
+        <translation>Send trace/debug info to console instead of debug.log file</translation>
+    </message>
+    <message>
+        <location line="+3"/>
         <source>Session not complete!</source>
         <translation type="obsolete">Session not complete!</translation>
     </message>
@@ -5036,9 +6389,30 @@ that paper wallet has been printed successfully!</translation>
     </message>
     <message>
         <source>Specify your own public address</source>
-        <translation type="obsolete">Specify your own public address</translation>
+        <translation>Specify your own public address</translation>
     </message>
     <message>
+        <location line="+7"/>
+        <source>Synchronization pending...</source>
+        <translation>Synchronization pending...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Synchronizing governance objects...</source>
+        <translation>Synchronizing governance objects...</translation>
+    </message>
+    <message>
+        <location line="+1"/>
+        <source>Synchronizing masternode payments...</source>
+        <translation>Synchronizing masternode payments...</translation>
+    </message>
+    <message>
+        <location line="+3"/>
+        <source>The transaction amount is too small to pay the fee</source>
+        <translation>The transaction amount is too small to pay the fee</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>This help message</source>
         <translation type="obsolete">This help message</translation>
     </message>
@@ -5084,31 +6458,16 @@ that paper wallet has been printed successfully!</translation>
     </message>
     <message>
         <source>Unknown network specified in -onlynet: &apos;%s&apos;</source>
-        <translation type="obsolete">Unknown network specified in -onlynet: &apos;%s&apos;</translation>
+        <translation>Unknown network specified in -onlynet: &apos;%s&apos;</translation>
     </message>
     <message>
-        <source>Upgrade wallet to latest format</source>
-        <translation type="obsolete">Upgrade wallet to latest format</translation>
+        <source>Unknown state: id = %u</source>
+        <translation>Unknown state: id = %u</translation>
     </message>
     <message>
-        <source>Use OpenSSL (https) for JSON-RPC connections</source>
-        <translation type="obsolete">Use OpenSSL (https) for JSON-RPC connections</translation>
-    </message>
-    <message>
-        <source>Use UPnP to map the listening port (default: 1 when listening)</source>
-        <translation type="obsolete">Use UPnP to map the listening port (default: 1 when listening)</translation>
-    </message>
-    <message>
-        <source>Use the test network</source>
-        <translation type="obsolete">Use the test network</translation>
-    </message>
-    <message>
+        <location line="+8"/>
         <source>Username for JSON-RPC connections</source>
         <translation type="obsolete">Username for JSON-RPC connections</translation>
-    </message>
-    <message>
-        <source>Value more than Darksend pool maximum allows.</source>
-        <translation type="obsolete">Value more than Darksend pool maximum allows.</translation>
     </message>
     <message>
         <source>Verifying blocks...</source>
@@ -5119,6 +6478,12 @@ that paper wallet has been printed successfully!</translation>
         <translation type="obsolete">Verifying wallet...</translation>
     </message>
     <message>
+        <location line="+1"/>
+        <source>Very low number of keys left: %d</source>
+        <translation>Very low number of keys left: %d</translation>
+    </message>
+    <message>
+        <location line="+1"/>
         <source>Wallet %s resides outside data directory %s</source>
         <translation type="obsolete">Wallet %s resides outside data directory %s</translation>
     </message>
@@ -5135,10 +6500,7 @@ that paper wallet has been printed successfully!</translation>
         <translation type="obsolete">Warning</translation>
     </message>
     <message>
-        <source>Warning: This version is obsolete, upgrade required!</source>
-        <translation type="obsolete">Warning: This version is obsolete, upgrade required!</translation>
-    </message>
-    <message>
+        <location line="+5"/>
         <source>You need to rebuild the database using -reindex to change -txindex</source>
         <translation type="obsolete">You need to rebuild the database using -reindex to change -txindex</translation>
     </message>
