@@ -497,9 +497,10 @@ bool CGovernanceObject::IsValidLocally(std::string& strError, bool& fMissingMast
                 } else if (err == CMasternode::COLLATERAL_INVALID_PUBKEY) {
                     fMissingMasternode = true;
                     strError = "Masternode not found: " + strOutpoint;
-                } else if (err == CMasternode::COLLATERAL_OK) {
-                    // this should never happen with CPubKey() as a param
-                    strError = "CheckCollateral critical failure! Masternode: " + strOutpoint;
+                } else if (err == CMasternode::COLLATERAL_UTXO_NOT_FOUND) {
+                    strError = "Failed to find Masternode UTXO, missing masternode=" + GetMasternodeVin().prevout.ToStringShort() + "\n";
+                } else if (err == CMasternode::COLLATERAL_INVALID_AMOUNT || err == CMasternode::COLLATERAL_OLD_AMOUNT) {
+                    strError = "Masternode UTXO should have "+ std::to_string(MASTERNODE_COLLATERAL_AMOUNT)+ " SIB, missing masternode=" + GetMasternodeVin().prevout.ToStringShort() + "\n";
                 }
 
                 return false;

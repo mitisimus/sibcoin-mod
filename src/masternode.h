@@ -13,6 +13,7 @@ class CMasternode;
 class CMasternodeBroadcast;
 class CConnman;
 
+static const int MASTERNODE_OLD_COLLATERAL_AMOUNT       = 1000;
 static const int MASTERNODE_COLLATERAL_AMOUNT           = 4000;
 
 static const int MASTERNODE_CHECK_SECONDS               =   5;
@@ -179,6 +180,7 @@ public:
         COLLATERAL_UTXO_NOT_FOUND,
         COLLATERAL_INVALID_AMOUNT,
         COLLATERAL_INVALID_PUBKEY
+        COLLATERAL_OLD_AMOUNT
     };
 
 

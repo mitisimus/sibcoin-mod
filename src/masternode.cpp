@@ -117,6 +117,10 @@ CMasternode::CollateralStatus CMasternode::CheckCollateral(const COutPoint& outp
     }
 
     if(coin.out.nValue != MASTERNODE_COLLATERAL_AMOUNT * COIN) {
+        if(coins.vout[vin.prevout.n].nValue == MASTERNODE_OLD_COLLATERAL_AMOUNT * COIN ){
+            return COLLATERAL_OLD_AMOUNT;
+        }
+        
         return COLLATERAL_INVALID_AMOUNT;
     }
 
@@ -149,6 +153,23 @@ void CMasternode::Check(bool fForce)
         if(!GetUTXOCoin(outpoint, coin)) {
             nActiveState = MASTERNODE_OUTPOINT_SPENT;
             LogPrint("masternode", "CMasternode::Check -- Failed to find Masternode UTXO, masternode=%s\n", outpoint.ToStringShort());
+            return;
+        }
+        if (err == COLLATERAL_INVALID_AMOUNT) {
+            nActiveState = MASTERNODE_OUTPOINT_SPENT;
+            LogPrint("masternode", "CMasternode::Check -- Masternode UTXO is invalid, masternode=%s\n", outpoint.ToStringShort());
+            return;
+        }
+        if (err == COLLATERAL_OLD_AMOUNT ) {
+            
+            if ( nProtocolVersion <= OLD_COLLATERAL_PROTOCOL_VERSION ){
+                nActiveState = MASTERNODE_UPDATE_REQUIRED;
+                LogPrint("masternode", "CMasternode::Check -- Masternode has old collateral amount, masternode=%s\n", outpoint.ToStringShort());
+                return;
+            }
+            
+            nActiveState = MASTERNODE_OUTPOINT_SPENT;
+            LogPrint("masternode", "CMasternode::Check -- Masternode UTXO is invalid, masternode=%s\n", outpoint.ToStringShort());
             return;
         }
 
