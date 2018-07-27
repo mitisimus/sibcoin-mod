@@ -1769,6 +1769,7 @@ This product includes software developed by the OpenSSL Project for use in the O
         <translation>Node Count:</translation>
     </message>
     <message>
+        <location filename="../masternodelist.cpp" line="+50"/>
         <source>Start alias</source>
         <translation>Start alias</translation>
     </message>

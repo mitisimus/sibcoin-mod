@@ -1754,6 +1754,7 @@ Address: %4
         <translation>Количество узлов:</translation>
     </message>
     <message>
+        <location filename="../masternodelist.cpp" line="+50"/>
         <source>Start alias</source>
         <translation>Запуск по имени</translation>
     </message>
