@@ -117,7 +117,9 @@ CMasternode::CollateralStatus CMasternode::CheckCollateral(const COutPoint& outp
     }
 
     if(coin.out.nValue != MASTERNODE_COLLATERAL_AMOUNT * COIN) {
-        if(coins.vout[vin.prevout.n].nValue == MASTERNODE_OLD_COLLATERAL_AMOUNT * COIN ){
+        // should be removed after update to 16.2
+        if(coins.vout[vin.prevout.n].nValue == MASTERNODE_OLD_COLLATERAL_AMOUNT * COIN){
+            nHeight = coins.nHeight;
             return COLLATERAL_OLD_AMOUNT;
         }
         
