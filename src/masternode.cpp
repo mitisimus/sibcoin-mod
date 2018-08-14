@@ -118,8 +118,8 @@ CMasternode::CollateralStatus CMasternode::CheckCollateral(const COutPoint& outp
 
     if(coin.out.nValue != MASTERNODE_COLLATERAL_AMOUNT * COIN) {
         // should be removed after update to 16.2
-        if(coins.vout[vin.prevout.n].nValue == MASTERNODE_OLD_COLLATERAL_AMOUNT * COIN){
-            nHeight = coins.nHeight;
+        if(coin.out.nValue == MASTERNODE_OLD_COLLATERAL_AMOUNT * COIN){
+            nHeightRet = coin.nHeight;
             return COLLATERAL_OLD_AMOUNT;
         }
         
@@ -155,23 +155,6 @@ void CMasternode::Check(bool fForce)
         if(!GetUTXOCoin(outpoint, coin)) {
             nActiveState = MASTERNODE_OUTPOINT_SPENT;
             LogPrint("masternode", "CMasternode::Check -- Failed to find Masternode UTXO, masternode=%s\n", outpoint.ToStringShort());
-            return;
-        }
-        if (err == COLLATERAL_INVALID_AMOUNT) {
-            nActiveState = MASTERNODE_OUTPOINT_SPENT;
-            LogPrint("masternode", "CMasternode::Check -- Masternode UTXO is invalid, masternode=%s\n", outpoint.ToStringShort());
-            return;
-        }
-        if (err == COLLATERAL_OLD_AMOUNT ) {
-            
-            if ( nProtocolVersion <= OLD_COLLATERAL_PROTOCOL_VERSION ){
-                nActiveState = MASTERNODE_UPDATE_REQUIRED;
-                LogPrint("masternode", "CMasternode::Check -- Masternode has old collateral amount, masternode=%s\n", outpoint.ToStringShort());
-                return;
-            }
-            
-            nActiveState = MASTERNODE_OUTPOINT_SPENT;
-            LogPrint("masternode", "CMasternode::Check -- Masternode UTXO is invalid, masternode=%s\n", outpoint.ToStringShort());
             return;
         }
 
@@ -584,6 +567,18 @@ bool CMasternodeBroadcast::CheckOutpoint(int& nDos)
 
     if(err == COLLATERAL_INVALID_PUBKEY) {
         LogPrint("masternode", "CMasternodeBroadcast::CheckOutpoint -- Masternode UTXO should match pubKeyCollateralAddress, masternode=%s\n", outpoint.ToStringShort());
+        nDos = 33;
+        return false;
+    }
+
+    if (err == COLLATERAL_OLD_AMOUNT) {
+        if (nProtocolVersion <= OLD_COLLATERAL_PROTOCOL_VERSION) {
+            LogPrint("masternode", "CMasternode::Check -- Masternode has old collateral amount, masternode=%s\n", outpoint.ToStringShort());
+            nDos = 33;
+            return false;
+        }
+
+        LogPrint("masternode", "CMasternode::Check -- Masternode UTXO is invalid, masternode=%s\n", outpoint.ToStringShort());
         nDos = 33;
         return false;
     }
