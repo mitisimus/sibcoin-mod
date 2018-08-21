@@ -1,5 +1,14 @@
-Building Dash
-=============
+Building SibCore
+================
 
-See doc/build-*.md for instructions on building the various
-elements of the Dash Core reference implementation of Dash.
+Use the autogen script to prepare the build environment.
+
+    ./autogen.sh
+    ./configure
+    make
+
+Always verify the signatures and checksums.
+
+See doc/build-*.md for instructions on building sibcoind,
+the intended-for-services, no-graphical-interface, reference
+implementation of SibCore.
