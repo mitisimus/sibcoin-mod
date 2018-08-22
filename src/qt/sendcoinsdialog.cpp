@@ -1,6 +1,6 @@
-// Copyright (c) 2011-2014 The Bitcoin developers
-// Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015 The SibCoin developers
+// Copyright (c) 2011-2016 The Bitcoin developers
+// Copyright (c) 2014-2018 The Dash developers
+// Copyright (c) 2015-2018 The SibCoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -69,7 +69,7 @@ SendCoinsDialog::SendCoinsDialog(const PlatformStyle *_platformStyle, QWidget *p
     connect(ui->checkBoxCoinControlChange, SIGNAL(stateChanged(int)), this, SLOT(coinControlChangeChecked(int)));
     connect(ui->lineEditCoinControlChange, SIGNAL(textEdited(const QString &)), this, SLOT(coinControlChangeEdited(const QString &)));
 
-    // Dash specific
+    // Sibcoin specific
     QSettings settings;
     if (!settings.contains("bUseDarkSend"))
         settings.setValue("bUseDarkSend", false);

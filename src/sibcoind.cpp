@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2015 The SibCoin developers
+// Copyright (c) 2014-2018 The Dash Core developers
+// Copyright (c) 2015-2018 The SibCoin developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -34,8 +34,8 @@
  *
  * \section intro_sec Introduction
  *
- * This is the developer documentation of the reference client for an experimental new digital currency called Dash (https://www.dash.org/),
- * which enables instant payments to anyone, anywhere in the world. Dash uses peer-to-peer technology to operate
+ * This is the developer documentation of the reference client for an experimental new digital currency called Sibcoin (https://sibcoin.money/),
+ * which enables instant payments to anyone, anywhere in the world. Sibcoin uses peer-to-peer technology to operate
  * with no central authority: managing transactions and issuing money are carried out collectively by the network.
  *
  * The software is a community-driven open source project, released under the MIT license.
@@ -74,7 +74,7 @@ bool AppInit(int argc, char* argv[])
     //
     // Parameters
     //
-    // If Qt is used, parameters/dash.conf are parsed in qt/dash.cpp's main()
+    // If Qt is used, parameters/sibcoin.conf are parsed in qt/sibcoin.cpp's main()
     ParseParameters(argc, argv);
 
     // Process help and version before taking care about datadir
@@ -89,7 +89,7 @@ bool AppInit(int argc, char* argv[])
         else
         {
             strUsage += "\n" + _("Usage:") + "\n" +
-                  "  dashd [options]                     " + strprintf(_("Start %s Daemon"), _(PACKAGE_NAME)) + "\n";
+                  "  sibcoind [options]                     " + strprintf(_("Start %s Daemon"), _(PACKAGE_NAME)) + "\n";
 
             strUsage += "\n" + HelpMessage(HMM_BITCOIND);
         }
@@ -136,12 +136,12 @@ bool AppInit(int argc, char* argv[])
         // Command-line RPC
         bool fCommandLine = false;
         for (int i = 1; i < argc; i++)
-            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "dash:"))
+            if (!IsSwitchChar(argv[i][0]) && !boost::algorithm::istarts_with(argv[i], "sibcoin:"))
                 fCommandLine = true;
 
         if (fCommandLine)
         {
-            fprintf(stderr, "Error: There is no RPC client functionality in dashd anymore. Use the dash-cli utility instead.\n");
+            fprintf(stderr, "Error: There is no RPC client functionality in sibcoind anymore. Use the sibcoin-cli utility instead.\n");
             exit(EXIT_FAILURE);
         }
         // -server defaults to true for bitcoind but not for the GUI so do this here

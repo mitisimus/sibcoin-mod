@@ -1,7 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2015 The SibCoin developers
+// Copyright (c) 2009-2016 The Bitcoin Core developers
+// Copyright (c) 2014-2018 The Dash Core developers
+// Copyright (c) 2015-2018 The SibCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -109,7 +109,7 @@ namespace boost {
 
 
 
-//Dash only features
+//Sibcoin only features
 bool fMasternodeMode = false;
 bool fLiteMode = false;
 /**
@@ -121,8 +121,8 @@ bool fLiteMode = false;
 */
 int nWalletBackups = 10;
 
-const char * const BITCOIN_CONF_FILENAME = "dash.conf";
-const char * const BITCOIN_PID_FILENAME = "dashd.pid";
+const char * const BITCOIN_CONF_FILENAME = "sibcoin.conf";
+const char * const BITCOIN_PID_FILENAME = "sibcoind.pid";
 
 CCriticalSection cs_args;
 std::map<std::string, std::string> mapArgs;
@@ -278,8 +278,8 @@ bool LogAcceptCategory(const char* category)
                 const std::vector<std::string>& categories = mapMultiArgs.at("-debug");
                 ptrCategory.reset(new std::set<std::string>(categories.begin(), categories.end()));
                 // thread_specific_ptr automatically deletes the set when the thread ends.
-                // "dash" is a composite category enabling all Dash-related debug output
-                if(ptrCategory->count(std::string("dash"))) {
+                // "sibcoin" is a composite category enabling all Sibcoin-related debug output
+                if(ptrCategory->count(std::string("sibcoin"))) {
                     ptrCategory->insert(std::string("privatesend"));
                     ptrCategory->insert(std::string("instantsend"));
                     ptrCategory->insert(std::string("masternode"));

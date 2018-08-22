@@ -1,6 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
-// Copyright (c) 2009-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Dash Core developers
+// Copyright (c) 2009-2016 The Bitcoin Core developers
+// Copyright (c) 2014-2018 The Dash Core developers
+// Copyright (c) 2014-2018 The SibCoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -353,7 +354,7 @@ static void SendMoney(const CTxDestination &address, CAmount nValue, bool fSubtr
     if (pwalletMain->GetBroadcastTransactions() && !g_connman)
         throw JSONRPCError(RPC_CLIENT_P2P_DISABLED, "Error: Peer-to-peer functionality missing or disabled");
 
-    // Parse Dash address
+    // Parse Sibcoin address
     CScript scriptPubKey = GetScriptForDestination(address);
 
     // Create and send the transaction
@@ -678,7 +679,7 @@ UniValue getreceivedbyaddress(const JSONRPCRequest& request)
 
     LOCK2(cs_main, pwalletMain->cs_wallet);
 
-    // Dash address
+    // Sibcoin address
     CBitcoinAddress address = CBitcoinAddress(request.params[0].get_str());
     if (!address.IsValid())
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Sibcoin address");

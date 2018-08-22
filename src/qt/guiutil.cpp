@@ -1,6 +1,6 @@
-// Copyright (c) 2011-2015 The Bitcoin Core developers
-// Copyright (c) 2014-2017 The Dash Core developers
-// Copyright (c) 2015 The Sibcoin developers
+// Copyright (c) 2011-2016 The Bitcoin Core developers
+// Copyright (c) 2014-2018 The Dash Core developers
+// Copyright (c) 2015-2018 The Sibcoin developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -653,10 +653,10 @@ boost::filesystem::path static StartupShortcutPath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Dash Core.lnk";
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Sibcoin Core.lnk";
     if (chain == CBaseChainParams::TESTNET) // Remove this special case when CBaseChainParams::TESTNET = "testnet4"
-        return GetSpecialFolderPath(CSIDL_STARTUP) / "Dash Core (testnet).lnk";
-    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Dash Core (%s).lnk", chain);
+        return GetSpecialFolderPath(CSIDL_STARTUP) / "Sibcoin Core (testnet).lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / strprintf("Sibcoin Core (%s).lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -753,8 +753,8 @@ boost::filesystem::path static GetAutostartFilePath()
 {
     std::string chain = ChainNameFromCommandLine();
     if (chain == CBaseChainParams::MAIN)
-        return GetAutostartDir() / "dashcore.desktop";
-    return GetAutostartDir() / strprintf("dashcore-%s.lnk", chain);
+        return GetAutostartDir() / "sibconcore.desktop";
+    return GetAutostartDir() / strprintf("sibcoincore-%s.lnk", chain);
 }
 
 bool GetStartOnSystemStartup()
@@ -793,13 +793,13 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         if (!optionFile.good())
             return false;
         std::string chain = ChainNameFromCommandLine();
-        // Write a dashcore.desktop file to the autostart directory:
+        // Write a sibcoincore.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
         if (chain == CBaseChainParams::MAIN)
-            optionFile << "Name=Dash Core\n";
+            optionFile << "Name=Sibcoin Core\n";
         else
-            optionFile << strprintf("Name=Dash Core (%s)\n", chain);
+            optionFile << strprintf("Name=Sibcoin Core (%s)\n", chain);
         optionFile << "Exec=" << pszExePath << strprintf(" -min -testnet=%d -regtest=%d\n", GetBoolArg("-testnet", false), GetBoolArg("-regtest", false));
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
