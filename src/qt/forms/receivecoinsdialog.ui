@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>776</width>
-    <height>387</height>
+    <height>443</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,1">
@@ -326,7 +326,7 @@
   <tabstop>removeRequestButton</tabstop>
  </tabstops>
  <resources>
-  <include location="../dash.qrc"/>
+  <include location="../sibcoin.qrc"/>
  </resources>
  <connections/>
 </ui>

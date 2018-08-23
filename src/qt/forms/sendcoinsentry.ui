@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>729</width>
-    <height>150</height>
+    <height>151</height>
    </rect>
   </property>
   <property name="focusPolicy">
@@ -1249,7 +1249,7 @@
   <tabstop>deleteButton_s</tabstop>
  </tabstops>
  <resources>
-  <include location="../dash.qrc"/>
+  <include location="../sibcoin.qrc"/>
  </resources>
  <connections/>
 </ui>

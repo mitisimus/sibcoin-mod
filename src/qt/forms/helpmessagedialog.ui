@@ -20,16 +20,7 @@
    <property name="spacing">
     <number>0</number>
    </property>
-   <property name="leftMargin">
-    <number>12</number>
-   </property>
-   <property name="topMargin">
-    <number>12</number>
-   </property>
-   <property name="rightMargin">
-    <number>12</number>
-   </property>
-   <property name="bottomMargin">
+   <property name="margin">
     <number>12</number>
    </property>
    <item>
@@ -73,7 +64,7 @@
         <bool>false</bool>
        </property>
        <property name="pixmap">
-        <pixmap resource="../dash.qrc">:/images/drkblue/about</pixmap>
+        <pixmap resource="../sibcoin.qrc">:/images/drkblue/about</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
@@ -110,8 +101,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>630</width>
-          <height>201</height>
+          <width>640</width>
+          <height>209</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -169,6 +160,7 @@
   </layout>
  </widget>
  <resources>
+  <include location="../sibcoin.qrc"/>
   <include location="../dash.qrc"/>
  </resources>
  <connections>
