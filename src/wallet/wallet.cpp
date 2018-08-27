@@ -27,6 +27,7 @@
 #include "util.h"
 #include "ui_interface.h"
 #include "utilmoneystr.h"
+#include "random.h"
 
 #include "governance.h"
 #include "instantx.h"

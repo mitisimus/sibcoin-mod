@@ -10,15 +10,19 @@
 #include "guiconstants.h"
 #include "walletmodel.h"
 
-#include "allocators.h"
-
 #include <QKeyEvent>
 #include <QMessageBox>
 #include <QPushButton>
-#include <QPrintDialog>
 #include <QFileDialog>
 #include <QPainter>
+
+#if QT_VERSION >= 0x050000
+#include <QtPrintSupport/QPrinter>
+#include <QtPrintSupport/QPrintDialog>
+#else
+#include <QPrintDialog>
 #include <QPrinter>
+#endif
 
 #ifdef USE_QRCODE
 #include <qrencode.h>

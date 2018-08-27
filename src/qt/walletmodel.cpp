@@ -469,7 +469,7 @@ CKey WalletModel::generateNewKey() const
     return wallet->GeneratePrivKey();
 }
 
-bool WalletModel::setAddressBook(const CTxDestination& address, const string& strName, const string& strPurpose)
+bool WalletModel::setAddressBook(const CTxDestination& address, const std::string& strName, const std::string& strPurpose)
 {
     return wallet->SetAddressBook(address, strName, strPurpose);
 }
