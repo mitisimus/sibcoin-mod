@@ -11,8 +11,8 @@
 #include "guiutil.h"
 #include "walletmodel.h"
 
-#include "allocators.h"
-#include "../rpcserver.h"
+//#include "allocators.h"
+#include "../rpc/server.h"
 //#include "../rpcprotocol.h"
 #include "json/json_spirit_writer.h"
 
@@ -196,14 +196,14 @@ void GenAndPrintDialog::on_importButton_clicked()
         // To be investigate
         catch (...)
         {
-            cerr << "Import private key error!" << endl;            
+            cerr << "Import private key error!" << endl;
 //            for (json_spirit::Object::iterator it = err.begin(); it != err.end(); ++it)
 //            {
 //                cerr << it->name_ << " = " << it->value_.get_str() << endl;
 //            }
             QMessageBox::critical(this, tr("Error"), tr("Private key import error"));
         }
-    }    
+    }
 }
 
 bool readHtmlTemplate(const QString &res_name, QString &htmlContent)

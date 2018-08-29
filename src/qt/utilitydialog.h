@@ -60,7 +60,7 @@ private:
     QString coreOptions;
     QString uiOptions;
 
-private slots:
+private Q_SLOTS:
     void on_okButton_accepted();
 };
 

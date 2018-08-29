@@ -322,7 +322,6 @@ crypto_libdash_crypto_a_SOURCES += \
   crypto/bmw.c \
   crypto/cubehash.c \
   crypto/echo.c \
-  crypto/gost.c \
   crypto/groestl.c \
   crypto/jh.c \
   crypto/keccak.c \
@@ -335,7 +334,6 @@ crypto_libdash_crypto_a_SOURCES += \
   crypto/sph_bmw.h \
   crypto/sph_cubehash.h \
   crypto/sph_echo.h \
-  crypto/sph_gost.h \
   crypto/sph_groestl.h \
   crypto/sph_jh.h \
   crypto/sph_keccak.h \

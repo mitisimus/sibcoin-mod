@@ -366,7 +366,7 @@ void WalletView::genAndPrintAddresses()
     if (dlg.exec())
     {
         QString uri = dlg.getURI();
-        emit receivedURI(uri);
+        Q_EMIT receivedURI(uri);
     }
 }
 

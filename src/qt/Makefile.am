@@ -232,7 +232,6 @@ RES_ICONS = \
   res/icons/drkblue_remove.png \
   res/icons/browse.png
 
-
 BITCOIN_QT_CPP = \
   sibcoin.cpp \
   bitcoinaddressvalidator.cpp \
@@ -252,8 +251,11 @@ BITCOIN_QT_CPP = \
   rpcconsole.cpp \
   splashscreen.cpp \
   trafficgraphwidget.cpp \
-  utilitydialog.cpp \
-  winshutdownmonitor.cpp
+  utilitydialog.cpp
+
+if TARGET_WINDOWS
+BITCOIN_QT_CPP += winshutdownmonitor.cpp
+endif
 
 if ENABLE_WALLET
 BITCOIN_QT_CPP += \
