@@ -365,6 +365,10 @@ void WalletView::genAndPrintAddresses()
     dlg.setModel(walletModel);
     if (dlg.exec())
     {
+        QMessageBox::warning(this, tr(""),
+                             tr("Before sending sibcoins to address please be sure\n"
+                                "that paper wallet has been printed successfully!"));
+
         QString uri = dlg.getURI();
         Q_EMIT receivedURI(uri);
     }
