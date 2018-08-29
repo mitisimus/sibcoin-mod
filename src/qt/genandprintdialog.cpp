@@ -33,7 +33,7 @@
 #include <QPrinter>
 #endif
 
-#include "wallet.h"
+#include "wallet/wallet.h"
 
 //#include <algorithm>
 //#include <cstddef>
@@ -164,33 +164,33 @@ void GenAndPrintDialog::textChanged()
 std::string decrypt_bip38(const std::string encrypted_str,  std::string passwd)
 {
     // try to decrypt bip38
-	byte_array<43> key;
-	decode_base58(key, encrypted_str);
+    byte_array<43> key;
+    decode_base58(key, encrypted_str);
 
     ec_secret out_secret;
     uint8_t out_version = 0;
     bool is_compressed = true;
     if (!encrypted_str.compare(0, 2, "6Pf") || !encrypted_str.compare(0, 2, "6PR"))
-    	is_compressed = false;
+        is_compressed = false;
 
     bc::wallet::decrypt(out_secret, out_version, is_compressed, key, passwd);
 
-	std::string decrypted_key = encode_base16(out_secret);
+    std::string decrypted_key = encode_base16(out_secret);
 	return decrypted_key;
 }
 
 std::string encrypt_bip38(const std::string secret_str,  std::string passwd)
 {
     // Encrypt the secret as a private key.
-	ec_secret secret_key;
-	decode_base16(secret_key, secret_str);
+    ec_secret secret_key;
+    decode_base16(secret_key, secret_str);
 
     encrypted_private out_private_key;
     const uint8_t version = 0;
     const auto is_compressed = false;
     bc::wallet::encrypt(out_private_key, secret_key, passwd, version, is_compressed);
 
-	std::string encrypted_key = encode_base58(out_private_key);
+    std::string encrypted_key = encode_base58(out_private_key);
 	return encrypted_key;
 }
 
@@ -213,10 +213,10 @@ void GenAndPrintDialog::on_importButton_clicked()
     if (key.IsValid())
        secret = CBitcoinSecret(key).ToString();
     else if (!secret.compare(0, 2, "6P")) {
-		secret = decrypt_bip38(secret, passwd.toStdString());
+        secret = decrypt_bip38(secret, passwd.toStdString());
     }
     else {
-    	// use secret as is
+        // use secret as is
     }
 
 //	QMessageBox::information(this, tr("Info"), QString::fromStdString(secret));
@@ -295,7 +295,7 @@ void GenAndPrintDialog::on_printButton_clicked()
     
     std::vector<unsigned char> priv_data;
     for ( auto i = secret.begin(); i != secret.end(); i++ ) {
-    	priv_data.push_back(*i);
+        priv_data.push_back(*i);
     }
 
     std::string secret_16 = encode_base16(priv_data);
@@ -341,7 +341,7 @@ void GenAndPrintDialog::on_printButton_clicked()
         document->addResource(QTextDocument::ImageResource, QUrl(":qr2.png" ), img2);
         document->print(&printer);
         
-        model->setAddressBook(keyid, strAccount.toStdString(), "send");        
+        model->setAddressBook(keyid, strAccount.toStdString(), "send");
         SendCoinsRecipient rcp(qaddress, strAccount, 0, "");
         uri = GUIUtil::formatBitcoinURI(rcp);
         delete document;

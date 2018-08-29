@@ -47,11 +47,11 @@ private:
     int try_idx;
     QString data_url;
     
-signals:
+Q_SIGNALS:
     void resourceReady(std::string res_root);
     
 
-public slots:
+public Q_SLOTS:
     void replyFinished(QNetworkReply* p_reply);
     
 private:

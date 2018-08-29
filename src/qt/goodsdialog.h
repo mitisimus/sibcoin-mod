@@ -40,7 +40,7 @@ private:
     
     const QString page_name;
     
-public slots:
+public Q_SLOTS:
     void on_resourceReady(std::string res_root);
 
 };

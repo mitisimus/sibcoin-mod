@@ -1211,8 +1211,6 @@ bool AppInitParameterInteraction()
 #ifdef ENABLE_WALLET
     if (!CWallet::ParameterInteraction())
         return false;
-
-    std::string strSibFile = GetArg("-sibstore", "sib.dat");
 #endif // ENABLE_WALLET
 
     fIsBareMultisigStd = GetBoolArg("-permitbaremultisig", DEFAULT_PERMIT_BAREMULTISIG);
@@ -1389,6 +1387,8 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
 
     // Initialize KeePass Integration
     keePassInt.init();
+
+    std::string strSibFile = GetArg("-sibstore", "sib.dat");
 #endif // ENABLE_WALLET
     // ********************************************************* Step 6: network initialization
     // Note that we absolutely cannot open any actual connections

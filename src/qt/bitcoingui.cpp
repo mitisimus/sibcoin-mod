@@ -944,6 +944,8 @@ void BitcoinGUI::gotoMasternodePage()
         masternodeAction->setChecked(true);
         if (walletFrame) walletFrame->gotoMasternodePage();
     }
+}
+
 void BitcoinGUI::gotoGoodsPage()
 {
     goodsAction->setChecked(true);

@@ -5,7 +5,7 @@
 #ifndef SIBDB_H
 #define	SIBDB_H
 
-#include "db.h"
+#include "wallet/db.h"
 
 #include <string>
 

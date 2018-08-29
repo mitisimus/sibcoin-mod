@@ -68,7 +68,7 @@ void SibModel::loadLocalResource()
     
     if (readResourceWithMD5()) {
         registerRes();
-        emit resourceReady(res_prefix.toStdString());
+        Q_EMIT resourceReady(res_prefix.toStdString());
     }
 }
 
@@ -120,7 +120,7 @@ void SibModel::replyFinished(QNetworkReply* p_reply)
         if (remoteMD5 == rccMD5) {
             registerRes();
             saveResourceWithMD5();
-            emit resourceReady(res_prefix.toStdString());
+            Q_EMIT resourceReady(res_prefix.toStdString());
         }
         else {
             LogPrintf("md5 not valid. Calculated: %s, received: %s\n",
