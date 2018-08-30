@@ -19,7 +19,7 @@ $(LIBUNIVALUE): $(wildcard univalue/lib/*) $(wildcard univalue/include/*)
 else
 LIBUNIVALUE = $(UNIVALUE_LIBS)
 endif
-BIP_CPPFLAGS = -I$(srcdir)/bip
+BIP_CPPFLAGS = -I$(srcdir)/bip -msse2
 
 BITCOIN_CONFIG_INCLUDES=-I$(builddir)/config
 BITCOIN_INCLUDES=-I$(builddir) -I$(builddir)/obj $(BDB_CPPFLAGS) $(BOOST_CPPFLAGS) $(BIP_CPPFLAGS) $(LEVELDB_CPPFLAGS) $(CRYPTO_CFLAGS) $(SSL_CFLAGS)
