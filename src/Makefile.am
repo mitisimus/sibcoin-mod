@@ -287,10 +287,11 @@ libdash_zmq_a_SOURCES = \
 endif
 
 
-# wallet: shared between dashd and dash-qt, but only linked
+# wallet: shared between sibcoind and sibcoin-qt, but only linked
 # when wallet enabled
 libdash_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libdash_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libdash_wallet_a_CFLAGS = -fPIC
 libdash_wallet_a_SOURCES = \
   keepass.cpp \
   privatesend-client.cpp \
