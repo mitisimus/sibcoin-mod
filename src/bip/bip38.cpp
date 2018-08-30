@@ -105,8 +105,10 @@ std::vector<unsigned char> decrypt_bip38_ec(const std::vector<unsigned char> key
     unsigned char iv[32];
     memset(iv,0,32);
 
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
     EVP_CIPHER_CTX d;
     EVP_CIPHER_CTX_init(&d);
+
     EVP_DecryptInit_ex(&d, EVP_aes_256_ecb(), NULL, derivedhalf2, iv);
 
     unsigned char unencryptedpart2[32];
@@ -121,6 +123,26 @@ std::vector<unsigned char> decrypt_bip38_ec(const std::vector<unsigned char> key
     memcpy(encryptedpart1+8, unencryptedpart2, 8);
     EVP_DecryptUpdate(&d, unencryptedpart1, &decrypt_len, encryptedpart1, 16);
     EVP_DecryptUpdate(&d, unencryptedpart1, &decrypt_len, encryptedpart1, 16);
+#else
+    EVP_CIPHER_CTX *d = EVP_CIPHER_CTX_new();
+    EVP_DecryptInit_ex(d, EVP_aes_256_ecb(), NULL, derivedhalf2, iv);
+
+    unsigned char unencryptedpart2[32];
+    int decrypt_len;
+
+    EVP_DecryptUpdate(d, unencryptedpart2, &decrypt_len, encryptedpart2, 16);
+    EVP_DecryptUpdate(d, unencryptedpart2, &decrypt_len, encryptedpart2, 16);
+    for(i=0; i<16; i++) {
+        unencryptedpart2[i] ^= derived[i + 16];
+    }
+    unsigned char unencryptedpart1[32];
+    memcpy(encryptedpart1+8, unencryptedpart2, 8);
+    EVP_DecryptUpdate(d, unencryptedpart1, &decrypt_len, encryptedpart1, 16);
+    EVP_DecryptUpdate(d, unencryptedpart1, &decrypt_len, encryptedpart1, 16);
+
+    EVP_CIPHER_CTX_free(d);
+#endif
+
     for(i=0; i<16; i++) {
         unencryptedpart1[i] ^= derived[i];
     }
@@ -198,16 +220,31 @@ std::vector<unsigned char> decrypt_bip38(const std::vector<unsigned char> enc_da
 	//decryptedhalf2 = Aes.dec(encryptedhalf2)
 
     int decrypt_len;
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
     EVP_CIPHER_CTX de;
 
     EVP_CIPHER_CTX_init(&de);
     EVP_DecryptInit_ex(&de, EVP_aes_256_cbc(), NULL, derivedhalf2, NULL);
     EVP_DecryptUpdate(&de, decryptedhalf2, &decrypt_len, encryptedhalf2, 16);
 
-	//#5. Decrypt encryptedpart1 to yield the remainder of seedb.
-	//decryptedhalf1 = Aes.dec(encryptedhalf1)
+    //#5. Decrypt encryptedpart1 to yield the remainder of seedb.
+    //decryptedhalf1 = Aes.dec(encryptedhalf1)
     EVP_DecryptInit_ex(&de, EVP_aes_256_cbc(), NULL, derivedhalf2, NULL);
     EVP_DecryptUpdate(&de, decryptedhalf1, &decrypt_len, encryptedhalf1, 16);
+#else
+    EVP_CIPHER_CTX *de = EVP_CIPHER_CTX_new();
+
+    EVP_CIPHER_CTX_init(de);
+    EVP_DecryptInit_ex(de, EVP_aes_256_cbc(), NULL, derivedhalf2, NULL);
+    EVP_DecryptUpdate(de, decryptedhalf2, &decrypt_len, encryptedhalf2, 16);
+
+    //#5. Decrypt encryptedpart1 to yield the remainder of seedb.
+    //decryptedhalf1 = Aes.dec(encryptedhalf1)
+    EVP_DecryptInit_ex(de, EVP_aes_256_cbc(), NULL, derivedhalf2, NULL);
+    EVP_DecryptUpdate(de, decryptedhalf1, &decrypt_len, encryptedhalf1, 16);
+
+    EVP_CIPHER_CTX_free(de);
+#endif
 
 	//priv = decryptedhalf1 + decryptedhalf2
 	//priv = binascii.unhexlify('%064x' % (long(binascii.hexlify(priv), 16) ^ long(binascii.hexlify(derivedhalf1), 16)))
@@ -270,6 +307,8 @@ std::vector<unsigned char> encrypt_bip38(const std::vector<unsigned char> priv_k
 		part2[i] = p_secret[i + 16] ^ derivedhalf1[i + 16];
 
     int encrypt_len;
+
+#if OPENSSL_VERSION_NUMBER < 0x10100000L
     EVP_CIPHER_CTX en;
 
     EVP_CIPHER_CTX_init(&en);
@@ -277,6 +316,16 @@ std::vector<unsigned char> encrypt_bip38(const std::vector<unsigned char> priv_k
     EVP_EncryptUpdate(&en, encryptedhalf1, &encrypt_len, part1, 16);
     EVP_EncryptInit_ex(&en, EVP_aes_256_cbc(), NULL, derivedhalf2, NULL);
     EVP_EncryptUpdate(&en, encryptedhalf2, &encrypt_len, part2, 16);
+#else
+    EVP_CIPHER_CTX *en = EVP_CIPHER_CTX_new();
+
+    EVP_EncryptInit_ex(en, EVP_aes_256_cbc(), NULL, derivedhalf2, NULL);
+    EVP_EncryptUpdate(en, encryptedhalf1, &encrypt_len, part1, 16);
+    EVP_EncryptInit_ex(en, EVP_aes_256_cbc(), NULL, derivedhalf2, NULL);
+    EVP_EncryptUpdate(en, encryptedhalf2, &encrypt_len, part2, 16);
+
+    EVP_CIPHER_CTX_free(en);
+#endif
 
 	//		#5. The encrypted private key is the Base58Check-encoded concatenation of the following, which totals 39 bytes without Base58 checksum:
 	//		#		0x01 0x42 + flagbyte + salt + encryptedhalf1 + encryptedhalf2

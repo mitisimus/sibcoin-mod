@@ -1873,11 +1873,11 @@ bool AppInitMain(boost::thread_group& threadGroup, CScheduler& scheduler)
     nInstantSendDepth = GetArg("-instantsenddepth", DEFAULT_INSTANTSEND_DEPTH);
     nInstantSendDepth = std::min(std::max(nInstantSendDepth, MIN_INSTANTSEND_DEPTH), MAX_INSTANTSEND_DEPTH);
 
-#ifdef ENABLE_WALLET
-    if(fMasterNode && fDisableWallet){
-        return InitError("You can not start a masternode with disabled wallet");
-    }
-#endif // ENABLE_WALLET
+//#ifdef ENABLE_WALLET
+//    if(fMasterNode && fDisableWallet){
+//        return InitError("You can not start a masternode with disabled wallet");
+//    }
+//#endif // ENABLE_WALLET
 
     LogPrintf("fLiteMode %d\n", fLiteMode);
     LogPrintf("nInstantSendDepth %d\n", nInstantSendDepth);

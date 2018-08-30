@@ -172,11 +172,8 @@
          <property name="text">
           <string>N/A</string>
          </property>
-         <property name="textFormat">
-          <enum>Qt::PlainText</enum>
-         </property>
-         <property name="textInteractionFlags">
-          <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+         <property name="autoDefault">
+          <bool>false</bool>
          </property>
         </widget>
        </item>

@@ -170,14 +170,14 @@ void GenAndPrintDialog::on_importButton_clicked()
     
     // test keys for bip38
     // With EC
-	// secret = "6PfLGnQs6VZnrNpmVKfjotbnQuaJK4KZoPFrAjx1JMJUa1Ft8gnf5WxfKd";
+    // secret = "6PfLGnQs6VZnrNpmVKfjotbnQuaJK4KZoPFrAjx1JMJUa1Ft8gnf5WxfKd";
     // Without EC
-	// secret = "6PRVWUbkzzsbcVac2qwfssoUJAN1Xhrg6bNk8J7Nzm5H7kxEbn2Nh2ZoGg";
+    // secret = "6PRVWUbkzzsbcVac2qwfssoUJAN1Xhrg6bNk8J7Nzm5H7kxEbn2Nh2ZoGg";
 
-	if (!DecodeBase58(secret, priv_data)) {
+    if (!DecodeBase58(secret, priv_data)) {
         LogPrintf("DecodeBase58 failed: str=%s\n", secret.c_str());
         return;
-	}
+    }
 
     CKey key;
     model->decryptKey(priv_data, passwd.toStdString(), salt, key);
@@ -185,30 +185,30 @@ void GenAndPrintDialog::on_importButton_clicked()
     if (key.IsValid())
        secret = CBitcoinSecret(key).ToString();
     else if (!secret.compare(0, 2, "6P")) {
-    	if (secret[2] == 'f') {
-    		// With EC
-			//	Passphrase: Satoshi
-			//	Passphrase code: passphraseoRDGAXTWzbp72eVbtUDdn1rwpgPUGjNZEc6CGBo8i5EC1FPW8wcnLdq4ThKzAS
-			//	Encrypted key: 6PfLGnQs6VZnrNpmVKfjotbnQuaJK4KZoPFrAjx1JMJUa1Ft8gnf5WxfKd
-			//	Bitcoin address: 1CqzrtZC6mXSAhoxtFwVjz8LtwLJjDYU3V
-			//	Unencrypted private key (WIF): 5KJ51SgxWaAYR13zd9ReMhJpwrcX47xTJh2D3fGPG9CM8vkv5sH
-			//	Unencrypted private key (hex): C2C8036DF268F498099350718C4A3EF3984D2BE84618C2650F5171DCC5EB660A
-			priv_data = decrypt_bip38_ec(priv_data, passwd.toStdString());
-			key.Set(priv_data.begin(), priv_data.end(), true);
-			secret = CBitcoinSecret(key).ToString();
-    	}
-    	else if (secret[2] == 'R' || secret[2] == 'Y') {
-    		bool compressed = secret[2] == 'Y';
-    		// Without EC
-    		// passwd = "TestingOneTwoThree";
-			priv_data = decrypt_bip38(priv_data, passwd.toStdString());
-			key.Set(priv_data.begin(), priv_data.end(), compressed);
-			secret = CBitcoinSecret(key).ToString();
-    	}
-    	else {
-    		QMessageBox::information(this, tr(""), QString::fromStdString("This BIP38 mode is not implemented"));
-    		return;
-    	}
+        if (secret[2] == 'f') {
+            // With EC
+            //	Passphrase: Satoshi
+            //	Passphrase code: passphraseoRDGAXTWzbp72eVbtUDdn1rwpgPUGjNZEc6CGBo8i5EC1FPW8wcnLdq4ThKzAS
+            //	Encrypted key: 6PfLGnQs6VZnrNpmVKfjotbnQuaJK4KZoPFrAjx1JMJUa1Ft8gnf5WxfKd
+            //	Bitcoin address: 1CqzrtZC6mXSAhoxtFwVjz8LtwLJjDYU3V
+            //	Unencrypted private key (WIF): 5KJ51SgxWaAYR13zd9ReMhJpwrcX47xTJh2D3fGPG9CM8vkv5sH
+            //	Unencrypted private key (hex): C2C8036DF268F498099350718C4A3EF3984D2BE84618C2650F5171DCC5EB660A
+            priv_data = decrypt_bip38_ec(priv_data, passwd.toStdString());
+            key.Set(priv_data.begin(), priv_data.end(), true);
+            secret = CBitcoinSecret(key).ToString();
+        }
+        else if (secret[2] == 'R' || secret[2] == 'Y') {
+            bool compressed = secret[2] == 'Y';
+            // Without EC
+            // passwd = "TestingOneTwoThree";
+            priv_data = decrypt_bip38(priv_data, passwd.toStdString());
+            key.Set(priv_data.begin(), priv_data.end(), compressed);
+            secret = CBitcoinSecret(key).ToString();
+        }
+        else {
+            QMessageBox::information(this, tr(""), QString::fromStdString("This BIP38 mode is not implemented"));
+            return;
+        }
     }
     else {
         // use secret as is
@@ -244,7 +244,7 @@ void GenAndPrintDialog::on_importButton_clicked()
         // To be investigate
         catch (...)
         {
-            cerr << "Import private key error!" << endl;            
+            cerr << "Import private key error!" << endl;
 //            for (json_spirit::Object::iterator it = err.begin(); it != err.end(); ++it)
 //            {
 //                cerr << it->name_ << " = " << it->value_.get_str() << endl;
