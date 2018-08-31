@@ -25,6 +25,7 @@
 #include "util.h"
 #include "utilstrencodings.h"
 #include "validationinterface.h"
+#include "wallet/wallet.h"
 
 #include "governance-classes.h"
 #include "masternode-payments.h"
@@ -320,10 +321,10 @@ std::string gbt_vb_name(const Consensus::DeploymentPos pos) {
 }
 
 #ifdef ENABLE_WALLET
-UniValue getwork(const UniValue& params, bool fHelp)
+UniValue getwork(const JSONRPCRequest& request)
 {
-    if (fHelp || params.size() > 1)
-        throw runtime_error(
+    if (request.fHelp || request.params.size() > 1)
+        throw std::runtime_error(
             "getwork ( \"data\" )  \n"
             "METHOD DEPRECATED!  \n"
             "\nIf 'data' is not specified, it returns the formatted hash data to work on.\n"
@@ -344,17 +345,17 @@ UniValue getwork(const UniValue& params, bool fHelp)
             + HelpExampleRpc("getwork", "")
         );
 
-    if (vNodes.empty())
+    if (g_connman->GetNodeCount(CConnman::CONNECTIONS_ALL) == 0)
         throw JSONRPCError(RPC_CLIENT_NOT_CONNECTED, "Sibcoin is not connected!");
 
     if (IsInitialBlockDownload())
         throw JSONRPCError(RPC_CLIENT_IN_INITIAL_DOWNLOAD, "Sibcoin is downloading blocks...");
 
-    typedef map<uint256, pair<CBlock*, CScript> > mapNewBlock_t;
+    typedef std::map<uint256, std::pair<CBlock*, CScript> > mapNewBlock_t;
     static mapNewBlock_t mapNewBlock;    // FIXME: thread safety
-    static vector<CBlockTemplate*> vNewBlockTemplate;
+    static std::vector<std::unique_ptr<CBlockTemplate>> vNewBlockTemplate;
 
-    if (params.size() == 0)
+    if (request.params.size() == 0)
     {
         boost::shared_ptr<CReserveScript> coinbaseScript;
         GetMainSignals().ScriptForMining(coinbaseScript);
@@ -372,7 +373,7 @@ UniValue getwork(const UniValue& params, bool fHelp)
         static unsigned int nTransactionsUpdatedLast;
         static CBlockIndex* pindexPrev;
         static int64_t nStart;
-        static CBlockTemplate* pblocktemplate;
+        static std::unique_ptr<CBlockTemplate> pblocktemplate;
         if (pindexPrev != chainActive.Tip() ||
             (mempool.GetTransactionsUpdated() != nTransactionsUpdatedLast && GetTime() - nStart > 60))
         {
@@ -380,8 +381,6 @@ UniValue getwork(const UniValue& params, bool fHelp)
             {
                 // Deallocate old blocks since they're obsolete now
                 mapNewBlock.clear();
-                BOOST_FOREACH(CBlockTemplate* pblocktemplate, vNewBlockTemplate)
-                    delete pblocktemplate;
                 vNewBlockTemplate.clear();
             }
 
@@ -394,10 +393,10 @@ UniValue getwork(const UniValue& params, bool fHelp)
             nStart = GetTime();
 
             // Create new block
-            pblocktemplate = CreateNewBlock(Params(), coinbaseScript->reserveScript);
+            pblocktemplate = BlockAssembler(Params()).CreateNewBlock(coinbaseScript->reserveScript);
             if (!pblocktemplate)
                 throw JSONRPCError(RPC_OUT_OF_MEMORY, "Out of memory");
-            vNewBlockTemplate.push_back(pblocktemplate);
+            vNewBlockTemplate.push_back(std::move(pblocktemplate));
 
             // Need to update only after we know CreateNewBlock succeeded
             pindexPrev = pindexPrevNew;
@@ -413,7 +412,7 @@ UniValue getwork(const UniValue& params, bool fHelp)
         IncrementExtraNonce(pblock, pindexPrev, nExtraNonce);
 
         // Save
-        mapNewBlock[pblock->hashMerkleRoot] = make_pair(pblock, pblock->vtx[0].vin[0].scriptSig);
+        mapNewBlock[pblock->hashMerkleRoot] = std::make_pair(pblock, pblock->vtx[0]->vin[0].scriptSig);
 
         // Pre-build hash buffers
         char pmidstate[32];
@@ -432,7 +431,7 @@ UniValue getwork(const UniValue& params, bool fHelp)
     }
     else
     {
-        vector<unsigned char> vchData = ParseHex(params[0].get_str());
+        std::vector<unsigned char> vchData = ParseHex(request.params[0].get_str());
         if (vchData.size() != 128)
             throw JSONRPCError(RPC_INVALID_PARAMETER, "Invalid parameter");
         CBlock* pdata = (CBlock*)&vchData[0];
@@ -448,17 +447,18 @@ UniValue getwork(const UniValue& params, bool fHelp)
         boost::unique_lock<boost::mutex> lock(csBestBlock);
             
         CBlock* pblock = mapNewBlock[pdata->hashMerkleRoot].first;
+        std::shared_ptr<const CBlock> shared_pblock = std::make_shared<const CBlock>(*pblock);
 
         pblock->nTime = pdata->nTime;
         pblock->nNonce = pdata->nNonce;
 
-        CMutableTransaction txCoinbase(pblock->vtx[0]);
+        CMutableTransaction txCoinbase(*pblock->vtx[0]);
         txCoinbase.vin[0].scriptSig = mapNewBlock[pdata->hashMerkleRoot].second;
-        pblock->vtx[0] = txCoinbase;
+        pblock->vtx[0] = MakeTransactionRef(std::move(txCoinbase));
         pblock->hashMerkleRoot = BlockMerkleRoot(*pblock);
 
         assert(pwalletMain != NULL);
-        return ProcessBlockFound(pblock, Params());
+        return ProcessBlockFound(shared_pblock, Params());
         //return ProcessBlockFound(pblock, *pwalletMain, *pMiningKey);
     }
 }
@@ -1105,6 +1105,7 @@ static const CRPCCommand commands[] =
 
     { "generating",         "generate",               &generate,               true,  {"nblocks","maxtries"} },
     { "generating",         "generatetoaddress",      &generatetoaddress,      true,  {"nblocks","address","maxtries"} },
+    { "generating",         "getwork",                &getwork,                true,  {} },
 
     { "util",               "estimatefee",            &estimatefee,            true,  {"nblocks"} },
     { "util",               "estimatepriority",       &estimatepriority,       true,  {"nblocks"} },

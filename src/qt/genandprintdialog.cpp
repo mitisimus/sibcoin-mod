@@ -245,7 +245,7 @@ void GenAndPrintDialog::on_importButton_clicked()
         // To be investigate
         catch (...)
         {
-            std::cerr << "Import private key error!" << std::endl;            
+            std::cerr << "Import private key error!" << std::endl;
 //            for (json_spirit::Object::iterator it = err.begin(); it != err.end(); ++it)
 //            {
 //                cerr << it->name_ << " = " << it->value_.get_str() << endl;

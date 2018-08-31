@@ -215,7 +215,7 @@ int64_t UpdateTime(CBlockHeader* pblock, const Consensus::Params& consensusParam
 void FormatHashBuffers(CBlock* pblock, char* pmidstate, char* pdata, char* phash1);
 
 //bool ProcessBlockFound(CBlock* pblock, CWallet& wallet, CReserveKey& reservekey);
-bool ProcessBlockFound(const CBlock* pblock, const CChainParams& chainparams);
+bool ProcessBlockFound(const std::shared_ptr<const CBlock> pblock, const CChainParams& chainparams);
 /** Base sha256 mining transform */
 void SHA256Transform(void* pstate, void* pinput, const void* pinit);
 #endif // BITCOIN_MINER_H

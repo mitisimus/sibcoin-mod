@@ -34,6 +34,7 @@
 #include <boost/tuple/tuple.hpp>
 #include <queue>
 #include <utility>
+#include <openssl/sha.h>
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -90,7 +91,7 @@ class COrphan
 {
 public:
     const CTransaction* ptx;
-    set<uint256> setDependsOn;
+    std::set<uint256> setDependsOn;
     CFeeRate feeRate;
     double dPriority;
 
@@ -693,4 +694,26 @@ void FormatHashBuffers(CBlock* pblock, char* pmidstate, char* pdata, char* phash
 
     memcpy(pdata, &tmp.block, 128);
     memcpy(phash1, &tmp.hash1, 64);
+}
+
+bool ProcessBlockFound(const std::shared_ptr<const CBlock> pblock, const CChainParams& chainparams)
+{
+    LogPrintf("%s\n", pblock->ToString());
+    LogPrintf("generated %s\n", FormatMoney(pblock->vtx[0]->vout[0].nValue));
+
+    // Found a solution
+    {
+        LOCK(cs_main);
+        if (pblock->hashPrevBlock != chainActive.Tip()->GetBlockHash())
+            return error("ProcessBlockFound -- generated block is stale");
+    }
+
+    // Inform about the new block
+    GetMainSignals().BlockFound(pblock->GetHash());
+
+    // Process this block the same as if we had received it from another node
+    if (!ProcessNewBlock(chainparams, pblock, true, NULL))
+        return error("ProcessBlockFound -- ProcessNewBlock() failed, block not accepted");
+
+    return true;
 }
