@@ -822,8 +822,8 @@ bool CGovernanceManager::MasternodeRateCheck(const CGovernanceObject& govobj, bo
         return true;
     }
 
-    // Allow 1 trigger per mn per cycle, with a small fudge factor
-    double dMaxRate = 2 * 1.1 / double(nSuperblockCycleSeconds);
+    // Allow 3 trigger per mn per cycle, with a small fudge factor
+    double dMaxRate = 6 * 1.1 / double(nSuperblockCycleSeconds);
 
     // Temporary copy to check rate after new timestamp is added
     CRateCheckBuffer buffer = it->second.triggerBuffer;
