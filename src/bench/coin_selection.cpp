@@ -4,6 +4,7 @@
 
 #include "bench.h"
 #include "wallet/wallet.h"
+#include "masternode.h"
 
 #include <boost/foreach.hpp>
 #include <set>
@@ -45,7 +46,7 @@ static void CoinSelection(benchmark::State& state)
 
         // Add coins.
         for (int i = 0; i < 1000; i++)
-            addCoin(1000 * COIN, wallet, vCoins);
+            addCoin(MASTERNODE_COLLATERAL_AMOUNT * COIN, wallet, vCoins);
         addCoin(3 * COIN, wallet, vCoins);
 
         std::set<std::pair<const CWalletTx*, unsigned int> > setCoinsRet;
