@@ -195,6 +195,8 @@ extern std::string HelpRequiringPassphrase();
 extern std::string HelpExampleCli(const std::string& methodname, const std::string& args);
 extern std::string HelpExampleRpc(const std::string& methodname, const std::string& args);
 
+extern UniValue importprivkey(const JSONRPCRequest& request);
+
 extern void EnsureWalletIsUnlocked();
 
 bool StartRPC();

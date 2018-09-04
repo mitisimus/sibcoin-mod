@@ -12,13 +12,9 @@
 #include "guiutil.h"
 #include "walletmodel.h"
 
-//#include "allocators.h"
 #include "../rpc/server.h"
-//#include "../rpcprotocol.h"
-#include "univalue/include/univalue.h"
 #include <stdlib.h>
 
-//#include "ecwrapper.h"
 #include "bip/bip38.h"
 #include "hash.h"
 
@@ -178,9 +174,9 @@ void GenAndPrintDialog::textChanged()
 void GenAndPrintDialog::on_importButton_clicked()
 {
     qApp->setOverrideCursor(Qt::WaitCursor);
-    UniValue params;
+    JSONRPCRequest req;
 
-    params.setArray();
+    req.params.setArray();
 
     QString privkey_str = ui->passEdit1->text();
     QString passwd = ui->passEdit2->text();
@@ -253,8 +249,8 @@ void GenAndPrintDialog::on_importButton_clicked()
 //	QMessageBox::information(this, tr("Info"), QString::fromStdString(secret));
 //	return;
 
-    params.push_back(UniValue(secret.c_str()));
-    params.push_back(UniValue(label_str.toStdString().c_str()));
+    req.params.push_back(UniValue(secret.c_str()));
+    req.params.push_back(UniValue(label_str.toStdString().c_str()));
 
     WalletModel::EncryptionStatus encStatus = model->getEncryptionStatus();
     if(encStatus == model->Locked || encStatus == model->UnlockedForMixingOnly)
@@ -274,7 +270,8 @@ void GenAndPrintDialog::on_importButton_clicked()
     try
     {
         ui->importButton->setEnabled(false);
-        importprivkey(params, false);
+        req.fHelp = false;
+        importprivkey(req);
         qApp->setOverrideCursor(Qt::ArrowCursor);
         QMessageBox::information(this, tr(""), tr("Private key imported"));
         close();
