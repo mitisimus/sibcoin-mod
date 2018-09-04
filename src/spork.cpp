@@ -26,7 +26,7 @@ std::map<int, int64_t> mapSporkDefaults = {
     {SPORK_10_MASTERNODE_PAY_UPDATED_NODES,  4070908800ULL}, // OFF
     {SPORK_12_RECONSIDER_BLOCKS,             0},             // 0 BLOCKS
     {SPORK_14_REQUIRE_SENTINEL_FLAG,         4070908800ULL}, // OFF
-    {SPORK_15_REJECT_OLD_BLOCKS_DEFAULT,     4070908800ULL}, // OFF
+    {SPORK_15_REJECT_OLD_BLOCKS,             4070908800ULL}, // OFF
 };
 
 void CSporkManager::ProcessSpork(CNode* pfrom, const std::string& strCommand, CDataStream& vRecv, CConnman& connman)
@@ -171,7 +171,7 @@ int CSporkManager::GetSporkIDByName(const std::string& strName)
     if (strName == "SPORK_10_MASTERNODE_PAY_UPDATED_NODES")     return SPORK_10_MASTERNODE_PAY_UPDATED_NODES;
     if (strName == "SPORK_12_RECONSIDER_BLOCKS")                return SPORK_12_RECONSIDER_BLOCKS;
     if (strName == "SPORK_14_REQUIRE_SENTINEL_FLAG")            return SPORK_14_REQUIRE_SENTINEL_FLAG;
-    if (strName == "SPORK_15_REJECT_OLD_BLOCKS")                return SPORK_15_REJECT_OLD_BLOCKS_DEFAULT;
+    if (strName == "SPORK_15_REJECT_OLD_BLOCKS")                return SPORK_15_REJECT_OLD_BLOCKS;
 
     LogPrint("spork", "CSporkManager::GetSporkIDByName -- Unknown Spork name '%s'\n", strName);
     return -1;
