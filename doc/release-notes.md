@@ -1,4 +1,5 @@
 Sibcoin Core version 0.16.3.0
+==========================
 
 Release is now available from:
 
