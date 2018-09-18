@@ -1,12 +1,10 @@
-Sibcoin Core version 0.12.3.2
-==========================
+Sibcoin Core version 0.16.3.0
 
 Release is now available from:
 
   <https://sibcoin.money/download>
 
-This is a new minor version release, bringing various bugfixes and other
-improvements.
+This is a new major version release, bringing new features and other improvements.
 
 Please report bugs using the issue tracker at github:
 
@@ -27,75 +25,76 @@ dashd/dash-qt (on Linux).
 Downgrade warning
 -----------------
 
-### Downgrade to a version < 0.12.2.2
+### Downgrade to a version < 0.16.3.0
 
-Because release 0.12.2.2 included the [per-UTXO fix](release-notes/dash/release-notes-0.12.2.2.md#per-utxo-fix)
+Because release 0.16.3.0 included the [per-UTXO fix](release-notes/dash/release-notes-0.12.2.2.md#per-utxo-fix)
 which changed the structure of the internal database, you will have to reindex
-the database if you decide to use any pre-0.12.2.2 version.
+the database if you decide to use any pre-0.16.3.0 version.
 
 Wallet forward or backward compatibility was not affected.
-
-### Downgrade to 0.12.2.2/3, 0.12.3.1
-
-Downgrading to these versions does not require any additional actions, should be
-fully compatible.
 
 
 Notable changes
 ===============
 
-Improve initial sync
---------------------
+Fix crash bug with duplicate inputs within a transaction
+--------------------------------------------------------
 
-Some users had problems getting their nodes synced. The issue occured due to nodes trying to
-get additional data from each available peer but not being able to process this data fast enough.
-This was recognized as a stalled sync process and thus the process was reset. To address the issue
-we limited sync process to 3 peers max now and the issue should no longer appear as long as there
-are at least 4 connections.
+There was a critical bug discovered in Bitcoin Core's codebase recently which
+can cause node receiving a block to crash https://github.com/bitcoin/bitcoin/pull/14247
 
-Testnet/Devnet fixes
---------------------
+Per-UTXO fix
+------------
 
-Turned out that a low-diff rule for slow blocks backported from Bitcoin works a bit too aggressive for
-a blockchain which uses a dynamic per-block difficulty adjustment algorithm (DGW). While blocks are still
-produced at a more or less constant rate on average, the rate however is way too high.
+This fixes a potential vulnerability, so called 'Corebleed', which was
+demonstrated this summer at the Вrеаkіng Віtсоіn Соnfеrеnсе іn Раrіs. The DoS
+can cause nodes to allocate excessive amounts of memory, which leads them to a
+halt. You can read more about the fix in the original Bitcoin Core pull request
+https://github.com/bitcoin/bitcoin/pull/10195
 
-We also lifted multiple ports restriction on devnet and also incuded other fixes which should improve
-connectivity on devnets which are using nodes with multiple different ports.
+To fix this issue in Dash Core however, we had to backport a lot of other
+improvements from Bitcoin Core, see full list of backports in the detailed
+change log below.
+
+Additional indexes fix
+----------------------
+
+If you were using additional indexes like `addressindex`, `spentindex` or
+`timestampindex` it's possible that they are not accurate. Please consider
+reindexing the database by starting your node with `-reindex` command line
+option. This is a one-time operation, the issue should be fixed now.
+
+InstantSend fix
+---------------
+
+InstantSend should work with multisig addresses now.
+
+PrivateSend fix
+---------------
+
+Some internal data structures were not cleared properly, which could lead
+to a slightly higher memory consumption over a long period of time. This was
+a minor issue which was not affecting mixing speed or user privacy in any way.
+
+Removal of support for local masternodes
+----------------------------------------
+
+Keeping a wallet with 1000 DASH unlocked for 24/7 is definitely not a good idea
+anymore. Because of this fact, it's also no longer reasonable to update and test
+this feature, so it's completely removed now. If for some reason you were still
+using it, please follow one of the guides and setup a remote masternode instead.
 
 
-0.12.3.2 Change log
+Dash 0.12.3.3 Change log
 ===================
 
-See detailed [change log](https://github.com/dashpay/dash/compare/v0.12.3.1...dashpay:v0.12.3.2) below.
-
-### Network:
-- [`2474d9cb8`](https://github.com/dashpay/dash/commit/2474d9cb8) Sync mn list and mnw list from 3 peers max (#2169)
-- [`2c303cdb1`](https://github.com/dashpay/dash/commit/2c303cdb1) A few devnet related fixes (#2168)
-
-### Mining:
-- [`2ba0c7760`](https://github.com/dashpay/dash/commit/2ba0c7760) Add tests for special rules for slow blocks on devnet/testnet (#2176)
-- [`b9a83d2ae`](https://github.com/dashpay/dash/commit/b9a83d2ae) Allow mining min diff for very slow (2h+) blocks (#2175)
-- [`050cabdf5`](https://github.com/dashpay/dash/commit/050cabdf5) Adjust diff for slow testnet/devnet blocks a bit smoother (#2161)
-
-### GUI:
-- [`7b9919d18`](https://github.com/dashpay/dash/commit/7b9919d18) Fix issues with selections on Masternode tab (#2170)
-- [`c4698d5f3`](https://github.com/dashpay/dash/commit/c4698d5f3) Make PS Buttons not react to spacebar (#2154)
-
-### Other:
-- [`f833e2ed6`](https://github.com/dashpay/dash/commit/f833e2ed6) Bump to 0.12.3.2 (#2173)
-
+See detailed [set of changes](https://github.com/dashpay/dash/compare/v0.12.3.2...dashpay:v0.12.3.3).
 
 Credits
 =======
 
-Thanks to everyone who directly contributed to this release:
-
-- Alexander Block
-- PaulieD
-- UdjinM6
-
-As well as everyone who submitted issues and reviewed pull requests.
+Thanks to everyone who directly contributed to this release,
+as well as everyone who submitted issues and reviewed pull requests.
 
 
 Older releases
@@ -119,8 +118,14 @@ Dash Core tree 0.12.0.x was a fork of Bitcoin Core tree 0.10.
 
 Sibcoin Core tree 0.15.x was a fork of Dash Core tree 0.11.
 
-Sibcoin Core tree 0.16.3.x was a fork of Dash Core tree 0.12.3.x.
+Sibcoin Core tree 0.16.0.x was a fork of Dash Core tree 0.12.0.x.
 
+Sibcoin Core tree 0.16.1.x was a fork of Dash Core tree 0.12.1.x.
+
+Sibcoin Core tree 0.16.2.x was a fork of Dash Core tree 0.12.1.x with some critical updates from Dash Core 0.12.2.x.
+
+
+- [v0.12.3.2](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.12.3.2.md) released Jul/09/2018
 - [v0.12.3.1](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.12.3.1.md) released Jul/03/2018
 - [v0.12.2.3](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.12.2.3.md) released Jan/12/2018
 - [v0.12.2.2](https://github.com/dashpay/dash/blob/master/doc/release-notes/dash/release-notes-0.12.2.2.md) released Dec/17/2017
