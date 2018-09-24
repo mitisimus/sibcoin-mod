@@ -116,13 +116,7 @@ CMasternode::CollateralStatus CMasternode::CheckCollateral(const COutPoint& outp
         return COLLATERAL_UTXO_NOT_FOUND;
     }
 
-    if(coin.out.nValue != MASTERNODE_COLLATERAL_AMOUNT * COIN) {
-        // should be removed after update to 16.2
-        if(coin.out.nValue == MASTERNODE_OLD_COLLATERAL_AMOUNT * COIN){
-            nHeightRet = coin.nHeight;
-            return COLLATERAL_OLD_AMOUNT;
-        }
-        
+    if(coin.out.nValue != MASTERNODE_COLLATERAL_AMOUNT * COIN) {       
         return COLLATERAL_INVALID_AMOUNT;
     }
 
@@ -567,18 +561,6 @@ bool CMasternodeBroadcast::CheckOutpoint(int& nDos)
 
     if(err == COLLATERAL_INVALID_PUBKEY) {
         LogPrint("masternode", "CMasternodeBroadcast::CheckOutpoint -- Masternode UTXO should match pubKeyCollateralAddress, masternode=%s\n", outpoint.ToStringShort());
-        nDos = 33;
-        return false;
-    }
-
-    if (err == COLLATERAL_OLD_AMOUNT) {
-        if (nProtocolVersion <= OLD_COLLATERAL_PROTOCOL_VERSION) {
-            LogPrint("masternode", "CMasternode::Check -- Masternode has old collateral amount, masternode=%s\n", outpoint.ToStringShort());
-            nDos = 33;
-            return false;
-        }
-
-        LogPrint("masternode", "CMasternode::Check -- Masternode UTXO is invalid, masternode=%s\n", outpoint.ToStringShort());
         nDos = 33;
         return false;
     }
