@@ -43,7 +43,7 @@
 #define DBG( x ) 
 #endif
 
-//Dash only features
+//Sibcoin only features
 
 extern bool fMasternodeMode;
 extern bool fLiteMode;

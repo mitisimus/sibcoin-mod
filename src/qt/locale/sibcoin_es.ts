@@ -1784,13 +1784,13 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location line="+117"/>
-        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Dash network, as detailed below.</source>
-        <translation>Es posible que las transacciones recientes aún no estén visibles y, por lo tanto, el saldo de su monedero podría ser incorrecto. Esta información será corregida una vez que su monedero haya terminado de sincronizarse con la red de Dash, como se detalla a continuación.</translation>
+        <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the Sibcon network, as detailed below.</source>
+        <translation>Es posible que las transacciones recientes aún no estén visibles y, por lo tanto, el saldo de su monedero podría ser incorrecto. Esta información será corregida una vez que su monedero haya terminado de sincronizarse con la red de Sibcoin, como se detalla a continuación.</translation>
     </message>
     <message>
         <location line="+19"/>
-        <source>Attempting to spend Dash that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
-        <translation>La red no aceptará intentos de gastar Dash que estén afectados por transacciones aún no reflejadas.</translation>
+        <source>Attempting to spend Sibcoin that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <translation>La red no aceptará intentos de gastar Sibcoin que estén afectados por transacciones aún no reflejadas.</translation>
     </message>
     <message>
         <location line="+63"/>
@@ -2172,7 +2172,7 @@ https://www.transifex.com/projects/p/sibcoin/</source>
     <message>
         <location line="+13"/>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
-        <translation>Elegir la subdivisión predeterminada para mostrar las cuantías en la interfaz y cuando se envían dashs.</translation>
+        <translation>Elegir la subdivisión predeterminada para mostrar las cuantías en la interfaz y cuando se envían sibcoins.</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -3686,7 +3686,7 @@ https://www.transifex.com/projects/p/sibcoin/</source>
         <location filename="../forms/sendcoinsdialog.ui" line="+14"/>
         <location filename="../sendcoinsdialog.cpp" line="+668"/>
         <source>Send Coins</source>
-        <translation>Enviar Dash</translation>
+        <translation>Enviar Sibcoin</translation>
     </message>
     <message>
         <location line="+76"/>
@@ -5104,7 +5104,7 @@ https://www.transifex.com/projects/p/sibcoin/</source>
         <location line="+5"/>
         <location line="+11"/>
         <source>Send Coins</source>
-        <translation>Enviar Dash</translation>
+        <translation>Enviar Sibcoin</translation>
     </message>
     <message>
         <location line="-28"/>
