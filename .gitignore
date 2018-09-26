@@ -12,7 +12,7 @@ src/sibcoin-cli
 src/sibcoin-tx
 src/test/test_sibcoin
 src/qt/test/test_sibcoin-qt
-src/bench/bench_dash
+src/bench/bench_sibcoin
 
 # autoreconf
 Makefile.in
@@ -131,7 +131,7 @@ share/BitcoindComparisonTool.jar
 .autotools
 /doc/doxygen/
 
-libdashconsensus.pc
+libsibcoinconsensus.pc
 contrib/devtools/split-debug.sh
 src/qt/sibcoin-qt.bash
 qa/pull-tester/tests-config.sh

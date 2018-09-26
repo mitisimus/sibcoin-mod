@@ -6,7 +6,7 @@ AM_CPPFLAGS += -I$(top_srcdir)/src \
   $(PROTOBUF_CFLAGS) \
   $(QR_CFLAGS)
 bin_PROGRAMS = sibcoin-qt
-noinst_LIBRARIES = libdashqt.a
+noinst_LIBRARIES = libsibcoinqt.a
 SUBDIRS = . $(BUILD_TEST_QT)
 DIST_SUBDIRS = . test
 
@@ -319,15 +319,15 @@ RES_MOVIES = $(wildcard res/movies/spinner-*.png)
 
 SIBCOIN_RC = res/sibcoin-qt-res.rc
 
-libdashqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(QT_INCLUDES) \
+libsibcoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(QT_INCLUDES) \
   -I$(top_srcdir)/src/qt/forms $(QT_DBUS_INCLUDES)
-libdashqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
+libsibcoinqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
   $(QT_QRC) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_MOVIES) $(RES_CSS)
 
-nodist_libdashqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
+nodist_libsibcoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
   $(PROTOBUF_H) $(QT_QRC_CPP)
 
-BUILT_SOURCES = $(nodist_libdashqt_a_SOURCES)
+BUILT_SOURCES = $(nodist_libsibcoinqt_a_SOURCES)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
@@ -344,7 +344,7 @@ endif
 if TARGET_WINDOWS
   sibcoin_qt_SOURCES += $(SIBCOIN_RC)
 endif
-sibcoin_qt_LDADD = libdashqt.a $(LIBBITCOIN_SERVER)
+sibcoin_qt_LDADD = libsibcoinqt.a $(LIBBITCOIN_SERVER)
 if ENABLE_WALLET
 sibcoin_qt_LDADD += $(LIBBITCOIN_WALLET)
 endif
