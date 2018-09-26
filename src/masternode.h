@@ -55,7 +55,7 @@ public:
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action) {
         int nVersion = s.GetVersion();
-        if (nVersion == 70208 && (s.GetType() & SER_NETWORK)) {
+        if (nVersion <= 70208 && (s.GetType() & SER_NETWORK)) {
             // converting from/to old format
             CTxIn txin{};
             if (ser_action.ForRead()) {
@@ -88,7 +88,7 @@ public:
             nDaemonVersion = DEFAULT_DAEMON_VERSION;
             return;
         }
-        if (!(nVersion == 70208 && (s.GetType() & SER_NETWORK))) {
+        if (!(nVersion <= 70208 && (s.GetType() & SER_NETWORK))) {
             READWRITE(nDaemonVersion);
         }
     }
@@ -208,7 +208,7 @@ public:
     inline void SerializationOp(Stream& s, Operation ser_action) {
         LOCK(cs);
         int nVersion = s.GetVersion();
-        if (nVersion == 70208 && (s.GetType() & SER_NETWORK)) {
+        if (nVersion <= 70208 && (s.GetType() & SER_NETWORK)) {
             // converting from/to old format
             CTxIn txin{};
             if (ser_action.ForRead()) {
@@ -365,7 +365,7 @@ public:
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action) {
         int nVersion = s.GetVersion();
-        if (nVersion == 70208 && (s.GetType() & SER_NETWORK)) {
+        if (nVersion <= 70208 && (s.GetType() & SER_NETWORK)) {
             // converting from/to old format
             CTxIn txin{};
             if (ser_action.ForRead()) {
@@ -432,7 +432,7 @@ public:
     template <typename Stream, typename Operation>
     inline void SerializationOp(Stream& s, Operation ser_action) {
         int nVersion = s.GetVersion();
-        if (nVersion == 70208 && (s.GetType() & SER_NETWORK)) {
+        if (nVersion <= 70208 && (s.GetType() & SER_NETWORK)) {
             // converting from/to old format
             CTxIn txin1{};
             CTxIn txin2{};

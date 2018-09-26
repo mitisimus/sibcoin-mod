@@ -218,7 +218,7 @@ public:
         } else if (ser_action.ForRead()) {
             nInputCount = 0;
         }
-        if (nVersion == 70208 && (s.GetType() & SER_NETWORK)) {
+        if (nVersion <= 70208 && (s.GetType() & SER_NETWORK)) {
             // converting from/to old format
             CTxIn txin{};
             if (ser_action.ForRead()) {
@@ -305,7 +305,7 @@ public:
     inline void SerializationOp(Stream& s, Operation ser_action) {
         READWRITE(tx);
         int nVersion = s.GetVersion();
-        if (nVersion == 70208 && (s.GetType() & SER_NETWORK)) {
+        if (nVersion <= 70208 && (s.GetType() & SER_NETWORK)) {
             // converting from/to old format
             CTxIn txin{};
             if (ser_action.ForRead()) {
