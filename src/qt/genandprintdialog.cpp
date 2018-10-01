@@ -179,6 +179,8 @@ void GenAndPrintDialog::on_importButton_clicked()
     req.params.setArray();
 
     QString privkey_str = ui->passEdit1->text();
+    privkey_str = privkey_str.simplified();
+    privkey_str = privkey_str.remove(QChar(' '));
     QString passwd = ui->passEdit2->text();
     QString label_str = ui->passEdit3->text();
     std::string secret = privkey_str.toStdString();
