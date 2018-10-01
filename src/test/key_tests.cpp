@@ -25,7 +25,7 @@ static const CBitcoinAddress addr2 ("SYDJDuEgjkAptxBww9aJApCyKVCgqELvot");
 static const CBitcoinAddress addr1C("SNQaqoHf1Jiec47f3Mc2xiPiTqHJ3YjCcx");
 static const CBitcoinAddress addr2C("SZZA2K7bi4UcYMX3Vi4VyKzTHv4deszeEB");
 
-static const std::string strAddressBad("Xta1praZQjyELweyMByXyiREw1ZRsjXzVP");
+static const std::string strAddressBad("SaoUSSdmB5kqc7a6U8VCFJxKRT2YfDMRxA");
 
 
 #ifdef KEY_TESTS_DUMPINFO
