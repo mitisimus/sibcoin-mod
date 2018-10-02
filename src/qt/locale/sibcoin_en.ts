@@ -4166,8 +4166,8 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="-1094"/>
-        <source>The address to send the payment to (e.g. SwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg)</source>
-        <translation>The address to send the payment to (e.g. SwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg)</translation>
+        <source>The address to send the payment to (e.g. SiBjNTJZQqn6V1RtyVu2friaJMij1dHpm4)</source>
+        <translation>The address to send the payment to (e.g. SiBjNTJZQqn6V1RtyVu2friaJMij1dHpm4)</translation>
     </message>
     <message>
         <location line="+95"/>
@@ -4232,8 +4232,8 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>The address to sign the message with (e.g. SwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg)</source>
-        <translation>The address to sign the message with (e.g. SwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg)</translation>
+        <source>The address to sign the message with (e.g. SiBjNTJZQqn6V1RtyVu2friaJMij1dHpm4)</source>
+        <translation>The address to sign the message with (e.g. SiBjNTJZQqn6V1RtyVu2friaJMij1dHpm4)</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -4279,8 +4279,8 @@ https://www.transifex.com/projects/p/sibcoin/</translation>
     </message>
     <message>
         <location line="+106"/>
-        <source>The Sibcoin address the message was signed with (e.g. SwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg)</source>
-        <translation>The Sibcoin address the message was signed with (e.g. SwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg)</translation>
+        <source>The Sibcoin address the message was signed with (e.g. SiBjNTJZQqn6V1RtyVu2friaJMij1dHpm4)</source>
+        <translation>The Sibcoin address the message was signed with (e.g. SiBjNTJZQqn6V1RtyVu2friaJMij1dHpm4)</translation>
     </message>
     <message>
         <location line="+37"/>
