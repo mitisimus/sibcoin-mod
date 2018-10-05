@@ -1,6 +1,6 @@
 PACKAGE=qt
 $(package)_version=5.7.1
-$(package)_download_path=http://download.qt.io/official_releases/qt/5.7/$($(package)_version)/submodules
+$(package)_download_path=http://download.qt.io/archive/qt/5.7/$($(package)_version)/submodules
 $(package)_suffix=opensource-src-$($(package)_version).tar.gz
 $(package)_file_name=qtbase-$($(package)_suffix)
 $(package)_sha256_hash=95f83e532d23b3ddbde7973f380ecae1bac13230340557276f75f2e37984e410
@@ -78,8 +78,6 @@ $(package)_config_opts += -reduce-exports
 $(package)_config_opts += -static
 $(package)_config_opts += -silent
 $(package)_config_opts += -v
-$(package)_config_opts += -no-feature-printer
-$(package)_config_opts += -no-feature-printdialog
 
 ifneq ($(build_os),darwin)
 $(package)_config_opts_darwin = -xplatform macx-clang-linux
