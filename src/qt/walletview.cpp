@@ -379,6 +379,7 @@ void WalletView::genAndPrintAddresses()
     if(!walletModel)
         return;
     
+#ifdef ENABLE_PRINTSUPPORT
     GenAndPrintDialog dlg(GenAndPrintDialog::Export, this);
     dlg.setModel(walletModel);
     if (dlg.exec())
@@ -390,6 +391,9 @@ void WalletView::genAndPrintAddresses()
         QString uri = dlg.getURI();
         Q_EMIT receivedURI(uri);
     }
+#else
+    QMessageBox::warning(this, tr(""), tr("Print support is disabled!"));
+#endif
 }
 
 void WalletView::loadFromPaper()

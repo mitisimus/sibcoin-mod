@@ -258,6 +258,12 @@ AC_ARG_WITH([daemon],
   [build_bitcoind=$withval],
   [build_bitcoind=yes])
 
+AC_ARG_WITH([printsupport],
+  [AS_HELP_STRING([--with-printsupport],
+  [enable print support for Qt (default=yes)])],
+  [enable_printsupport=$withval],
+  [enable_printsupport=yes])
+
 use_pkgconfig=yes
 case $host in
   *mingw*)
@@ -1054,6 +1060,15 @@ if test x$build_bitcoin_utils$build_bitcoin_libs$build_bitcoind$bitcoin_enable_q
   AC_MSG_ERROR([No targets! Please specify at least one of: --with-utils --with-libs --with-daemon --with-gui --enable-bench or --enable-tests])
 fi
 
+dnl enable printsupport
+AC_MSG_CHECKING([if printsupport should be enabled])
+if test x$enable_printsupport != xno; then
+  AC_MSG_RESULT(yes)
+  AC_DEFINE_UNQUOTED([ENABLE_PRINTSUPPORT],[1],[Define to 1 to enable printsupport])
+else
+  AC_MSG_RESULT(no)
+fi
+
 AM_CONDITIONAL([TARGET_DARWIN], [test x$TARGET_OS = xdarwin])
 AM_CONDITIONAL([BUILD_DARWIN], [test x$BUILD_OS = xdarwin])
 AM_CONDITIONAL([TARGET_WINDOWS], [test x$TARGET_OS = xwindows])
@@ -1066,6 +1081,7 @@ AM_CONDITIONAL([USE_QRCODE], [test x$use_qr = xyes])
 AM_CONDITIONAL([USE_LCOV],[test x$use_lcov = xyes])
 AM_CONDITIONAL([GLIBC_BACK_COMPAT],[test x$use_glibc_compat = xyes])
 AM_CONDITIONAL([HARDEN],[test x$use_hardening = xyes])
+AM_CONDITIONAL([ENABLE_PRINTSUPPORT],[test x$enable_printsupport = xyes])
 
 AC_DEFINE(CLIENT_VERSION_MAJOR, _CLIENT_VERSION_MAJOR, [Major version])
 AC_DEFINE(CLIENT_VERSION_MINOR, _CLIENT_VERSION_MINOR, [Minor version])

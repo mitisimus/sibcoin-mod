@@ -75,7 +75,11 @@ Q_IMPORT_PLUGIN(QXcbIntegrationPlugin);
 #elif defined(QT_QPA_PLATFORM_WINDOWS)
 Q_IMPORT_PLUGIN(QMinimalIntegrationPlugin);
 Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin);
+
+#ifdef ENABLE_PRINTSUPPORT
 Q_IMPORT_PLUGIN(QWindowsPrinterSupportPlugin);
+#endif
+
 #elif defined(QT_QPA_PLATFORM_COCOA)
 Q_IMPORT_PLUGIN(QCocoaIntegrationPlugin);
 #endif
